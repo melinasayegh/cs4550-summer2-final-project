@@ -1,0 +1,30 @@
+footer.home-page-footer {
+    margin: 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #e0eaf3;
+    color: black;
+    display: block;
+    width: 100%;
+}
+
+div.footer-content {
+    margin: auto;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+div.home-page-tip {
+    margin: 30px auto;
+    width: 50%;
+    height: 20%;
+    background-color: white;
+}
+
+div.featured-recipes {
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+}

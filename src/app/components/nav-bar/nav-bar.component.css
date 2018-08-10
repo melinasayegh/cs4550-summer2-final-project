@@ -1,0 +1,52 @@
+header.home-page-header {
+    margin: 0;
+    padding: 0;
+    color: black;
+    display: block;
+    width: 100%;
+    border-bottom: 2px solid #d3d6cd;
+}
+
+div.search-div {
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    width: 50%;
+}
+
+div.categories-btn {
+    cursor: pointer;
+    background-color: #b4be60;
+    padding: 0px 20px;
+    margin: 15px 5px;
+}
+
+header.home-page-header>h2, div.search-div, div.search-div>div, div.search-div>input,
+div.search-div>i, div.register-login-div>h4 {
+    display: inline-block;
+}
+
+header.home-page-header>h2 {
+    margin: auto 30px;
+}
+
+header.home-page-header>h2:hover,  div.register-login-div>h4:hover{
+    cursor: pointer;
+}
+
+div.search-div>input {
+    margin: auto 5px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    width: 66%;
+}
+
+div.register-login-div {
+    margin: auto 30px;
+    float: right;
+    display: block;
+}
+
+div.register-login-div>h4 {
+    margin: auto 5px;
+}
