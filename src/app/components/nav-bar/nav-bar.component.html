@@ -4,12 +4,20 @@
     <div class="categories-btn">
       <p>Categories</p>
     </div>
-    <input id="searchFld" class="form-control" placeholder="Search for a recipe">
+    <input id="searchFld" placeholder="Search for a recipe">
     <i class="fa fa-search"></i>
   </div>
 
-  <div class="register-login-div">
+  <div class="register-login-div" [ngClass]="{'hide': isNotCurrentPage('home')}">
     <h4 routerLink="/registration">Register</h4>
-    <h4 routerLink="/login">Log In</h4>
+    <h4 routerLink="/login">Sign In</h4>
+  </div>
+
+  <div class="register-div" [ngClass]="{'hide': isNotCurrentPage('login')}">
+    <h4 routerLink="/register">Sign Up</h4>
+  </div>
+
+  <div class="login-div" [ngClass]="{'hide': isNotCurrentPage('register')}">
+    <h4 routerLink="/login">Sign In</h4>
   </div>
 </header>
