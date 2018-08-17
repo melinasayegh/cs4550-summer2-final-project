@@ -11,6 +11,7 @@ import { RecipePreviewComponent } from './components/recipe-preview/recipe-previ
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { PageFooterComponent } from './components/page-footer/page-footer.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
+import { CategoryTagComponent } from './components/category-tag/category-tag.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
     RecipePreviewComponent,
     LoginPageComponent,
     PageFooterComponent,
-    RegisterPageComponent
+    RegisterPageComponent,
+    CategoryTagComponent
   ],
   imports: [
     BrowserModule,

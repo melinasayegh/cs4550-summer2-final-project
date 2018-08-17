@@ -22,7 +22,7 @@ div.recipe-image>img {
 
 div.recipe-description {
     max-width: 220px;
-    max-height: 85px;
+    max-height: 110px;
     text-align: left;
     word-wrap: break-word;
     padding: 15px;
@@ -35,5 +35,10 @@ div.recipe-description>h3 {
 
 div.recipe-description>p {
     margin: 10px 0 10px 0;
+}
+
+div.category-tags {
+    display: block;
+    margin-top: 10px;
 }
 
