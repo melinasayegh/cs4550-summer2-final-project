@@ -1,3 +1,14 @@
+***
+## Welcome to the cs4550-summer2-final-project repository!
+This is the client app for our final project for CS 4550 Web Development - Summer 2
+
+Brenda Lau, Melina Sayegh, and Yoni Smolyar
+
+***
+Heroku App: https://webdev-final-client-angular.herokuapp.com/
+***
+
+
 # `angular-seed` — the seed for AngularJS apps
 
 This project is an application skeleton for a typical [AngularJS][angularjs] web app. You can use it
