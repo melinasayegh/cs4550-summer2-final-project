@@ -12,6 +12,9 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { PageFooterComponent } from './components/page-footer/page-footer.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { CategoryTagComponent } from './components/category-tag/category-tag.component';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
+import { FriendPreviewComponent } from './components/friend-preview/friend-preview.component';
+import { RecipeReviewComponent } from './components/recipe-review/recipe-review.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { CategoryTagComponent } from './components/category-tag/category-tag.com
     LoginPageComponent,
     PageFooterComponent,
     RegisterPageComponent,
-    CategoryTagComponent
+    ProfilePageComponent,
+    CategoryTagComponent,
+    FriendPreviewComponent,
+    RecipeReviewComponent
   ],
   imports: [
     BrowserModule,

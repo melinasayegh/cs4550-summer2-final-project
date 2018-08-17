@@ -1,5 +1,5 @@
 aside.profile-nav-bar {
-    background-color: #e0eaf3;
+    background-color: #ecede9;
     width: 25%;
     height: 100%;
     position: absolute;
@@ -26,4 +26,37 @@ div.profile-bio {
 
 div.profile-bio>h3 {
     margin: 0 auto;
+}
+
+ul.profile-tabs-list {
+    margin: 30px auto;
+    padding-left: 0;
+    width: 100%;
+}
+
+li.list-group-item {
+    margin: auto;
+    background-color: #e0eaf3;
+    border-bottom: 1px solid #e6e6e6;
+    list-style-type: none;
+    padding: 20px 0;
+}
+
+li.list-group-item:hover {
+    background-color: #cedeec;
+    cursor: pointer;
+}
+
+li.list-group-item.active {
+    background-color: #cedeec;
+}
+
+div.friends-view, div.my-recipes-view, div.favorites-view, div.reviews-view {
+    width: 75%;
+    float: right;
+    margin: 30px auto;
+}
+
+div.hide {
+    display: none;
 }

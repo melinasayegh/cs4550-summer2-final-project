@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilePageComponent implements OnInit {
 
+  selectedTab: String;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  selectTab(tab) {
+    this.selectedTab = tab;
   }
 
 }

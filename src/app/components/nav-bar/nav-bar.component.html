@@ -1,7 +1,7 @@
 <header class="home-page-header">
   <h2 routerLink="/home">SomeName</h2>
   <div class="search-div">
-    <div class="categories-btn">
+    <div class="categories-btn" (click)="categoryDropDown = !categoryDropDown">
       <p>Categories</p>
     </div>
     <input id="searchFld" placeholder="Search for a recipe">
@@ -20,4 +20,16 @@
   <div class="login-div" [ngClass]="{'hide': isNotCurrentPage('register')}">
     <h4 routerLink="/login">Sign In</h4>
   </div>
+
+  <div class="logout-div" [ngClass]="{'hide': isNotCurrentPage('profile')}">
+    <h4 routerLink="/home">Log out</h4>
+  </div>
+
+  <!--<div class="category-drop-down" [ngClass]="{'hide': !categoryDropDown}">-->
+    <!--<div class="category-row">-->
+      <!--<div class="category">-->
+     <!--<h4>Meal Type</h4>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
 </header>

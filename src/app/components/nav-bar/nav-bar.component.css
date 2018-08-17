@@ -21,8 +21,13 @@ div.categories-btn {
     margin: 15px 5px;
 }
 
+div.categories-btn:hover {
+    background-color: #abb74e;
+}
+
 header.home-page-header>h2, div.search-div, div.search-div>div, div.search-div>input,
-div.search-div>i, div.register-login-div>h4, div.register-div>h4, div.login-div>h4 {
+div.search-div>i, div.register-login-div>h4, div.register-div>h4, div.login-div>h4,
+div.logout-div>h4 {
     display: inline-block;
 }
 
@@ -31,7 +36,7 @@ header.home-page-header>h2 {
 }
 
 header.home-page-header>h2:hover,  div.register-login-div>h4:hover, div.register-div>h4:hover,
-div.login-div>h4:hover{
+div.login-div>h4:hover, div.logout-div>h4:hover{
     cursor: pointer;
 }
 
@@ -42,13 +47,13 @@ div.search-div>input {
     width: 66%;
 }
 
-div.register-login-div, div.register-div, div.login-div  {
+div.register-login-div, div.register-div, div.login-div, div.logout-div  {
     margin: auto 30px;
     float: right;
     display: block;
 }
 
-div.register-login-div>h4, div.register-div>h4, div.login-div>h4 {
+div.register-login-div>h4, div.register-div>h4, div.login-div>h4, div.logout-div>h4 {
     margin: auto 5px;
 }
 

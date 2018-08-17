@@ -11,8 +11,52 @@
     <!--<p>Graduated from the Culinary Institute of Burn and Learn.</p>-->
   </div>
 
-    <div class="profile-tab-list">
-
-    </div>
+      <ul class="profile-tabs-list">
+        <li class="list-group-item"
+            [ngClass]="{'active': selectedTab == 'Friends'}"
+            (click)="selectTab('Friends')">
+          Friends
+        </li>
+        <li class="list-group-item"
+            [ngClass]="{'active': selectedTab == 'My Recipes'}"
+            (click)="selectTab('My Recipes')">
+          My Recipes
+        </li>
+        <li class="list-group-item"
+            [ngClass]="{'active': selectedTab == 'Favorites'}"
+            (click)="selectTab('Favorites')">
+          Favorites
+        </li>
+        <li class="list-group-item"
+            [ngClass]="{'active': selectedTab == 'Reviews'}"
+            (click)="selectTab('Reviews')">
+          Reviews
+        </li>
+      </ul>
   </aside>
+
+  <div class="friends-view" [ngClass]="{'hide' : selectedTab != 'Friends'}">
+    <app-friend-preview></app-friend-preview>
+    <app-friend-preview></app-friend-preview>
+    <app-friend-preview></app-friend-preview>
+  </div>
+
+  <div class="my-recipes-view" [ngClass]="{'hide' : selectedTab != 'My Recipes'}">
+    <app-recipe-preview></app-recipe-preview>
+    <app-recipe-preview></app-recipe-preview>
+    <app-recipe-preview></app-recipe-preview>
+  </div>
+
+  <div class="favorites-view" [ngClass]="{'hide' : selectedTab != 'Favorites'}">
+    <app-recipe-preview></app-recipe-preview>
+    <app-recipe-preview></app-recipe-preview>
+    <app-recipe-preview></app-recipe-preview>
+  </div>
+
+  <div class="reviews-view" [ngClass]="{'hide' : selectedTab != 'Reviews'}">
+    <app-recipe-review></app-recipe-review>
+    <app-recipe-review></app-recipe-review>
+    <app-recipe-review></app-recipe-review>
+  </div>
 </div>
+

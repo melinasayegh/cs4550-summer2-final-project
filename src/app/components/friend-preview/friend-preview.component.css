@@ -1,0 +1,35 @@
+div.friend-preview {
+    border: 1px solid #e4e6e8;
+    display: inline-block;
+    margin: auto auto 10px 20px;
+    cursor: pointer;
+    background-color: white;
+    width: 250px;
+}
+
+div.friend-preview-content {
+    display: block;
+}
+
+div.friend-image {
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 15px;
+}
+
+div.friend-image>img {
+    width: 100%;
+    min-height: 100%;
+}
+
+div.friend-name {
+    display: inline-block;
+    margin: auto auto auto 10px;
+}
+
+div.friend-name>h5 {
+    margin: 25px auto;
+}

@@ -9,10 +9,12 @@ import { Input } from '@angular/core';
 export class NavBarComponent implements OnInit {
 
   @Input() currPage: {};
+  categoryDropDown: boolean;
 
   constructor() { }
 
   ngOnInit() {
+    this.categoryDropDown = false;
   }
 
   isNotCurrentPage(pageType) {
