@@ -1,0 +1,12 @@
+div.home-page-tip {
+    margin: 30px auto;
+    width: 50%;
+    height: 20%;
+    background-color: white;
+}
+
+div.featured-recipes {
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+}

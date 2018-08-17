@@ -1,0 +1,21 @@
+div.recipe-review {
+    border: 1px solid #e4e6e8;
+    display: inline-block;
+    margin: auto auto 20px 40px;
+    cursor: pointer;
+    background-color: white;
+    width: 75%;
+}
+
+div.recipe-review-content {
+    display: block;
+    padding: 25px;
+}
+
+div.review-heading>h5 {
+    float: right;
+}
+
+div.review-heading>h4, div.review-heading>h5 {
+    display: inline-block;
+}

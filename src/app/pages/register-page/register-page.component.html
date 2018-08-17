@@ -1,0 +1,53 @@
+<div>
+  <app-nav-bar currPage="register"></app-nav-bar>
+
+  <div class="container">
+    <h1>Sign Up</h1>
+
+    <div class="alert"
+         [ngClass]="{'hide': !usernameAlert}"
+         role="alert">
+      Username is already taken
+    </div>
+
+    <div class="alert"
+         [ngClass]="{'hide': !passwordAlert}"
+         role="alert" >
+      Passwords do not match
+    </div>
+
+    <div class="alert"
+         [ngClass]="{'hide': !fieldsAlert}"
+         role="alert">
+      All fields are required to sign up
+    </div>
+
+    <form>
+      <div class="form-group">
+        <label for="usernameFld">Username</label>
+        <input [(ngModel)]="username"
+               name="username"
+               id="usernameFld">
+      </div>
+      <div class="form-group">
+        <label for="passwordFld">Password</label>
+        <input [(ngModel)]="password"
+               name="password"
+               type="password"
+               id="passwordFld">
+      </div>
+      <div class="form-group">
+        <label for="password2Fld">Verify Password</label>
+        <input [(ngModel)]="password2"
+               name="password2"
+               type="password"
+               id="password2Fld">
+      </div>
+      <div class="register-btn">
+        <p (click)="register(username, password, password2)">Sign Up</p>
+      </div>
+    </form>
+  </div>
+
+  <app-page-footer></app-page-footer>
+</div>
