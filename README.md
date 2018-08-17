@@ -5,7 +5,7 @@ This is the client app for our final project for CS 4550 Web Development - Summe
 Brenda Lau, Melina Sayegh, and Yoni Smolyar
 
 ***
-Heroku App: https://webdev-final-client-angular.herokuapp.com/
+Heroku App: https://community-cookings.herokuapp.com/
 ***
 
 
