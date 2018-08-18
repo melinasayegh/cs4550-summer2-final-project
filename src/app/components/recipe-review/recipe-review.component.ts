@@ -1,4 +1,6 @@
+
 import {Component, Input, OnInit} from '@angular/core';
+
 
 @Component({
   selector: 'app-recipe-review',
@@ -13,7 +15,7 @@ export class RecipeReviewComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  
   isNotCurrentPage(pageType) {
       if (pageType !== this.currPage) {
           return true;
