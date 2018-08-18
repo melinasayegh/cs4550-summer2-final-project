@@ -22,8 +22,8 @@ div.recipe-image>img {
 }
 
 div.recipe-description {
-    max-width: 220px;
-    max-height: 140px;
+    width: 220px;
+    height: 100px;
     text-align: left;
     word-wrap: break-word;
     padding: 15px;
