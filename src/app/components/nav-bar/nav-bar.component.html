@@ -21,17 +21,16 @@
     <h4 routerLink="/login">Sign In</h4>
   </div>
 
-  <div class="logout-div" [ngClass]="{'hide': isNotCurrentPage('profile')} && isNotCurrentPage('create-recipe')">
-    <h4 routerLink="/home">Log out</h4>
-  <div class="logout-div" [ngClass]="{'hide': isNotCurrentPage('profile')}">
-    <h4 (click)="logout()">Log out</h4>
-  </div>
+    <div class="logout-div" [ngClass]="{'hide': isNotCurrentPage('profile')}">
+      <h4 (click)="logout()">Log out</h4>
+    </div>
+
 
   <!--<div class="category-drop-down" [ngClass]="{'hide': !categoryDropDown}">-->
-    <!--<div class="category-row">-->
-      <!--<div class="category">-->
-     <!--<h4>Meal Type</h4>-->
-      <!--</div>-->
-    <!--</div>-->
+  <!--<div class="category-row">-->
+  <!--<div class="category">-->
+  <!--<h4>Meal Type</h4>-->
+  <!--</div>-->
+  <!--</div>-->
   <!--</div>-->
 </header>
