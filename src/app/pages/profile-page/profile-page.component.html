@@ -43,6 +43,12 @@
 
   <div class="my-recipes-view" [ngClass]="{'hide' : selectedTab != 'My Recipes'}">
     <ul class="my-recipes-list">
+      <li>
+        <div class="create-recipe" routerLink="/newRecipe">
+            <i class="fa fa-plus"></i>
+            <h3>Create a new recipe</h3>
+        </div>
+      </li>
       <li><app-recipe-preview></app-recipe-preview></li>
       <li><app-recipe-preview></app-recipe-preview></li>
       <li><app-recipe-preview></app-recipe-preview></li>

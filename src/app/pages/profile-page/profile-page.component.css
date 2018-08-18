@@ -83,3 +83,19 @@ ul.friends-list>li {
     display: inline-block;
     margin: auto 2% 2% auto;
 }
+
+div.create-recipe {
+    border: 1px solid #e4e6e8;
+    display: inline-block;
+    margin: auto;
+    cursor: pointer;
+    height: 380px;
+    width: 250px;
+    overflow: hidden;
+    background-color: white;
+    text-align: center;
+}
+
+div.create-recipe>h3 {
+    display: block;
+}
