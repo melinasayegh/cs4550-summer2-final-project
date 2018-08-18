@@ -17,6 +17,7 @@ import { FriendPreviewComponent } from './components/friend-preview/friend-previ
 import { RecipeReviewComponent } from './components/recipe-review/recipe-review.component';
 import { SearchResultsPageComponent } from './pages/search-results-page/search-results-page.component';
 import { RecipePageComponent } from './pages/recipe-page/recipe-page.component';
+import { UserServiceClient } from './services/user.service.client';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,9 @@ import { RecipePageComponent } from './pages/recipe-page/recipe-page.component';
     routing,
     FormsModule
   ],
-  providers: [],
+  providers: [
+      UserServiceClient
+  ],
   bootstrap: [AppComponent]
 })
 

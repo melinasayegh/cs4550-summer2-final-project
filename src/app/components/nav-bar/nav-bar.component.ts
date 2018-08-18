@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
+import {UserServiceClient} from '../../services/user.service.client';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,16 +11,21 @@ import { Input } from '@angular/core';
 export class NavBarComponent implements OnInit {
 
   @Input() currPage = <any>{};
-  
   categoryDropDown: boolean;
 
-  constructor() { }
+  constructor(private router: Router,
+              private userService: UserServiceClient) { }
 
   ngOnInit() {
     this.categoryDropDown = false;
   }
 
-  isNotCurrentPage(pageType) {
+  logout = () => {
+      this.userService.logout()
+          .then(() => this.router.navigate(['home']));
+  }
+
+  isNotCurrentPage = (pageType) => {
     if (pageType !== this.currPage) {
       return true;
     } else {
