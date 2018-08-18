@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-recipe-preview',
-  templateUrl: './recipe-preview.component.html',
-  styleUrls: ['./recipe-preview.component.css']
+    selector: 'app-recipe-preview',
+    templateUrl: './recipe-preview.component.html',
+    styleUrls: ['./recipe-preview.component.css']
 })
 export class RecipePreviewComponent implements OnInit {
 
-  constructor() { }
+    recipe = {};
+    sourceUrl = '';
+    tag = '';
+    constructor() { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
 }
