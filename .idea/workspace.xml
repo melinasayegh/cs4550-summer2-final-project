@@ -2,32 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71833ea0-e8f4-41fc-bb28-6ce58a953c48" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/pages/recipe-page/recipe-page.component.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/pages/recipe-page/recipe-page.component.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/pages/recipe-page/recipe-page.component.spec.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/pages/recipe-page/recipe-page.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/pages/search-results-page/search-results-page.component.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/pages/search-results-page/search-results-page.component.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/pages/search-results-page/search-results-page.component.spec.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/pages/search-results-page/search-results-page.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.module.ts" afterPath="$PROJECT_DIR$/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.routing.ts" afterPath="$PROJECT_DIR$/src/app/app.routing.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/nav-bar/nav-bar.component.css" afterPath="$PROJECT_DIR$/src/app/components/nav-bar/nav-bar.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/nav-bar/nav-bar.component.html" afterPath="$PROJECT_DIR$/src/app/components/nav-bar/nav-bar.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/nav-bar/nav-bar.component.ts" afterPath="$PROJECT_DIR$/src/app/components/nav-bar/nav-bar.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/recipe-preview/recipe-preview.component.css" afterPath="$PROJECT_DIR$/src/app/components/recipe-preview/recipe-preview.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/recipe-preview/recipe-preview.component.html" afterPath="$PROJECT_DIR$/src/app/components/recipe-preview/recipe-preview.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/recipe-review/recipe-review.component.css" afterPath="$PROJECT_DIR$/src/app/components/recipe-review/recipe-review.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/recipe-review/recipe-review.component.html" afterPath="$PROJECT_DIR$/src/app/components/recipe-review/recipe-review.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/recipe-review/recipe-review.component.ts" afterPath="$PROJECT_DIR$/src/app/components/recipe-review/recipe-review.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/home-page/home-page.component.css" afterPath="$PROJECT_DIR$/src/app/pages/home-page/home-page.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/home-page/home-page.component.html" afterPath="$PROJECT_DIR$/src/app/pages/home-page/home-page.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/login-page/login-page.component.html" afterPath="$PROJECT_DIR$/src/app/pages/login-page/login-page.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/profile-page/profile-page.component.css" afterPath="$PROJECT_DIR$/src/app/pages/profile-page/profile-page.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/profile-page/profile-page.component.html" afterPath="$PROJECT_DIR$/src/app/pages/profile-page/profile-page.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/register-page/register-page.component.html" afterPath="$PROJECT_DIR$/src/app/pages/register-page/register-page.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -68,17 +44,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="recipe-page.component.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/pages/recipe-page/recipe-page.component.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="profile-page.component.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="profile-page.component.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/pages/profile-page/profile-page.component.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="352">
@@ -88,12 +54,74 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="recipe-preview.component.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/components/recipe-preview/recipe-preview.component.css">
+      <file leaf-file-name="modules.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-83">
-              <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="5" lean-forward="false" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1534557330000" expanded="true" signature="56359:56401" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="56359:56419" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="56359:56432" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="56359:56447" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="56482:59039" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="56495:59024" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="56549:56844" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="56568:56829" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="56631:56809" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="56671:56775" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="56692:56753" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="56894:57221" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="56913:57206" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="57008:57186" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="57048:57152" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="57069:57130" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="57272:57537" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="57291:57522" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="57324:57502" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="57364:57468" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="57385:57446" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="57580:57886" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="57599:57871" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="57673:57851" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="57713:57817" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="57734:57795" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="57937:58307" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="57956:58292" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="58055:58272" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="58095:58238" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="58116:58216" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="58342:58648" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="58361:58633" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="58435:58613" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="58475:58579" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="58496:58557" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="58700:59010" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="58719:58995" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="58797:58975" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="58837:58941" ph="..." />
+                <marker date="1534557330000" expanded="true" signature="58858:58919" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -128,16 +156,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="recipe-page.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/pages/recipe-page/recipe-page.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="103" lean-forward="false" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="103" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -151,8 +169,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/containers/RecipePreviewList.js" />
-        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/components/NavBar.js" />
         <option value="$PROJECT_DIR$/src/components/RecipePreview.js" />
         <option value="$PROJECT_DIR$/src/containers/HomePageContainer.js" />
@@ -202,6 +218,8 @@
         <option value="$PROJECT_DIR$/src/app/pages/home-page/home-page.component.html" />
         <option value="$PROJECT_DIR$/src/app/pages/home-page/home-page.component.css" />
         <option value="$PROJECT_DIR$/src/app/pages/profile-page/profile-page.component.css" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -259,115 +277,7 @@
             <path>
               <item name="cs4550-summer2-final-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="cs4550-summer2-final-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cs4550-summer2-final-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cs4550-summer2-final-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cs4550-summer2-final-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cs4550-summer2-final-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cs4550-summer2-final-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cs4550-summer2-final-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="category-tag" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cs4550-summer2-final-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cs4550-summer2-final-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="friend-preview" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cs4550-summer2-final-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cs4550-summer2-final-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="nav-bar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cs4550-summer2-final-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cs4550-summer2-final-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="page-footer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cs4550-summer2-final-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cs4550-summer2-final-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="recipe-preview" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cs4550-summer2-final-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cs4550-summer2-final-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="recipe-review" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cs4550-summer2-final-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cs4550-summer2-final-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cs4550-summer2-final-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cs4550-summer2-final-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="home-page" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cs4550-summer2-final-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cs4550-summer2-final-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="login-page" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cs4550-summer2-final-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cs4550-summer2-final-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="profile-page" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cs4550-summer2-final-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cs4550-summer2-final-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="recipe-page" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cs4550-summer2-final-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cs4550-summer2-final-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="search-results-page" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -510,12 +420,12 @@
       <workItem from="1533417085411" duration="18000" />
       <workItem from="1533920223252" duration="336000" />
       <workItem from="1533920910397" duration="1599000" />
-      <workItem from="1534547658136" duration="7465000" />
+      <workItem from="1534547658136" duration="7946000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52115000" />
+    <option name="totallyTimeSpent" value="52596000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-18" y="34" width="1420" height="854" extended-state="0" />
@@ -568,27 +478,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cs4550-summer2-final-project.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/karma.conf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -950,6 +839,72 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
           <caret line="63" column="33" lean-forward="false" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1534557330000" expanded="true" signature="56359:56401" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="56359:56419" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="56359:56432" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="56359:56447" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="56482:59039" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="56495:59024" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="56549:56844" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="56568:56829" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="56631:56809" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="56671:56775" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="56692:56753" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="56894:57221" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="56913:57206" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="57008:57186" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="57048:57152" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="57069:57130" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="57272:57537" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="57291:57522" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="57324:57502" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="57364:57468" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="57385:57446" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="57580:57886" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="57599:57871" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="57673:57851" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="57713:57817" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="57734:57795" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="57937:58307" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="57956:58292" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="58055:58272" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="58095:58238" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="58116:58216" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="58342:58648" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="58361:58633" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="58435:58613" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="58475:58579" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="58496:58557" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="58700:59010" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="58719:58995" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="58797:58975" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="58837:58941" ph="..." />
+            <marker date="1534557330000" expanded="true" signature="58858:58919" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="5" lean-forward="false" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
           <folding />
         </state>
       </provider>
