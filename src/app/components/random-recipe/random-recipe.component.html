@@ -1,4 +1,16 @@
-<p>
-  Here is a link to a random recipe!
-</p>
-<a href="{{randomRecipe.sourceUrl}}">{{randomRecipe.sourceUrl}}</a>
+<div class="container-fluid">
+  <h4>
+    Pick a tag or keyword that your random recipe will belong to.
+  </h4>
+  <input [(ngModel)]="tag"
+         placeholder="Enter keyword here"
+         class="form-control">
+  <br/>
+  <button routerLink='/random/{{tag}}'
+          class="btn btn-block btn-success">
+    Search
+  </button>
+  <br/>
+  <a [hidden]="randomRecipe === 'undefined'"
+     href="{{sourceUrl}}">{{sourceUrl}}</a>
+</div>
