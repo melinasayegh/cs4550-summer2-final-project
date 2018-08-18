@@ -18,6 +18,9 @@ import { RecipeReviewComponent } from './components/recipe-review/recipe-review.
 import { SearchResultsPageComponent } from './pages/search-results-page/search-results-page.component';
 import { RecipePageComponent } from './pages/recipe-page/recipe-page.component';
 import { CreateRecipePageComponent } from './pages/create-recipe-page/create-recipe-page.component';
+import { RandomRecipeComponent } from './components/random-recipe/random-recipe.component';
+import { UserServiceClient } from './services/user.service.client';
+import {RecipeServiceClient} from './services/recipe.service.client';
 
 @NgModule({
   declarations: [
@@ -35,14 +38,18 @@ import { CreateRecipePageComponent } from './pages/create-recipe-page/create-rec
     RecipeReviewComponent,
     SearchResultsPageComponent,
     RecipePageComponent,
-    CreateRecipePageComponent
+    CreateRecipePageComponent,
+    RandomRecipeComponent
   ],
   imports: [
     BrowserModule,
     routing,
     FormsModule
   ],
-  providers: [],
+  providers: [
+      UserServiceClient,
+      RecipeServiceClient
+  ],
   bootstrap: [AppComponent]
 })
 
