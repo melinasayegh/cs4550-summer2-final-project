@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RecipeServiceClient} from '../../services/recipe.service.client';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-random-recipe',
@@ -9,14 +10,23 @@ import {RecipeServiceClient} from '../../services/recipe.service.client';
 export class RandomRecipeComponent implements OnInit {
 
     randomRecipe;
+    sourceUrl = '';
+    tag = '';
 
-    constructor(private recipeService: RecipeServiceClient) {
+    constructor(private recipeService: RecipeServiceClient,
+                private aRoute: ActivatedRoute,
+    ) {
+        this.aRoute.params.subscribe(params => this.loadRandomRecipe(params['tag']));
+    }
+
+    loadRandomRecipe(tag) {
+        this.tag = tag;
+        this.recipeService.getRandomRecipe(tag)
+            .then(recipe => this.randomRecipe = recipe)
+            .then(recipe => this.sourceUrl = recipe.sourceUrl);
     }
 
     ngOnInit() {
-        this.recipeService.getRandomRecipe()
-            .then(recipe => this.randomRecipe = recipe);
-        console.log(this.randomRecipe);
     }
 }
 
