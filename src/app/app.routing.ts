@@ -7,12 +7,14 @@ import { SearchResultsPageComponent } from './pages/search-results-page/search-r
 import { RecipePageComponent } from './pages/recipe-page/recipe-page.component';
 
 const appRoutes: Routes = [
-    { path: 'home', component: HomePageComponent },
-    { path: 'login', component: LoginPageComponent },
-    { path: 'register', component: RegisterPageComponent },
-    { path: 'profile', component: ProfilePageComponent },
-    { path: 'results/:search', component: SearchResultsPageComponent },
+    { path: '',                 component: HomePageComponent },
+    { path: 'home',             component: HomePageComponent },
+    { path: 'login',            component: LoginPageComponent },
+    { path: 'register',         component: RegisterPageComponent },
+    { path: 'profile',          component: ProfilePageComponent },
+    { path: 'results/:search',  component: SearchResultsPageComponent },
     { path: 'recipe/:recipeId', component: RecipePageComponent },
+    { path: '**',               component: HomePageComponent }
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);
