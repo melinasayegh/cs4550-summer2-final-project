@@ -18,6 +18,7 @@ import { RecipeReviewComponent } from './components/recipe-review/recipe-review.
 import { SearchResultsPageComponent } from './pages/search-results-page/search-results-page.component';
 import { RecipePageComponent } from './pages/recipe-page/recipe-page.component';
 import { RandomRecipeComponent } from './components/random-recipe/random-recipe.component';
+import { UserServiceClient } from './services/user.service.client';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,9 @@ import { RandomRecipeComponent } from './components/random-recipe/random-recipe.
     routing,
     FormsModule
   ],
-  providers: [],
+  providers: [
+      UserServiceClient
+  ],
   bootstrap: [AppComponent]
 })
 

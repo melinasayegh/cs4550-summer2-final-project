@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserServiceClient } from '../../services/user.service.client';
 
 @Component({
   selector: 'app-register-page',
@@ -10,20 +12,48 @@ export class RegisterPageComponent implements OnInit {
     username: String;
     password: String;
     password2: String;
-    fieldsAlert: boolean;
+    fieldsAlertUsername: boolean;
+    fieldsAlertPassword1: boolean;
+    fieldsAlertPassword2: boolean;
     passwordAlert: boolean;
     usernameAlert: boolean;
+
+    constructor(private router: Router,
+                private userService: UserServiceClient) { }
 
     ngOnInit() {
         this.clearAlerts();
     }
 
     clearAlerts() {
-        this.fieldsAlert = false;
+        this.fieldsAlertUsername = false;
+        this.fieldsAlertPassword1 = false;
+        this.fieldsAlertPassword2 = false;
         this.passwordAlert = false;
         this.usernameAlert = false;
     }
 
+    register() {
+        this.clearAlerts();
+        const newUser = {
+            username: this.username,
+            password: this.password
+        };
+        if (this.username === undefined) {
+            this.fieldsAlertUsername = true;
+        } else if (this.password === undefined) {
+            this.fieldsAlertPassword1 = true;
+        } else if (this.password2 === undefined) {
+            this.fieldsAlertPassword2 = true;
+        } else if (this.password !== this.password2) {
+            this.passwordAlert = true;
+        } else {
+            this.userService.register(newUser)
+                .then((response) =>
+                    this.router.navigate(['profile']),
+                    () => this.usernameAlert = true);
+        }
+    }
     // register = (username, password, password2) => {
     //     this.clearAlerts();
     //
