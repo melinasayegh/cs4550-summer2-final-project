@@ -34,7 +34,8 @@ ul.profile-tabs-list {
     width: 100%;
 }
 
-li.list-group-item {
+ul.profile-tabs-list>li {
+
     margin: auto;
     background-color: #e0eaf3;
     border-bottom: 1px solid #e6e6e6;
@@ -42,12 +43,13 @@ li.list-group-item {
     padding: 20px 0;
 }
 
-li.list-group-item:hover {
+ul.profile-tabs-list>li:hover {
+
     background-color: #cedeec;
     cursor: pointer;
 }
 
-li.list-group-item.active {
+ul.profile-tabs-list>li.active {
     background-color: #cedeec;
 }
 
@@ -59,4 +61,25 @@ div.friends-view, div.my-recipes-view, div.favorites-view, div.reviews-view {
 
 div.hide {
     display: none;
+}
+
+ul.review-list, ul.favorites-list ul.my-recipes-list, ul.friends-list {
+    width: 90%;
+    margin: auto;
+    padding-left: 0;
+}
+
+ul.review-list>li, ul.favorites-list>li, ul.my-recipes-list>li, ul.friends-list>li {
+    margin: auto;
+    list-style-type: none;
+}
+
+ul.favorites-list>li, ul.my-recipes-list>li {
+    display: inline-block;
+    margin: auto 5% 5% auto;
+}
+
+ul.friends-list>li {
+    display: inline-block;
+    margin: auto 2% 2% auto;
 }

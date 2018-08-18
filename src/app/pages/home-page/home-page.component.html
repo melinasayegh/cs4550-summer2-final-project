@@ -1,14 +1,17 @@
 <div>
-    <app-nav-bar currPage="home"></app-nav-bar>
+    <app-nav-bar [currPage]="'home'"></app-nav-bar>
 
     <div class="home-page-tip">
         <p>Did you know?...</p>
     </div>
 
     <div class="featured-recipes">
-        <app-recipe-preview></app-recipe-preview>
-        <app-recipe-preview></app-recipe-preview>
-        <app-recipe-preview></app-recipe-preview>
+        <h3>Featured Recipes</h3>
+        <ul class="featured-recipes-list">
+            <li><app-recipe-preview></app-recipe-preview></li>
+            <li><app-recipe-preview></app-recipe-preview></li>
+            <li><app-recipe-preview></app-recipe-preview></li>
+        </ul>
     </div>
 
     <app-page-footer></app-page-footer>

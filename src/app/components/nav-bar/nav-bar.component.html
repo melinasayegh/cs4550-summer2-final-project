@@ -1,5 +1,5 @@
 <header class="home-page-header">
-  <h2 routerLink="/home">SomeName</h2>
+  <h2 routerLink="/home">CommunityCookings</h2>
   <div class="search-div">
     <div class="categories-btn" (click)="categoryDropDown = !categoryDropDown">
       <p>Categories</p>
@@ -8,7 +8,7 @@
     <i class="fa fa-search"></i>
   </div>
 
-  <div class="register-login-div" [ngClass]="{'hide': isNotCurrentPage('home')}">
+  <div class="register-login-div" [ngClass]="{'hide': (isNotCurrentPage('home') && isNotCurrentPage('results')) && isNotCurrentPage('recipe')}">
     <h4 routerLink="/register">Sign Up</h4>
     <h4 routerLink="/login">Sign In</h4>
   </div>

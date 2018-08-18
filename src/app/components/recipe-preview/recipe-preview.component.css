@@ -1,7 +1,7 @@
 div.recipe-preview {
     border: 1px solid #e4e6e8;
     display: inline-block;
-    margin: auto auto 30px 40px;
+    margin: auto;
     cursor: pointer;
     text-align: left;
 }
@@ -23,7 +23,7 @@ div.recipe-image>img {
 
 div.recipe-description {
     max-width: 220px;
-    max-height: 110px;
+    max-height: 140px;
     text-align: left;
     word-wrap: break-word;
     padding: 15px;
@@ -43,3 +43,7 @@ div.category-tags {
     margin-top: 10px;
 }
 
+div.recipe-ratings {
+    margin: 5px auto auto auto;
+    color: #59821e;
+}

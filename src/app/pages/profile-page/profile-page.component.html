@@ -1,5 +1,6 @@
 <div>
-  <app-nav-bar currPage="profile"></app-nav-bar>
+  <app-nav-bar [currPage]="'profile'"></app-nav-bar>
+
 
   <aside class="profile-nav-bar">
     <div class="profile-img">
@@ -12,23 +13,20 @@
   </div>
 
       <ul class="profile-tabs-list">
-        <li class="list-group-item"
-            [ngClass]="{'active': selectedTab == 'Friends'}"
+        <li [ngClass]="{'active': selectedTab == 'Friends'}"
             (click)="selectTab('Friends')">
           Friends
         </li>
-        <li class="list-group-item"
-            [ngClass]="{'active': selectedTab == 'My Recipes'}"
+        <li [ngClass]="{'active': selectedTab == 'My Recipes'}"
             (click)="selectTab('My Recipes')">
           My Recipes
         </li>
-        <li class="list-group-item"
-            [ngClass]="{'active': selectedTab == 'Favorites'}"
+        <li [ngClass]="{'active': selectedTab == 'Favorites'}"
             (click)="selectTab('Favorites')">
           Favorites
         </li>
-        <li class="list-group-item"
-            [ngClass]="{'active': selectedTab == 'Reviews'}"
+        <li [ngClass]="{'active': selectedTab == 'Reviews'}"
+
             (click)="selectTab('Reviews')">
           Reviews
         </li>
@@ -36,27 +34,35 @@
   </aside>
 
   <div class="friends-view" [ngClass]="{'hide' : selectedTab != 'Friends'}">
-    <app-friend-preview></app-friend-preview>
-    <app-friend-preview></app-friend-preview>
-    <app-friend-preview></app-friend-preview>
+    <ul class="friends-list">
+      <li><app-friend-preview></app-friend-preview></li>
+      <li><app-friend-preview></app-friend-preview></li>
+      <li><app-friend-preview></app-friend-preview></li>
+    </ul>
   </div>
 
   <div class="my-recipes-view" [ngClass]="{'hide' : selectedTab != 'My Recipes'}">
-    <app-recipe-preview></app-recipe-preview>
-    <app-recipe-preview></app-recipe-preview>
-    <app-recipe-preview></app-recipe-preview>
+    <ul class="my-recipes-list">
+      <li><app-recipe-preview></app-recipe-preview></li>
+      <li><app-recipe-preview></app-recipe-preview></li>
+      <li><app-recipe-preview></app-recipe-preview></li>
+    </ul>
   </div>
 
   <div class="favorites-view" [ngClass]="{'hide' : selectedTab != 'Favorites'}">
-    <app-recipe-preview></app-recipe-preview>
-    <app-recipe-preview></app-recipe-preview>
-    <app-recipe-preview></app-recipe-preview>
+    <ul class="favorites-list">
+      <li><app-recipe-preview></app-recipe-preview></li>
+      <li><app-recipe-preview></app-recipe-preview></li>
+      <li><app-recipe-preview></app-recipe-preview></li>
+    </ul>
   </div>
 
   <div class="reviews-view" [ngClass]="{'hide' : selectedTab != 'Reviews'}">
-    <app-recipe-review></app-recipe-review>
-    <app-recipe-review></app-recipe-review>
-    <app-recipe-review></app-recipe-review>
+    <ul class="review-list">
+      <li><app-recipe-review [currPage]="'profile'"></app-recipe-review></li>
+      <li><app-recipe-review [currPage]="'profile'"></app-recipe-review></li>
+      <li><app-recipe-review [currPage]="'profile'"></app-recipe-review></li>
+    </ul>
   </div>
 </div>
 

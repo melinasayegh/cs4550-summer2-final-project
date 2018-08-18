@@ -10,3 +10,23 @@ div.featured-recipes {
     margin: 30px auto;
     text-align: center;
 }
+
+div.featured-recipes>h3 {
+    margin: 20px auto;
+}
+
+ul.featured-recipes-list {
+    width: 90%;
+    margin: auto;
+    padding-left: 0;
+}
+
+ul.featured-recipes-list>li {
+    margin: auto;
+    list-style-type: none;
+}
+
+ul.featured-recipes-list>li {
+    display: inline-block;
+    margin: auto 2.5% 5% 2.5%;
+}

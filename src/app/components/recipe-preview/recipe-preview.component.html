@@ -1,4 +1,5 @@
-<div class="recipe-preview">
+
+<div class="recipe-preview" routerLink="/recipe/placeholderRecipeId">
   <div class="recipe-preview-content">
     <div class="recipe-image">
       <img src="https://images-gmi-pmc.edge-generalmills.com/c4ad5042-70b6-403e-ba6f-286926657953.jpg">
@@ -6,6 +7,15 @@
 
     <div class="recipe-description">
       <h3>Piggy Pancakes</h3>
+
+      <div class="recipe-ratings">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+        <i class="far fa-star"></i>
+      </div>
+      
       <div class="category-tags">
         <app-category-tag [category]="'Gluten-free'"></app-category-tag>
         <app-category-tag [category]="'Vegan'"></app-category-tag>

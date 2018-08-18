@@ -1,7 +1,31 @@
-<div class="recipe-review">
+
+<div class="recipe-review" routerLink="/recipe/placeholderRecipeId">
   <div class="recipe-review-content">
     <div class="review-heading">
-      <h4>Marinated Mushrooms</h4>
+      <div class="user-ratings">
+        <div class="user" [ngClass]="{'hide' : isNotCurrentPage('recipe')}">
+          <div class="user-image">
+            <img src="https://www.softpaws.com/template/images/landing_page/july_cat_image.jpg">
+          </div>
+          <h4>Shady Cat</h4>
+        </div>
+
+        <div class="recipe-title" [ngClass]="{'hide' : isNotCurrentPage('profile')}">
+          <div class="recipe-image">
+            <img src="https://images-gmi-pmc.edge-generalmills.com/c4ad5042-70b6-403e-ba6f-286926657953.jpg">
+          </div>
+          <h4>Piggy Pancakes</h4>
+        </div>
+
+        <div class="recipe-ratings">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star"></i>
+        </div>
+      </div>
+
       <h5>09/6/2018</h5>
     </div>
       <p>Served these as an appetizer for Christmas Eve and they were absolutely delicious!! Also,
