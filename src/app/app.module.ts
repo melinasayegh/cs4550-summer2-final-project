@@ -17,6 +17,7 @@ import { FriendPreviewComponent } from './components/friend-preview/friend-previ
 import { RecipeReviewComponent } from './components/recipe-review/recipe-review.component';
 import { SearchResultsPageComponent } from './pages/search-results-page/search-results-page.component';
 import { RecipePageComponent } from './pages/recipe-page/recipe-page.component';
+import { RandomRecipeComponent } from './components/random-recipe/random-recipe.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { RecipePageComponent } from './pages/recipe-page/recipe-page.component';
     FriendPreviewComponent,
     RecipeReviewComponent,
     SearchResultsPageComponent,
-    RecipePageComponent
+    RecipePageComponent,
+    RandomRecipeComponent
   ],
   imports: [
     BrowserModule,
