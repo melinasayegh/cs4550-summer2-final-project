@@ -3,6 +3,7 @@ header.home-page-header {
     padding: 0;
     color: black;
     display: block;
+    height: 84px;
     width: 100%;
     border-bottom: 2px solid #d3d6cd;
 }
@@ -36,8 +37,9 @@ header.home-page-header>h2 {
 }
 
 header.home-page-header>h2:hover,  div.register-login-div>h4:hover, div.register-div>h4:hover,
-div.login-div>h4:hover, div.logout-div>h4:hover{
+div.login-div>h4:hover, div.logout-div>h4:hover, div.search-div>i:hover {
     cursor: pointer;
+    opacity: .7;
 }
 
 div.search-div>input {
@@ -48,13 +50,13 @@ div.search-div>input {
 }
 
 div.register-login-div, div.register-div, div.login-div, div.logout-div  {
-    margin: auto 30px;
+    margin: 30px;
     float: right;
     display: block;
 }
 
 div.register-login-div>h4, div.register-div>h4, div.login-div>h4, div.logout-div>h4 {
-    margin: auto 5px;
+    margin: auto 15px;
 }
 
 div.hide {

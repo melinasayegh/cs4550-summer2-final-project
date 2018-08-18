@@ -15,6 +15,8 @@ import { CategoryTagComponent } from './components/category-tag/category-tag.com
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { FriendPreviewComponent } from './components/friend-preview/friend-preview.component';
 import { RecipeReviewComponent } from './components/recipe-review/recipe-review.component';
+import { SearchResultsPageComponent } from './pages/search-results-page/search-results-page.component';
+import { RecipePageComponent } from './pages/recipe-page/recipe-page.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { RecipeReviewComponent } from './components/recipe-review/recipe-review.
     ProfilePageComponent,
     CategoryTagComponent,
     FriendPreviewComponent,
-    RecipeReviewComponent
+    RecipeReviewComponent,
+    SearchResultsPageComponent,
+    RecipePageComponent
   ],
   imports: [
     BrowserModule,

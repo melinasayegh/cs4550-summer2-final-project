@@ -8,7 +8,7 @@ import { Input } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  @Input() currPage: {};
+  @Input() currPage = <any>{};
   categoryDropDown: boolean;
 
   constructor() { }
