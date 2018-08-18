@@ -5,6 +5,7 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { SearchResultsPageComponent } from './pages/search-results-page/search-results-page.component';
 import { RecipePageComponent } from './pages/recipe-page/recipe-page.component';
+import {RandomRecipeComponent} from './components/random-recipe/random-recipe.component';
 
 const appRoutes: Routes = [
     { path: '',                 component: HomePageComponent },
@@ -14,6 +15,7 @@ const appRoutes: Routes = [
     { path: 'profile',          component: ProfilePageComponent },
     { path: 'results/:search',  component: SearchResultsPageComponent },
     { path: 'recipe/:recipeId', component: RecipePageComponent },
+    { path: 'random', component: RandomRecipeComponent},
     { path: '**',               component: HomePageComponent }
 ];
 
