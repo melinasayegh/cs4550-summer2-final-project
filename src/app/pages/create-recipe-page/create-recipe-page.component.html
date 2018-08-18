@@ -1,0 +1,61 @@
+<div>
+  <app-nav-bar [currPage]="'create-recipe'"></app-nav-bar>
+
+  <div class="create-recipe-form">
+    <form>
+      <h1>Create New Recipe</h1>
+
+      <div class="form-group">
+        <label for="titleFld">Recipe Title</label>
+        <input [(ngModel)]="recipeTitle"
+               name="title"
+               id="titleFld">
+      </div>
+
+      <div class="form-group">
+        <label for="imageFld">Image Link</label>
+        <input [(ngModel)]="recipeImage"
+               name="image"
+               id="imageFld"/>
+      </div>
+
+      <div class="form-group">
+        <label for="descriptionFld">Description</label>
+        <textarea [(ngModel)]="recipeDescription"
+               name="description"
+               id="descriptionFld"
+               rows="4">
+        </textarea>
+      </div>
+
+      <div class="form-group">
+      <label for="ingredientsFld">Ingredients</label>
+      <textarea [(ngModel)]="recipeIngredients"
+                name="ingredients"
+                id="ingredientsFld"
+                rows="8">
+        </textarea>
+    </div>
+
+      <div class="form-group">
+        <label for="directionsFld">Directions</label>
+        <textarea [(ngModel)]="recipeDirections"
+                  name="directions"
+                  id="directionsFld"
+                  rows="8">
+        </textarea>
+      </div>
+
+      <div class="create-cancel-btns">
+        <div class="cancel-btn">
+          <p>Cancel</p>
+        </div>
+
+        <div class="create-btn">
+          <p>Create</p>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>
