@@ -1,0 +1,66 @@
+<div>
+  <app-nav-bar [currPage]="'profile'"></app-nav-bar>
+
+  <aside class="profile-nav-bar">
+    <div class="profile-img">
+      <img src="http://allpetmagazine.com/wp-content/uploads/2016/09/cat-bread-facebook-min.png">
+    </div>
+
+    <div class="profile-bio">
+    <h3>Toasty Cat</h3>
+    <!--<p>Graduated from the Culinary Institute of Burn and Learn.</p>-->
+  </div>
+
+      <ul class="profile-tabs-list">
+        <li [ngClass]="{'active': selectedTab == 'Friends'}"
+            (click)="selectTab('Friends')">
+          Friends
+        </li>
+        <li [ngClass]="{'active': selectedTab == 'My Recipes'}"
+            (click)="selectTab('My Recipes')">
+          My Recipes
+        </li>
+        <li [ngClass]="{'active': selectedTab == 'Favorites'}"
+            (click)="selectTab('Favorites')">
+          Favorites
+        </li>
+        <li [ngClass]="{'active': selectedTab == 'Reviews'}"
+            (click)="selectTab('Reviews')">
+          Reviews
+        </li>
+      </ul>
+  </aside>
+
+  <div class="friends-view" [ngClass]="{'hide' : selectedTab != 'Friends'}">
+    <ul class="friends-list">
+      <li><app-friend-preview></app-friend-preview></li>
+      <li><app-friend-preview></app-friend-preview></li>
+      <li><app-friend-preview></app-friend-preview></li>
+    </ul>
+  </div>
+
+  <div class="my-recipes-view" [ngClass]="{'hide' : selectedTab != 'My Recipes'}">
+    <ul class="my-recipes-list">
+      <li><app-recipe-preview></app-recipe-preview></li>
+      <li><app-recipe-preview></app-recipe-preview></li>
+      <li><app-recipe-preview></app-recipe-preview></li>
+    </ul>
+  </div>
+
+  <div class="favorites-view" [ngClass]="{'hide' : selectedTab != 'Favorites'}">
+    <ul class="favorites-list">
+      <li><app-recipe-preview></app-recipe-preview></li>
+      <li><app-recipe-preview></app-recipe-preview></li>
+      <li><app-recipe-preview></app-recipe-preview></li>
+    </ul>
+  </div>
+
+  <div class="reviews-view" [ngClass]="{'hide' : selectedTab != 'Reviews'}">
+    <ul class="review-list">
+      <li><app-recipe-review [currPage]="'profile'"></app-recipe-review></li>
+      <li><app-recipe-review [currPage]="'profile'"></app-recipe-review></li>
+      <li><app-recipe-review [currPage]="'profile'"></app-recipe-review></li>
+    </ul>
+  </div>
+</div>
+

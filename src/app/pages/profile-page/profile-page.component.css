@@ -1,0 +1,83 @@
+aside.profile-nav-bar {
+    background-color: #ecede9;
+    width: 25%;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+}
+
+div.profile-img {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    margin: 40px auto 15px auto;
+}
+
+div.profile-img>img {
+    width: 100%;
+    min-height: 100%;
+}
+
+div.profile-bio {
+    padding: 15px;
+    max-height: 85px;
+    word-wrap: break-word;
+}
+
+div.profile-bio>h3 {
+    margin: 0 auto;
+}
+
+ul.profile-tabs-list {
+    margin: 30px auto;
+    padding-left: 0;
+    width: 100%;
+}
+
+ul.profile-tabs-list>li {
+    margin: auto;
+    background-color: #e0eaf3;
+    border-bottom: 1px solid #e6e6e6;
+    list-style-type: none;
+    padding: 20px 0;
+}
+
+ul.profile-tabs-list>li:hover {
+    background-color: #cedeec;
+    cursor: pointer;
+}
+
+ul.profile-tabs-list>li.active {
+    background-color: #cedeec;
+}
+
+div.friends-view, div.my-recipes-view, div.favorites-view, div.reviews-view {
+    width: 75%;
+    float: right;
+    margin: 30px auto;
+}
+
+div.hide {
+    display: none;
+}
+
+ul.review-list, ul.favorites-list ul.my-recipes-list, ul.friends-list {
+    width: 90%;
+    margin: auto;
+    padding-left: 0;
+}
+
+ul.review-list>li, ul.favorites-list>li, ul.my-recipes-list>li, ul.friends-list>li {
+    margin: auto;
+    list-style-type: none;
+}
+
+ul.favorites-list>li, ul.my-recipes-list>li {
+    display: inline-block;
+    margin: auto 5% 5% auto;
+}
+
+ul.friends-list>li {
+    display: inline-block;
+    margin: auto 2% 2% auto;
+}

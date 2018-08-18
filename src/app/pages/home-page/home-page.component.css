@@ -1,0 +1,32 @@
+div.home-page-tip {
+    margin: 30px auto;
+    width: 50%;
+    height: 20%;
+    background-color: white;
+}
+
+div.featured-recipes {
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+}
+
+div.featured-recipes>h3 {
+    margin: 20px auto;
+}
+
+ul.featured-recipes-list {
+    width: 90%;
+    margin: auto;
+    padding-left: 0;
+}
+
+ul.featured-recipes-list>li {
+    margin: auto;
+    list-style-type: none;
+}
+
+ul.featured-recipes-list>li {
+    display: inline-block;
+    margin: auto 2.5% 5% 2.5%;
+}
