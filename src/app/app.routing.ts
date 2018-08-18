@@ -8,13 +8,15 @@ import { RecipePageComponent } from './pages/recipe-page/recipe-page.component';
 import {RandomRecipeComponent} from './components/random-recipe/random-recipe.component';
 
 const appRoutes: Routes = [
-    { path: 'home', component: HomePageComponent },
-    { path: 'login', component: LoginPageComponent },
-    { path: 'register', component: RegisterPageComponent },
-    { path: 'profile', component: ProfilePageComponent },
-    { path: 'results/:search', component: SearchResultsPageComponent },
+    { path: '',                 component: HomePageComponent },
+    { path: 'home',             component: HomePageComponent },
+    { path: 'login',            component: LoginPageComponent },
+    { path: 'register',         component: RegisterPageComponent },
+    { path: 'profile',          component: ProfilePageComponent },
+    { path: 'results/:search',  component: SearchResultsPageComponent },
     { path: 'recipe/:recipeId', component: RecipePageComponent },
-    { path: 'random', component: RandomRecipeComponent}
+    { path: 'random', component: RandomRecipeComponent},
+    { path: '**',               component: HomePageComponent }
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);
