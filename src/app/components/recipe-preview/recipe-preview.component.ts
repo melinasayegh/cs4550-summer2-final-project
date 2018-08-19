@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {RecipeServiceClient} from '../../services/recipe.service.client';
 import {ActivatedRoute} from '@angular/router';
 
@@ -9,21 +9,22 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class RecipePreviewComponent implements OnInit {
 
-    recipe = {};
-    recipeTitle = '';
-    sourceUrl = '';
-    imageUrl = '';
-    tag = '';
+    @Input() recipeId = <any>{};
+    recipe = {
+        _id: String,
+        title: String,
+        image: String,
+        tags: [String]
+    };
 
     constructor(private recipeService: RecipeServiceClient,
                 private activatedRoute: ActivatedRoute) {
-        this.activatedRoute.params.subscribe(params => this.loadRecipeData(params['recipeId']));
+        //this.activatedRoute.params.subscribe(params => this.loadRecipeData(params['recipeId']));
     }
 
-    loadRecipeData(recipeId) {
-
-    }
     ngOnInit() {
+        this.recipeService.findRecipeById(this.recipeId)
+            .then(recipe => this.recipe = recipe);
     }
 
 }

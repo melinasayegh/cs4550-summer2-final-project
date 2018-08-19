@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {UserServiceClient} from '../../services/user.service.client';
+import {RecipeServiceClient} from '../../services/recipe.service.client';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-recipe-page',
@@ -7,15 +10,51 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipePageComponent implements OnInit {
 
+  creator = {
+    username: String
+  };
+  recipe = {
+      title: String,
+      image: String,
+      creator: String,
+      description: String,
+      ingredients: [String],
+      directions: [String],
+      prepTime: Number,
+      cookTime: Number,
+      createdAt: Date,
+      updatedAt: Date,
+      numServings: Number,
+      tags: [String]
+  };
+  directions: [String];
+  ingredients: [String];
   comment: String;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute,
+              private userService: UserServiceClient,
+              private recipeService: RecipeServiceClient) {
+      this.route.params.subscribe(params => this.findRecipeById(params['recipeId']));
+  }
 
   ngOnInit() {
+  }
+
+  fixDate = (date) => {
+      return new Date(date).toLocaleString();
   }
 
   submit() {
     // some create review function
   }
-
+  findRecipeById = (recipeId) => {
+    this.recipeService.findRecipeById(recipeId)
+        .then(recipe => {
+            this.recipe = recipe;
+            this.userService.findUserById(recipe.creator)
+                .then(user => this.creator = user);
+        });
+    console.log(recipeId);
+    console.log(this.recipe.title);
+  }
 }
