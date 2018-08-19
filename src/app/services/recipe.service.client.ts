@@ -12,11 +12,14 @@ export class RecipeServiceClient {
     }
 
     findAllRecipes = () => {
-
+        return fetch(LOCAL_URL + 'recipe', {
+            method: 'get',
+            credentials: 'include'
+        }).then(response => response.json());
     }
 
     findRecipeById = (recipeId) => {
-        return fetch('http://localhost:3000/api/recipe/' + recipeId, {
+        return fetch(LOCAL_URL + 'recipe/' + recipeId, {
             method: 'get',
             credentials: 'include'
         }).then(response => response.json());

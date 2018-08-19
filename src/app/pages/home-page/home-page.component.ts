@@ -7,7 +7,12 @@ import {RecipeServiceClient} from '../../services/recipe.service.client';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-  recipes: [];
+  recipes: [{
+    recipe: {
+      _id: String
+    }
+  }
+  ];
 
   constructor(private recipeService: RecipeServiceClient) {}
 
