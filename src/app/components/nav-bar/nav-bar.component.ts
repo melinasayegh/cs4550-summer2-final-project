@@ -10,26 +10,39 @@ import {Router} from '@angular/router';
 })
 export class NavBarComponent implements OnInit {
 
-  @Input() currPage = <any>{};
-  categoryDropDown: boolean;
+    isLoggedIn = false;
+    isAdminUser = false;
+    isNavbarOpen = false;
+    currentUser = {};
 
-  constructor(private router: Router,
-              private userService: UserServiceClient) { }
+    constructor(private router: Router,
+                private userService: UserServiceClient) { }
 
-  ngOnInit() {
-    this.categoryDropDown = false;
-  }
-
-  logout = () => {
-      this.userService.logout()
-          .then(() => this.router.navigate(['home']));
-  }
-
-  isNotCurrentPage = (pageType) => {
-    if (pageType !== this.currPage) {
-      return true;
-    } else {
-      return false;
+    toggleNavbar = () => {
+        this.isNavbarOpen = !this.isNavbarOpen;
     }
-  }
+
+    logout() {
+        this.userService.logout()
+            .then(() => this.router.navigate(['login']));
+
+    }
+    ngOnInit() {
+        this.userService.currentUser()
+            .then((user) =>  {
+                this.currentUser = user;
+                if (user.username !== undefined) {
+                    this.isLoggedIn = true;
+                    if ((user.username === 'admin') && (user.password === 'admin')) {
+                        this.isAdminUser = true;
+                    } else {
+                        this.isAdminUser = false;
+                    }
+                } else {
+                    this.isLoggedIn = false;
+                    this.isAdminUser = false;
+                }
+            });
+        console.log(this.isLoggedIn);
+    }
 }

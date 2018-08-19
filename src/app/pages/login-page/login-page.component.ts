@@ -12,22 +12,26 @@ export class LoginPageComponent implements OnInit {
   username: String;
   password: String;
   usernameAlert: boolean;
-  fieldsAlert: boolean;
+  fieldsAlertUsername: boolean;
+  fieldsAlertPassword: boolean;
 
   constructor(private router: Router,
               private userService: UserServiceClient) {}
 
   ngOnInit() {
-    this.clearAlert();
+    this.clearAlerts();
   }
-  clearAlert() {
+  clearAlerts() {
       this.usernameAlert = false;
-      this.fieldsAlert = false;
+      this.fieldsAlertUsername = false;
+      this.fieldsAlertPassword = false;
   }
   login(username, password) {
-      this.clearAlert();
-      if (username === undefined || password === undefined) {
-          this.fieldsAlert = true;
+      this.clearAlerts();
+      if (username === undefined || username === '') {
+          this.fieldsAlertUsername = true;
+      } else if (password === undefined || password === '') {
+          this.fieldsAlertPassword = true;
       } else {
           if (username === 'admin' && password === 'admin') {
               this.userService.login(username, password)
@@ -40,23 +44,4 @@ export class LoginPageComponent implements OnInit {
           }
       }
   }
-/*  login = (username, password) => {
-    this.clearAlert();
-    if (username == null || password == null) {
-      this.fieldsAlert = true;
-    } else {
-      const user = {
-        username: username,
-          password: password
-      };
-      this.userService.login(user)
-          .then(response => {
-            if (response.status === 200) {
-              this.router.navigate(['home']);
-            } else {
-              this.usernameAlert = true;
-            }
-          });
-    }
-  }*/
 }

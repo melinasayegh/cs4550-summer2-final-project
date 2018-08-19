@@ -12,6 +12,10 @@ export class RegisterPageComponent implements OnInit {
     username: String;
     password: String;
     password2: String;
+    firstName: String;
+    lastName: String;
+    email: String;
+
     fieldsAlertUsername: boolean;
     fieldsAlertPassword1: boolean;
     fieldsAlertPassword2: boolean;
@@ -35,10 +39,6 @@ export class RegisterPageComponent implements OnInit {
 
     register() {
         this.clearAlerts();
-        const newUser = {
-            username: this.username,
-            password: this.password
-        };
         if (this.username === undefined) {
             this.fieldsAlertUsername = true;
         } else if (this.password === undefined) {
@@ -48,38 +48,21 @@ export class RegisterPageComponent implements OnInit {
         } else if (this.password !== this.password2) {
             this.passwordAlert = true;
         } else {
+            const newUser = {
+                username: this.username,
+                password: this.password,
+                firstName: this.firstName,
+                lastName: this.lastName,
+                email: this.email,
+            };
             this.userService.register(newUser)
-                .then((response) =>
-                    this.router.navigate(['profile']),
-                    () => this.usernameAlert = true);
+                .then((response) => {
+                    if (response.status === 401) {
+                        this.usernameAlert = true;
+                    } else {
+                        this.router.navigate(['profile']);
+                    }
+                });
         }
     }
-    // register = (username, password, password2) => {
-    //     this.clearAlerts();
-    //
-    //     if (username == null || password == null || password2 == null) {
-    //         this.fieldsAlert = true;
-    //     } else if (password !== password2) {
-    //         this.passwordAlert = true;
-    //     } else {
-    //         const user = {
-    //             username: username,
-    //             password: password,
-    //             firstName: '',
-    //             lastName: '',
-    //             phoneNumber: '',
-    //             email: '',
-    //             address: '',
-    //             admin: false
-    //         };
-    //         this.userService.register(user)
-    //             .then(response => {
-    //                 if (response.status === 404) {
-    //                     this.usernameAlert = true;
-    //                 } else {
-    //                     this.router.navigate(['profile']);
-    //                 }
-    //             });
-    //     }
-    // }
 }
