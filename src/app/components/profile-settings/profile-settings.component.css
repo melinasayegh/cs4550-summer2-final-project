@@ -1,0 +1,17 @@
+/* Profile page CSS */
+
+.container {
+    display: flex;
+}
+
+.updateBtn {
+    background: #59821e;
+}
+
+.deleteBtn {
+    background: #495057;
+}
+
+.logoutBtn {
+    background: #dd514c;
+}

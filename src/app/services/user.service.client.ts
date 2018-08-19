@@ -45,13 +45,13 @@ export class UserServiceClient {
         }).then(response => response.json());
     }
     deleteProfile() {
-        return fetch(LOCAL_URL + 'profile', {
+        return fetch(LOCAL_URL + 'user/delete', {
             method: 'delete',
             credentials: 'include',
         });
     }
     updateProfile(newProfile) {
-        return fetch(LOCAL_URL + 'profile', {
+        return fetch(LOCAL_URL + 'user/update', {
             method: 'put',
             body: JSON.stringify(newProfile),
             credentials: 'include',
