@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {RecipeServiceClient} from '../../services/recipe.service.client';
 
 @Component({
   selector: 'app-home-page',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
+  recipes: [];
 
-  constructor() {}
+  constructor(private recipeService: RecipeServiceClient) {}
 
   ngOnInit() {
+    this.recipeService.findAllRecipes()
+        .then(recipes => this.recipes = recipes);
   }
-
 }

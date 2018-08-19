@@ -21,21 +21,27 @@ export class CreateRecipePageComponent implements OnInit {
   prepTime = '';
   cookTime = '';
   numServings = '';
-  tags = [String];
+  tags: [String];
+  directionsList: string[];
+  ingredientsList: string[];
 
   constructor(private router: Router,
               private userService: UserServiceClient,
               private recipeService: RecipeServiceClient) { }
 
   createRecipe() {
+
+      this.directionsList = this.directions.split('\n');
+      this.ingredientsList = this.ingredients.split('\n');
+
     const recipe = {
       title: this.title,
         description: this.description,
         creator: this.user._id,
         createdAt: new Date(),
         updatedAt: new Date(),
-        ingredients: this.ingredients,
-        directions: this.directions,
+        ingredients: this.ingredientsList,
+        directions: this.directionsList,
         prepTime: Number(this.prepTime),
         cookTime: Number(this.cookTime),
         numServings: Number(this.numServings),

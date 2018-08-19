@@ -7,10 +7,8 @@
 
     <div class="featured-recipes">
         <h3>Featured Recipes</h3>
-        <ul class="featured-recipes-list">
-            <li><app-recipe-preview></app-recipe-preview></li>
-            <li><app-recipe-preview></app-recipe-preview></li>
-            <li><app-recipe-preview></app-recipe-preview></li>
+        <ul *ngFor="let recipe of recipes" class="featured-recipes-list">
+            <li ><app-recipe-preview [recipeId]="{{recipeId}}"></app-recipe-preview></li>
         </ul>
     </div>
 

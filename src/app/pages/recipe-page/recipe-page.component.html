@@ -4,72 +4,69 @@
   <div class="recipe">
     <div class="recipe-header-row">
       <div class="recipe-title-description">
-        <h2>Piggy Pancakes</h2>
+        <h2>{{recipe.title}}</h2>
+        <h4>{{creator.username}}</h4>
+        <h5>Created on {{fixDate(recipe.createdAt)}}</h5>
+        <h5>Updated on {{fixDate(recipe.updatedAt)}}</h5>
 
         <div class="recipe-ratings">
           <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="far fa-star"></i>
-          <i class="far fa-star"></i>
+
         </div>
 
         <div class="recipe-description">
-          <h4>Tall and fluffy. These pancakes are just right. Topped with strawberries and whipped
-            cream, they are impossible to resist.</h4>
+          <h2>Description</h2>
+          {{recipe.description}}
         </div>
 
         <div class="category-tags">
-          <app-category-tag [category]="'Gluten-free'"></app-category-tag>
-          <app-category-tag [category]="'Vegan'"></app-category-tag>
-          <app-category-tag [category]="'Low-fat'"></app-category-tag>
+          <app-category-tag *ngFor="let tag of recipe.tags"
+                            [category]="tag"></app-category-tag>
         </div>
       </div>
 
       <div class="recipe-image">
-        <img src="https://images-gmi-pmc.edge-generalmills.com/c4ad5042-70b6-403e-ba6f-286926657953.jpg">
+        <img src="{{recipe.image}}">
       </div>
     </div>
 
-    <div class="recipe-ingredients-nutrition-row">
-      <div class="recipe-ingredients">
+    <div class="">
+      <div class="">
+        <h2>Information</h2>
+        <ul class="">
+          <li>
+            Prep Time: {{recipe.prepTime}} Minutes
+          </li>
+          <li>
+            Cook Time: {{recipe.cookTime}} Minutes
+          </li>
+          <li>
+           Number Servings: {{recipe.numServings}}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="">
+      <div class="">
         <h2>Ingredients</h2>
-        <ul class="recipe-ingredients-list">
-          <li>3/4 cup milk</li>
-          <li>2 tablespoons white vinegar</li>
-          <li>1 cup all-purpose flour</li>
-          <li>2 tablespoons white sugar</li>
-          <li>1 teaspoon baking powder</li>
-          <li>1/2 teaspoon baking soda</li>
-        </ul>
-      </div>
-
-      <div class="recipe-nutrition">
-        <h2>Nutrition Facts (per serving)</h2>
-        <ul class="recipe-nutrition-list">
-          <li>230 calories</li>
-          <li>8.2 g fat</li>
-          <li>32.7 g carbohydrates</li>
-          <li>6.4 g protein</li>
-          <li>65 mg cholesterol</li>
-          <li>650 mg sodium</li>
+        <ul class=""
+            *ngFor="let ingredient of recipe.ingredients">
+          <li>
+            {{ingredient}}
+          </li>
         </ul>
       </div>
     </div>
 
-    <div class="recipe-directions-row">
-      <div class="recipe-directions">
-        <h2>Directions</h2>
-        <ol class="recipe-direction-list">
-          <li>Combine milk with vinegar in a medium bowl and set aside for 5 minutes to "sour".</li>
-          <li>Combine flour, sugar, baking powder, baking soda, and salt in a large mixing bowl.
-            Whisk egg and butter into "soured" milk. Pour the flour mixture into the wet ingredients
-            and whisk until lumps are gone.</li>
-          <li>Heat a large skillet over medium heat, and coat with cooking spray. Pour 1/4 cupfuls
-            of batter onto the skillet, and cook until bubbles appear on the surface. Flip with a
-            spatula, and cook until browned on the other side.</li>
-        </ol>
-      </div>
+    <div class="">
+      <h2>Directions</h2>
+      <ol class="">
+        <li class=" webdev"
+            *ngFor="let item of recipe.directions">
+          {{item}}
+        </li>
+      </ol>
     </div>
 
     <div class="recipe-reviews-row">
