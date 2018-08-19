@@ -11,4 +11,9 @@ export class RecipeServiceClient {
             .then(response => response.json());
     }
 
+    findRecipeById(recipeId) {
+        return fetch(LOCAL_URL + 'recipe/' + recipeId)
+            .then(response => response.json());
+    }
+
 }
