@@ -5,10 +5,9 @@ const path = require('path');
 const app = express();
 
 // Serve only the static files form the dist directory
-app.use(express.static('./dist/wcs4550-summer2-final-project'));
+app.use(express.static('./dist/cs4550-summer2-final-project'));
 
 app.get('/*', function(req,res) {
-
     res.sendFile(path.join(__dirname,'/dist/cs4550-summer2-final-project/index.html'));
 });
 
