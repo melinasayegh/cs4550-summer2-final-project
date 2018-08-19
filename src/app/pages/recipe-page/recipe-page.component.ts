@@ -10,10 +10,12 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class RecipePageComponent implements OnInit {
 
+    userCreator = false;
   creator = {
     username: String
   };
   recipe = {
+      _id: String,
       title: String,
       image: String,
       creator: String,
@@ -38,10 +40,22 @@ export class RecipePageComponent implements OnInit {
   }
 
   ngOnInit() {
+      this.userService.profile()
+          .then(loggedInUser => {
+              this.userCreator = (this.recipe.creator === loggedInUser._id);
+          });
   }
 
   fixDate = (date) => {
       return new Date(date).toLocaleString();
+  }
+
+  updateRecipe = () =>{
+      alert('Need to update recipe');
+  }
+
+  deleteRecipe = () => {
+      this.recipeService.deleteRecipe(this.recipe._id);
   }
 
   submit() {

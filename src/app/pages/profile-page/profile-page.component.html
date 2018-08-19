@@ -55,17 +55,13 @@
             <h3>Create a new recipe</h3>
         </div>
       </li>
-      <li><app-recipe-preview></app-recipe-preview></li>
-      <li><app-recipe-preview></app-recipe-preview></li>
-      <li><app-recipe-preview></app-recipe-preview></li>
+      <li><app-recipe-preview *ngFor="let recipe of myRecipes" [recipeId]="recipe._id"></app-recipe-preview></li>
     </ul>
   </div>
 
   <div class="favorites-view" *ngIf="selectedTab === 'Favorites'">
     <ul class="favorites-list">
-      <li><app-recipe-preview></app-recipe-preview></li>
-      <li><app-recipe-preview></app-recipe-preview></li>
-      <li><app-recipe-preview></app-recipe-preview></li>
+      <li><app-recipe-preview *ngFor="let recipe of faveRecipes" [recipeId]="recipe._id"></app-recipe-preview></li>
     </ul>
   </div>
 
