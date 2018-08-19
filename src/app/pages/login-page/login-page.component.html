@@ -1,36 +1,61 @@
-<div>
-  <app-nav-bar [currPage]="'login'"></app-nav-bar>
+<app-nav-bar></app-nav-bar>
 
-  <div class="container">
-    <h1>Sign In</h1>
+<div class="container">
+    <div class="col-sm-12 col-md-10 col-lg-8 justify-content-center align-content-center">
 
-    <div class="alert" [ngClass]="{'hide': !usernameAlert}">
-      User does not exist
+        <h2>Sign In</h2>
+
+        <div class="alert col-sm-10 offset-sm-2" *ngIf="usernameAlert">
+            This user does not exist. Please try again.
+        </div>
+
+        <div class="alert col-sm-10 offset-sm-2" *ngIf="fieldsAlertUsername">
+            Please enter a username
+        </div>
+
+        <div class="alert col-sm-10 offset-sm-2" *ngIf="fieldsAlertPassword">
+            Please enter a password
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-2" for="username">
+                Username
+            </label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control user-fields"
+                       [(ngModel)]="username" id="username"/>
+            </div>
+        </div>
+
+        <div class ="form-group row">
+            <label class="control-label col-2" for="password">
+                Password
+            </label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control user-fields"
+                       id="password" [(ngModel)]="password"/>
+            </div>
+        </div>
+
+        <div class ="form-group row">
+            <div class="col-sm-10 offset-0 offset-sm-2">
+                <button class="btn custom-button loginBtn"
+                        id="loginBtn" type="button"
+                        (click)="login(username, password)">
+                    Sign In
+                </button>
+            </div>
+        </div>
+
+        <div class="form-group row no-account">
+            <label class="col-sm-10 offset-0 offset-sm-2 ">
+                Don't have an Account?
+                <a class="btn custom-button btn-dark" id="registerBtn" routerLink="/register" >
+                    Register
+                </a>
+            </label>
+        </div>
     </div>
-
-    <div class="alert" [ngClass]="{'hide': !fieldsAlert}">
-      Both fields are required to sign in
-    </div>
-
-    <form>
-      <div class="form-group">
-        <label for="usernameFld">Username</label>
-        <input [(ngModel)]="username"
-               name="username"
-               id="usernameFld">
-      </div>
-      <div class="form-group">
-        <label for="passwordFld">Password</label>
-        <input [(ngModel)]="password"
-               name="password"
-               type="password"
-               id="passwordFld">
-      </div>
-      <div class="login-btn">
-        <p (click)="login(username, password)">Sign In</p>
-      </div>
-    </form>
-  </div>
-
-  <app-page-footer></app-page-footer>
 </div>
+
+<app-page-footer></app-page-footer>

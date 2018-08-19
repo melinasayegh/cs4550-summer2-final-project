@@ -1,5 +1,5 @@
 <div>
-  <app-nav-bar [currPage]="'profile'"></app-nav-bar>
+  <app-nav-bar></app-nav-bar>
 
 
   <aside class="profile-nav-bar">
@@ -8,11 +8,14 @@
     </div>
 
     <div class="profile-bio">
-    <h3>Toasty Cat</h3>
-    <!--<p>Graduated from the Culinary Institute of Burn and Learn.</p>-->
+        <b>{{user.username}}</b>
   </div>
 
       <ul class="profile-tabs-list">
+        <li [ngClass]="{'active': selectedTab == 'Settings'}"
+            (click)="selectTab('Settings')">
+          Settings
+        </li>
         <li [ngClass]="{'active': selectedTab == 'Friends'}"
             (click)="selectTab('Friends')">
           Friends
@@ -26,14 +29,17 @@
           Favorites
         </li>
         <li [ngClass]="{'active': selectedTab == 'Reviews'}"
-
             (click)="selectTab('Reviews')">
           Reviews
         </li>
       </ul>
   </aside>
 
-  <div class="friends-view" [ngClass]="{'hide' : selectedTab != 'Friends'}">
+  <div class="settings-view" *ngIf="selectedTab === 'Settings'">
+    <app-profile-settings></app-profile-settings>
+  </div>
+
+  <div class="friends-view" *ngIf="selectedTab === 'Friends'">
     <ul class="friends-list">
       <li><app-friend-preview></app-friend-preview></li>
       <li><app-friend-preview></app-friend-preview></li>
@@ -41,7 +47,7 @@
     </ul>
   </div>
 
-  <div class="my-recipes-view" [ngClass]="{'hide' : selectedTab != 'My Recipes'}">
+  <div class="my-recipes-view" *ngIf="selectedTab === 'My Recipes'">
     <ul class="my-recipes-list">
       <li>
         <div class="create-recipe" routerLink="/newRecipe">
@@ -55,7 +61,7 @@
     </ul>
   </div>
 
-  <div class="favorites-view" [ngClass]="{'hide' : selectedTab != 'Favorites'}">
+  <div class="favorites-view" *ngIf="selectedTab === 'Favorites'">
     <ul class="favorites-list">
       <li><app-recipe-preview></app-recipe-preview></li>
       <li><app-recipe-preview></app-recipe-preview></li>
@@ -63,7 +69,7 @@
     </ul>
   </div>
 
-  <div class="reviews-view" [ngClass]="{'hide' : selectedTab != 'Reviews'}">
+  <div class="reviews-view" *ngIf="selectedTab === 'Reviews'">
     <ul class="review-list">
       <li><app-recipe-review [currPage]="'profile'"></app-recipe-review></li>
       <li><app-recipe-review [currPage]="'profile'"></app-recipe-review></li>
