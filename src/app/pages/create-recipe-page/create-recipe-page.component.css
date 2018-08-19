@@ -15,38 +15,7 @@ form {
     width: 85%;
 }
 
-div.create-btn, div.cancel-btn {
-    float: right;
-    cursor: pointer;
-    text-align: center;
-    margin: 40px 0 0 10px;
-    color: white;
-    padding: 0px 20px;
-    display: inline-block;
-}
-
-div.create-btn {
+.create-btn {
     background-color: #59821e;
-}
-
-div.cancel-btn {
-    background-color: #d3d6cd;
-}
-
-div.form-group {
-    display: block;
-}
-
-div.form-group>label, div.form-group>input, div.form-group>textarea {
-    display: inline-block;
-}
-
-div.form-group>label {
-    margin: 10px auto 5px auto;
-}
-
-div.form-group>input, div.form-group>textarea {
-    width: 100%;
-    margin: 5px auto;
-    padding: 16px 0;
+    color: white;
 }

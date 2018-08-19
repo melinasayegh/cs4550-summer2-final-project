@@ -12,13 +12,6 @@ div.recipe-header-row {
     border-bottom: 2px solid #ecede9;
 }
 
-div.recipe-ingredients-nutrition-row, div.recipe-directions-row {
-    margin: auto;
-    width: 95%;
-    padding-bottom: 20px;
-    border-bottom: 2px solid #ecede9;
-}
-
 div.recipe-reviews-row {
     width: 95%;
     padding-bottom: 20px;
@@ -27,7 +20,6 @@ div.recipe-reviews-row {
 
 div.recipe-title-description {
     display: inline-block;
-    text-align: center;
     width: 40%;
 }
 
