@@ -35,4 +35,14 @@ export class RecipeServiceClient {
             }
         });
     }
+
+    deleteRecipe = (recipeId) => {
+        return fetch(LOCAL_URL + 'recipe/' + recipeId, {
+            method: 'delete',
+            credentials: 'include',
+            headers: {
+                'content-type': 'application/json'
+            }
+        });
+    }
 }
