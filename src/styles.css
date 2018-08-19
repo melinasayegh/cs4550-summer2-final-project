@@ -4,13 +4,6 @@ html  {
     height: 100%;
 }
 
-body {
-    margin: 0px;
-    min-height: 100%;
-    background-color: #f9fcf2;
-    font-family: 'Open Sans', sans-serif;
-}
-
 .fa {
     font-size: 1.5em;
     margin: 10px;
@@ -18,4 +11,74 @@ body {
 
 .fa:hover {
     cursor: pointer;
+}
+
+/* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+.container {
+    margin: 20px;
+}
+
+.centered {
+    align-content: center;
+    justify-content: center;
+}
+
+.page-h1 {
+    font-family: 'Archivo', sans-serif;
+    padding-bottom: 10px;
+}
+
+.h1, .h2, .h3, .h4 {
+    font-family: 'Archivo', sans-serif;
+}
+
+.form-h1 {
+    font-family: 'Archivo', sans-serif;
+    padding-bottom: 10px;
+}
+
+.user-fields {
+    padding: 10px 10px 10px 10px;
+    display: inline-block;
+    border: none;
+    background: #f7f7f7;
+    border-radius: 2px;
+    resize: vertical;
+}
+
+.form-control:focus {
+    background: #f5f5f5;
+}
+
+.custom-button {
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+    display: inline-block;
+    border: none;
+    color: #ffffff;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: bold;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.list-group-item.active.webdev {
+    z-index: 2;
+    color: #fff;
+    background-color: #00a8ff;
+    border-color: #00a8ff;
+}
+
+.nav-item.active.webdev {
+    z-index: 2;
+    color: #fff;
+    background-color: #00a8ff;
+    border-color: #00a8ff;
 }

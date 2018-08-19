@@ -1,64 +1,104 @@
-<div>
+<app-nav-bar></app-nav-bar>
 
-  <div class="container">
-    <h1>Sign Up</h1>
+<div class="container">
+    <div class="col-sm-12 col-md-10 col-lg-8 justify-content-center align-content-center">
 
-    <div class="alert"
-         [ngClass]="{'hide': !usernameAlert}"
-         role="alert">
-      Username is already taken
+        <h2>Create an Account</h2>
+
+        <div class="alert col-sm-10 offset-sm-2" *ngIf="usernameAlert" role="alert">
+            Username is already taken.
+        </div>
+
+        <div class="alert col-sm-10 offset-sm-2" *ngIf="passwordAlert" role="alert" >
+            Passwords do not match.
+        </div>
+
+        <div class="alert col-sm-10 offset-sm-2" *ngIf="fieldsAlertUsername" role="alert">
+            Please enter a username.
+        </div>
+
+        <div class="alert col-sm-10 offset-sm-2" *ngIf="fieldsAlertPassword1" role="alert">
+            Please enter a password.
+        </div>
+
+        <div class="alert col-sm-10 offset-sm-2" *ngIf="fieldsAlertPassword2" role="alert">
+            Please confirm your password.
+        </div>
+
+        <div class ="form-group row col-12">
+            <label class="control-label col-sm-2" for="firstName">
+                First Name
+            </label>
+            <div class="col-sm-10">
+                <input [(ngModel)]="firstName" type="text" class="form-control user-fields" id="firstName"/>
+            </div>
+        </div>
+
+        <div class ="form-group row col-12">
+            <label class="control-label col-sm-2" for="lastName">
+                Last Name
+            </label>
+            <div class="col-sm-10">
+                <input [(ngModel)]="lastName" type="text" class="form-control user-fields" id="lastName"/>
+            </div>
+        </div>
+
+        <div class ="form-group row col-12">
+            <label class="control-label col-sm-2" for="email">
+                Email
+            </label>
+            <div class="col-sm-10">
+                <input [(ngModel)]="email" type="text" class="form-control user-fields" id="email"/>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="form-group row col-12">
+            <label class="control-label col-sm-2"for="username">
+                Username
+            </label>
+            <div class="col-sm-10">
+                <input [(ngModel)]="username" type="text" class="form-control user-fields" id="username"/>
+            </div>
+        </div>
+
+        <div class ="form-group row col-12">
+            <label class="control-label col-sm-2" for="password">
+                Password
+            </label>
+            <div class="col-sm-10">
+                <input [(ngModel)]="password" type="password" class="form-control user-fields" id="password"/>
+            </div>
+        </div>
+
+        <div class ="form-group row col-12">
+            <label class="control-label col-sm-2" for="password2">
+                Validate Password
+            </label>
+            <div class="col-sm-10">
+                <input [(ngModel)]="password2" type="password" class="form-control user-fields" id="password2"/>
+            </div>
+        </div>
+
+        <div class="form-group row col-12">
+            <div class="col-sm-10 offset-sm-2">
+                <button (click)="register()"
+                        class="btn custom-button registerBtn"
+                        id="registerBtn"
+                        type="button">
+                    Register
+                </button>
+            </div>
+        </div>
+
+        <div class="form-group row col-12 already-registered">
+            <label class="col-sm-10 offset-sm-2">Already have an account?
+                <a class="bbtn btn-dark custom-button loginBtn" id="loginBtn" routerLink="/login">
+                    Login
+                </a>
+            </label>
+        </div>
     </div>
-
-    <div class="alert"
-         [ngClass]="{'hide': !passwordAlert}"
-         role="alert" >
-      Passwords do not match
-    </div>
-
-    <div class="alert"
-         [ngClass]="{'hide': !fieldsAlertUsername}"
-         role="alert">
-      Please enter a username
-    </div>
-
-    <div class="alert"
-         [ngClass]="{'hide': !fieldsAlertPassword1}"
-         role="alert">
-      Please enter a password
-    </div>
-
-    <div class="alert"
-         [ngClass]="{'hide': !fieldsAlertPassword2}"
-         role="alert">
-      Please confirm your password
-    </div>
-
-    <form>
-      <div class="form-group">
-        <label for="usernameFld">Username</label>
-        <input [(ngModel)]="username"
-               name="username"
-               id="usernameFld">
-      </div>
-      <div class="form-group">
-        <label for="passwordFld">Password</label>
-        <input [(ngModel)]="password"
-               name="password"
-               type="password"
-               id="passwordFld">
-      </div>
-      <div class="form-group">
-        <label for="password2Fld">Verify Password</label>
-        <input [(ngModel)]="password2"
-               name="password2"
-               type="password"
-               id="password2Fld">
-      </div>
-      <div class="register-btn">
-        <p (click)="register()">Sign Up</p>
-      </div>
-    </form>
-  </div>
-
-  <app-page-footer></app-page-footer>
 </div>
+<app-page-footer></app-page-footer>
