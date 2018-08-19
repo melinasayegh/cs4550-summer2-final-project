@@ -7,54 +7,63 @@
 
       <div class="form-group">
         <label for="titleFld">Recipe Title</label>
-        <input [(ngModel)]="recipeTitle"
-               name="title"
-               id="titleFld">
+        <input class="form-control user-fields" [(ngModel)]="title"
+               name="title" id="titleFld">
       </div>
 
       <div class="form-group">
         <label for="imageFld">Image Link</label>
-        <input [(ngModel)]="recipeImage"
-               name="image"
-               id="imageFld"/>
+        <input class="form-control user-fields" [(ngModel)]="image"
+               name="image" id="imageFld" placeholder="http://cupofsugarpinchofsalt.s3.amazonaws.com/2.jpg"/>
       </div>
+
+        <div class="form-group">
+            <label for="imageFld">Prep Time</label>
+            <input class="form-control user-fields" [(ngModel)]="prepTime"
+                   name="image" id="prepTimeFld" placeholder="Enter as a number."/>
+        </div>
+
+        <div class="form-group">
+            <label for="imageFld">Cook Time</label>
+            <input class="form-control user-fields" [(ngModel)]="cookTime"
+                   name="image" id="cookTimeFld" placeholder="Enter as a number."/>
+        </div>
+
+        <div class="form-group">
+            <label for="imageFld"># Servings</label>
+            <input class="form-control user-fields" [(ngModel)]="numServings"
+                   name="image" id="numServingsFld" placeholder="Enter as a number."/>
+        </div>
 
       <div class="form-group">
         <label for="descriptionFld">Description</label>
-        <textarea [(ngModel)]="recipeDescription"
-               name="description"
-               id="descriptionFld"
-               rows="4">
+        <textarea [(ngModel)]="description"
+                  class="form-control user-fields" name="description"
+               id="descriptionFld" rows="4">
         </textarea>
       </div>
 
       <div class="form-group">
       <label for="ingredientsFld">Ingredients</label>
-      <textarea [(ngModel)]="recipeIngredients"
-                name="ingredients"
-                id="ingredientsFld"
-                rows="8">
+      <textarea [(ngModel)]="ingredients"
+                class="form-control user-fields" name="ingredients"
+                id="ingredientsFld" rows="8" placeholder="Write each ingredient on its own line.">
         </textarea>
     </div>
 
       <div class="form-group">
         <label for="directionsFld">Directions</label>
-        <textarea [(ngModel)]="recipeDirections"
-                  name="directions"
-                  id="directionsFld"
-                  rows="8">
+        <textarea [(ngModel)]="directions"
+                  class="form-control user-fields"  name="directions"
+                  id="directionsFld" rows="8" placeholder="Write each direction on its own line.">
         </textarea>
       </div>
-
       <div class="create-cancel-btns">
-        <div class="cancel-btn">
-          <p>Cancel</p>
-        </div>
-
-        <div class="create-btn">
-          <p>Create</p>
-        </div>
-
+        <span class="float-right">
+          <button (click)="createRecipe()" class="btn cancel-btn btn-dark">Cancel</button>
+          &nbsp;
+          <button (click)="createRecipe()" class="btn custom-btn create-btn">Create</button>
+        </span>
       </div>
     </form>
   </div>

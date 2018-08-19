@@ -16,4 +16,14 @@ export class RecipeServiceClient {
             .then(response => response.json());
     }
 
+    createRecipe(recipe) {
+        return fetch(LOCAL_URL + 'recipe', {
+            method: 'post',
+            body: JSON.stringify(recipe),
+            credentials: 'include',
+            headers: {
+                'content-type': 'application/json'
+            }
+        });
+    }
 }

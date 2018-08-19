@@ -27,6 +27,9 @@ export class NavBarComponent implements OnInit {
             .then(() => this.router.navigate(['login']));
 
     }
+    search() {
+        alert('Clicked Search');
+    }
     ngOnInit() {
         this.userService.currentUser()
             .then((user) =>  {
