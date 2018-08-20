@@ -4,6 +4,8 @@ This is the client app for our final project for CS 4550 Web Development - Summe
 
 Melina Sayegh, Yoni Smolyar, Brenda Lau
 
+***
+
 CLIENT: https://github.com/melinasayegh/cs4550-summer2-final-project/
 <br/>
 SERVER: https://github.com/melinasayegh/cs4550-summer2-final-project-server/
