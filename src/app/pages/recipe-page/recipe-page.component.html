@@ -90,9 +90,69 @@
         </div>
 
         <ul class="recipe-review-list">
-          <li><app-recipe-review [currPage]="'recipe'"></app-recipe-review></li>
-          <li><app-recipe-review [currPage]="'recipe'"></app-recipe-review></li>
-          <li><app-recipe-review [currPage]="'recipe'"></app-recipe-review></li>
+
+            <li>
+                <div class="recipe-review" routerLink="/recipe/placeholderRecipeId">
+                    <div class="recipe-review-content">
+                        <div class="review-heading">
+                            <div class="user-ratings">
+                                <div class="user">
+                                    <div class="user-image">
+                                        <img src="https://www.softpaws.com/template/images/landing_page/july_cat_image.jpg">
+                                    </div>
+                                    <h4>{{recipe.reviews[0].user.username}}</h4>
+                                    <p>heres a review</p>
+                                </div>
+
+                                <div class="recipe-ratings">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+
+                            <h5>{{fixDate(recipe.reviews[0].updatedAt)}}</h5>
+                        </div>
+                        <p>{{recipe.reviews[0].text}}</p>
+                    </div>
+                </div>
+            </li>
+
+            <!--<li *ngFor="let review of recipe.reviews">
+                <div class="recipe-review" routerLink="/recipe/placeholderRecipeId">
+                    <div class="recipe-review-content">
+                        <div class="review-heading">
+                            <div class="user-ratings">
+                                <div class="user">
+                                    <div class="user-image">
+                                        <img src="https://www.softpaws.com/template/images/landing_page/july_cat_image.jpg">
+                                    </div>
+                                    <h4>{{review.user.username}}</h4>
+                                    <p>heres a review</p>
+                                </div>
+
+                                <div class="recipe-ratings">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+
+                            <h5>{{fixDate(review.updatedAt)}}</h5>
+                        </div>
+                        <p>{{review.text}}</p>
+                    </div>
+                </div>
+            </li>-->
+
+          <li *ngFor="let review of recipe.reviews">
+              <app-recipe-review [reviewId]="review._id" [currPage]="'recipe'"></app-recipe-review>
+              <app-recipe-review [reviewId]="'5b7a282bfb6fc066d4287dec'" [currPage]="'recipe'"></app-recipe-review>
+          </li>
         </ul>
       </div>
     </div>

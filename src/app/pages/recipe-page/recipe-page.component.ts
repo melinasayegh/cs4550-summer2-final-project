@@ -30,7 +30,10 @@ export class RecipePageComponent implements OnInit {
       createdAt: Date,
       updatedAt: Date,
       numServings: Number,
-      tags: [String]
+      tags: [String],
+      reviews: [{
+          _id: String
+      }]
   };
   directions: [String];
   ingredients: [String];
@@ -70,10 +73,12 @@ export class RecipePageComponent implements OnInit {
     this.recipeService.findRecipeById(recipeId)
         .then(recipe => {
             this.recipe = recipe;
+            console.log(recipeId);
+            console.log(this.recipe.title);
+            console.log(this.recipe.reviews[0]._id);
+            //console.log(this.recipe.reviews[0].text);
             this.userService.findUserById(recipe.creator)
                 .then(user => this.creator = user);
         });
-    console.log(recipeId);
-    console.log(this.recipe.title);
   }
 }
