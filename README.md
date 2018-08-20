@@ -9,6 +9,7 @@ SERVER: https://github.com/melinasayegh/cs4550-summer2-final-project-server/
 
 ***
 CLIENT: Heroku App: https://community-cookings.herokuapp.com/
+<br/>
 SERVER: Heroku App: https://community-cookings-server.herokuapp.com/
 ***
 
