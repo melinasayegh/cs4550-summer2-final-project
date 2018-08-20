@@ -1,11 +1,6 @@
 <div>
   <app-nav-bar></app-nav-bar>
-
-
   <aside class="profile-nav-bar">
-    <div class="profile-img">
-      <img src="http://allpetmagazine.com/wp-content/uploads/2016/09/cat-bread-facebook-min.png">
-    </div>
 
     <div class="profile-bio">
         <b>{{user.username}}</b>
@@ -50,7 +45,7 @@
   <div class="my-recipes-view" *ngIf="selectedTab === 'My Recipes'">
     <ul class="my-recipes-list">
       <li>
-        <div class="create-recipe" routerLink="/newRecipe">
+        <div class="create-recipe" routerLink="/recipe/create/new">
             <i class="fa fa-plus"></i>
             <h3>Create a new recipe</h3>
         </div>
