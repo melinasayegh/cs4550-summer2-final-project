@@ -112,3 +112,8 @@ div.recipe-review-input {
 div.recipe-review-input>textarea {
     width: 100%;
 }
+
+.edit-btns {
+    margin-left: 50px;
+
+}

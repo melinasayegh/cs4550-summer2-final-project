@@ -10,18 +10,18 @@ import {UserServiceClient} from '../../services/user.service.client';
 })
 export class CreateRecipePageComponent implements OnInit {
 
-    @Input() recipe = {
+    isEditing = false;
+    recipeId;
+    recipe = {
         title: String,
         image: String,
         description: String,
-        ingredients: String,
-        directions: String,
+        ingredients: [String],
+        directions: [String],
         prepTime: String,
         cookTime: String,
         numServings: String,
-        tags: [String],
-        directionsList: [],
-        ingredientsList: []
+        tags: [String]
     }
     user = {
         _id: String
@@ -42,15 +42,32 @@ export class CreateRecipePageComponent implements OnInit {
               private route: ActivatedRoute,
               private userService: UserServiceClient,
               private recipeService: RecipeServiceClient) {
+      this.route.params.subscribe(params => this.loadRecipe(params['recipeId']));
+  }
 
+  loadRecipe = (recipeId) => {
+      if (recipeId !== undefined || recipeId !== null) {
+          this.recipeId = recipeId;
+          this.recipeService.findRecipeById(recipeId)
+              .then(recipe => this.recipe = recipe)
+              .then(() => this.setFields());
+      } else {
+          this.isEditing = false;
+      }
   }
 
   setFields = () => {
+      console.log(this.recipeId)
+
+      let ingredientsString = this.recipe.ingredients.join('\n');
+      let directionsString = this.recipe.directions.join('\n');
+
+      this.isEditing = true;
       this.title = this.recipe.title;
       this.description = this.recipe.description;
       this.image = this.recipe.image;
-      this.ingredients = this.recipe.ingredientsList;
-      this.directions = this.recipe.directionsList;
+      this.ingredients = ingredientsString;
+      this.directions = directionsString;
       this.prepTime = this.recipe.prepTime;
       this.cookTime  = this.recipe.cookTime;
       this.numServings  =  this.recipe.numServings;
@@ -65,8 +82,6 @@ export class CreateRecipePageComponent implements OnInit {
             title: this.title,
             description: this.description,
             image: this.image,
-            creator: this.user._id,
-            // created at doesnt change
             updatedAt: new Date(),
             ingredients: this.ingredientsList,
             directions: this.directionsList,
@@ -75,7 +90,7 @@ export class CreateRecipePageComponent implements OnInit {
             numServings: Number(this.numServings),
             tags: ['NONE'],
         };
-        //this.recipeService.updateRecipe(id, recipe);
+        this.recipeService.updateRecipe(this.recipeId, recipe);
     }
 
   createRecipe = () => {
@@ -101,6 +116,5 @@ export class CreateRecipePageComponent implements OnInit {
 
   ngOnInit() {
       this.userService.profile().then(user => this.user = user);
-      //this.recipeService.findRecipeById()
   }
 }

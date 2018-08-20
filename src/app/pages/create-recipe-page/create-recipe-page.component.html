@@ -3,7 +3,8 @@
 
   <div class="create-recipe-form">
     <form>
-      <h1>Create New Recipe</h1>
+      <h1 *ngIf="!isEditing">Create New Recipe</h1>
+        <h1 *ngIf="isEditing">Edit Recipe</h1>
 
       <div class="form-group">
         <label for="titleFld">Recipe Title</label>
@@ -58,10 +59,13 @@
                   id="directionsFld" rows="8" placeholder="Write each direction on its own line.">
         </textarea>
       </div>
+
       <div class="create-cancel-btns">
         <span class="float-right">
-          <button (click)="createRecipe()" class="btn cancel-btn btn-dark">Cancel</button>
+          <button routerLink="/home" class="btn cancel-btn btn-dark">Cancel</button>
           &nbsp;
+            <button (click)="updateRecipe()" class="btn custom-btn btn-light">Update</button>
+            &nbsp;
           <button (click)="createRecipe()" class="btn custom-btn create-btn">Create</button>
         </span>
       </div>
