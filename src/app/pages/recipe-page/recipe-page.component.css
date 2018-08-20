@@ -2,13 +2,12 @@ div.recipe {
     width: 95%;
     background-color: white;
     border: 1px solid #e4e6e8;
-    padding: 40px 0;
 }
 
-div.recipe-header-row {
+div.recipe-header-row, div.recipe-ingredients-information-row, div.recipe-directions-row {
     margin: auto;
     width: 95%;
-    padding-bottom: 40px;
+    padding: 40px 0;
     border-bottom: 2px solid #ecede9;
 }
 
@@ -23,30 +22,20 @@ div.recipe-title-description {
     width: 40%;
 }
 
-div.recipe-ingredients-nutrition-row {
-    margin: 10px auto 0 auto;
-}
-
-div.recipe-directions-row {
-    margin: 30px auto 0 auto;
-}
-
-div.recipe-ingredients, div.recipe-nutrition {
-    display: inline-block;
-    text-align: center;
-    vertical-align: top;
-    width: 30%;
-    margin: auto 5%;
+h2 {
+    margin: auto auto 20px auto;
 }
 
 div.recipe-ratings {
     color: #59821e;
+    margin: 20px auto;
 }
 
 div.recipe-description {
     text-align: left;
-    margin: auto 5%;
-    vertical-align: top;
+    margin: 20px 5%;
+    background-color: #f7f7f7;
+    padding: 20px;
 }
 
 div.recipe-image {
@@ -62,7 +51,7 @@ div.recipe-image>img {
 
 div.recipe-directions, div.recipe-reviews {
     margin: auto;
-    width: 85%;
+    width: 80%;
 }
 
 div.recipe {
@@ -70,13 +59,14 @@ div.recipe {
     text-align: center;
 }
 
-ul.recipe-ingredients-list, ul.recipe-nutrition-list, ol.recipe-direction-list, ul.recipe-review-list {
+ul.recipe-ingredients-list, ol.recipe-direction-list, ul.recipe-review-list,
+ul.recipe-information-list {
     padding-left: 0;
     width: 100%;
 }
 
-ul.recipe-ingredients-list>li, ul.recipe-nutrition-list>li, ul.recipe-review-list>li,
-ul.recipe-review-list>li {
+ul.recipe-ingredients-list>li, ul.recipe-review-list>li, ul.recipe-review-list>li,
+ul.recipe-information-list>li {
     margin: auto;
     list-style-type: none;
     padding: 0 0 15px 0;
@@ -88,9 +78,9 @@ ol.recipe-direction-list>li {
     padding: 0 0 30px 0;
 }
 
-div.recipe-ingredients>h2, ul.recipe-ingredients-list>li, div.recipe-nutrition>h2,
-ul.recipe-nutrition-list>li, div.recipe-directions>h2, ol.recipe-direction-list>li,
-div.recipe-reviews>h2, ul.recipe-review-list>li {
+div.recipe-ingredients>h2, ul.recipe-ingredients-list>li, div.recipe-directions>h2,
+ol.recipe-direction-list>li, div.recipe-reviews>h2, ul.recipe-review-list>li,
+ul.recipe-information-list>li {
     text-align: left;
 }
 
@@ -98,10 +88,14 @@ div.submit-btn {
     float: right;
     cursor: pointer;
     text-align: center;
-    margin: 20px 0;
+    margin: 20px auto;
     background-color: #59821e;
     color: white;
-    padding: 0px 20px;
+    padding: 10px 20px;
+}
+
+div.submit-btn>p {
+    margin-bottom: 0;
 }
 
 div.recipe-review-input {
@@ -115,5 +109,21 @@ div.recipe-review-input>textarea {
 
 .edit-btns {
     margin-left: 50px;
+}
 
+div.recipe-ingredients  {
+    display: inline-block;
+    width: 60%;
+    vertical-align: top;
+}
+
+div.recipe-information {
+    display: inline-block;
+    width: 20%;
+    background-color: #f7f7f7;
+    padding: 20px;
+}
+
+ul {
+    margin-bottom: 0;
 }

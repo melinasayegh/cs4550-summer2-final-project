@@ -15,18 +15,20 @@
     <div class="recipe-header-row">
       <div class="recipe-title-description">
         <h2>{{recipe.title}}</h2>
-        <h4>{{creator.username}}</h4>
-        <h5>Created on {{fixDate(recipe.createdAt)}}</h5>
-        <h5>Updated on {{fixDate(recipe.updatedAt)}}</h5>
+        <h6>Created by: {{creator.username}}</h6>
+        <h6>Created on {{fixDate(recipe.createdAt)}}</h6>
+        <h6>Updated on {{fixDate(recipe.updatedAt)}}</h6>
 
         <div class="recipe-ratings">
           <i class="fas fa-star"></i>
-
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star"></i>
         </div>
 
         <div class="recipe-description">
-          <h2>Description</h2>
-          {{recipe.description}}
+          "{{recipe.description}}"
         </div>
 
         <div class="category-tags">
@@ -39,43 +41,41 @@
       </div>
     </div>
 
-    <div class="">
-      <div class="">
-        <h2>Information</h2>
-        <ul class="">
-          <li>
-            Prep Time: {{recipe.prepTime}} Minutes
-          </li>
-          <li>
-            Cook Time: {{recipe.cookTime}} Minutes
-          </li>
-          <li>
-           Number Servings: {{recipe.numServings}}
-          </li>
-        </ul>
-      </div>
+    <div class="recipe-ingredients-information-row">
+        <div class="recipe-ingredients">
+            <h2>Ingredients</h2>
+            <ul class="recipe-ingredients-list"
+                *ngFor="let ingredient of recipe.ingredients">
+                <li>
+                    {{ingredient}}
+                </li>
+            </ul>
+        </div>
+
+        <div class="recipe-information">
+            <ul class="recipe-information-list">
+                <li>
+                    <h6>Prep Time: {{recipe.prepTime}} Min.</h6>
+                </li>
+                <li>
+                    <h6>Cook Time: {{recipe.cookTime}} Min.</h6>
+                </li>
+                <li>
+                    <h6>Number Servings: {{recipe.numServings}}</h6>
+                </li>
+            </ul>
+        </div>
     </div>
 
-    <div class="">
-      <div class="">
-        <h2>Ingredients</h2>
-        <ul class=""
-            *ngFor="let ingredient of recipe.ingredients">
-          <li>
-            {{ingredient}}
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="">
-      <h2>Directions</h2>
-      <ol class="">
-        <li class=" webdev"
-            *ngFor="let item of recipe.directions">
-          {{item}}
-        </li>
-      </ol>
+    <div class="recipe-directions-row">
+        <div class="recipe-directions">
+          <h2>Directions</h2>
+          <ol class="recipe-direction-list">
+            <li *ngFor="let item of recipe.directions">
+              {{item}}
+            </li>
+          </ol>
+        </div>
     </div>
 
     <div class="recipe-reviews-row">

@@ -1,9 +1,10 @@
 div.recipe-preview {
     border: 1px solid #e4e6e8;
     display: inline-block;
-    margin: auto;
+    margin: 15px;
     cursor: pointer;
     text-align: left;
+    vertical-align: top;
 }
 
 div.recipe-preview-content {
@@ -23,15 +24,19 @@ div.recipe-image>img {
 
 div.recipe-description {
     width: 220px;
-    height: 100px;
+    height: 130px;
     text-align: left;
     word-wrap: break-word;
     padding: 15px;
     background-color: white;
 }
 
-div.recipe-description>h3 {
+div.recipe-description>h5 {
     margin: 0 auto 0 0;
+    max-height: 1.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 div.recipe-description>p {
