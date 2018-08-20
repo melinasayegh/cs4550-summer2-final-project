@@ -1,18 +1,16 @@
 <div>
     <app-nav-bar></app-nav-bar>
 
-    <div class="home-page-tip">
-        <p>Did you know?...</p>
-    </div>
+    <!--<div class="home-page-tip">-->
+        <!--<p>Did you know?...</p>-->
+    <!--</div>-->
 
     <div class="featured-recipes">
         <h3>Featured Recipes</h3>
-        <ul >
-            <li >
+        <ul>
+            <li>
                 <app-recipe-preview *ngFor="let recipe of recipes"
                                     [recipeId]="recipe._id"></app-recipe-preview>
-                <app-category-tag *ngFor="let recipe of recipes"
-                                  [category]="recipe.tag"></app-category-tag>
             </li>
         </ul>
     </div>
