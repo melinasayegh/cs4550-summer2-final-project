@@ -9,11 +9,13 @@ import { CreateRecipePageComponent } from './pages/create-recipe-page/create-rec
 import {RandomRecipeComponent} from './components/random-recipe/random-recipe.component';
 import {AdminPageComponent} from './pages/admin-page/admin-page.component';
 import {AdminUsersComponent} from './pages/admin-users/admin-users.component';
+import {RecipesPageComponent} from './pages/recipes-page/recipes-page.component';
 
 const appRoutes: Routes = [
     { path: '',                 component: HomePageComponent },
     { path: 'login',            component: LoginPageComponent },
     { path: 'admin',            component: AdminPageComponent },
+    { path: 'recipes',          component: RecipesPageComponent},
     { path: 'admin/user',            component: AdminUsersComponent },
     { path: 'admin/user/:userId',            component: AdminUsersComponent },
     { path: 'admin/recipe',            component: AdminPageComponent },

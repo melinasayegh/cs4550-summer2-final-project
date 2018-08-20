@@ -26,6 +26,7 @@ import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { RecipeCreatorComponent } from './components/recipe-creator/recipe-creator.component';
 import { AdminUsersComponent } from './pages/admin-users/admin-users.component';
 import { AdminUserComponent } from './components/admin-user/admin-user.component';
+import { RecipesPageComponent } from './pages/recipes-page/recipes-page.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { AdminUserComponent } from './components/admin-user/admin-user.component
     AdminPageComponent,
     RecipeCreatorComponent,
     AdminUsersComponent,
-    AdminUserComponent
+    AdminUserComponent,
+    RecipesPageComponent
   ],
   imports: [
     BrowserModule,

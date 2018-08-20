@@ -1,0 +1,15 @@
+<div>
+  <app-nav-bar></app-nav-bar>
+
+  <div class="general-recipes">
+    <h3>All Recipes</h3>
+    <ul class="general-recipes-list">
+      <li>
+        <app-recipe-preview *ngFor="let recipe of recipes"
+                            [recipeId]="recipe._id"></app-recipe-preview>
+      </li>
+    </ul>
+  </div>
+
+  <app-page-footer></app-page-footer>
+</div>

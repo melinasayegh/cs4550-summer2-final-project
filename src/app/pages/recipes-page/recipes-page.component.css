@@ -1,0 +1,25 @@
+div.general-recipes {
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+}
+
+div.general-recipes>h3 {
+    margin: 20px auto;
+}
+
+ul.general-recipes-list {
+    width: 90%;
+    margin: auto;
+    padding-left: 0;
+}
+
+ul.general-recipes-list>li {
+    margin: auto;
+    list-style-type: none;
+}
+
+ul.general-recipes-list>li {
+    display: inline-block;
+    margin: auto 2.5% 5% 2.5%;
+}
