@@ -23,6 +23,7 @@ export class RecipePreviewComponent implements OnInit {
     }
 
     ngOnInit() {
+        console.log('in preview recipe' + this.recipeId);
         this.recipeService.findRecipeById(this.recipeId)
             .then(recipe => this.recipe = recipe);
     }

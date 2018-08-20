@@ -7,14 +7,15 @@
           <div class="user-image">
             <img src="https://www.softpaws.com/template/images/landing_page/july_cat_image.jpg">
           </div>
-          <h4>Shady Cat</h4>
+          <h4>{{review.user.username}}</h4>
+          <p>heres a review</p>
         </div>
 
         <div class="recipe-title" [ngClass]="{'hide' : isNotCurrentPage('profile')}">
           <div class="recipe-image">
-            <img src="https://images-gmi-pmc.edge-generalmills.com/c4ad5042-70b6-403e-ba6f-286926657953.jpg">
+            <img src="{{review.recipe.image}}">
           </div>
-          <h4>Piggy Pancakes</h4>
+          <h4>{{review.recipe.title}}</h4>
         </div>
 
         <div class="recipe-ratings">
@@ -26,10 +27,8 @@
         </div>
       </div>
 
-      <h5>09/6/2018</h5>
+      <h5>{{fixDate(review.updatedAt)}}</h5>
     </div>
-      <p>Served these as an appetizer for Christmas Eve and they were absolutely delicious!! Also,
-        very very easy to make!! Make way ahead of time and refrigerate until you're ready to serve
-        them!! Will definitely make again!</p>
+      <p>{{review.text}}</p>
   </div>
 </div>

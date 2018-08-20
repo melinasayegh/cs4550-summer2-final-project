@@ -11,9 +11,12 @@ import {ActivatedRoute} from '@angular/router';
 export class RecipePageComponent implements OnInit {
 
     userCreator = false;
+    isLoggedIn = false;
+
   creator = {
     username: String
   };
+
   recipe = {
       _id: String,
       title: String,
@@ -27,7 +30,10 @@ export class RecipePageComponent implements OnInit {
       createdAt: Date,
       updatedAt: Date,
       numServings: Number,
-      tags: [String]
+      tags: [String],
+      reviews: [{
+          _id: String
+      }]
   };
   directions: [String];
   ingredients: [String];
@@ -43,32 +49,36 @@ export class RecipePageComponent implements OnInit {
       this.userService.profile()
           .then(loggedInUser => {
               this.userCreator = (this.recipe.creator === loggedInUser._id);
-          });
+              this.isLoggedIn = true;
+          }, () => this.isLoggedIn = false);
   }
 
   fixDate = (date) => {
       return new Date(date).toLocaleString();
   }
 
-  updateRecipe = () =>{
-      alert('Need to update recipe');
-  }
-
   deleteRecipe = () => {
       this.recipeService.deleteRecipe(this.recipe._id);
   }
 
-  submit() {
-    // some create review function
+  submitReview() {
+    if (this.isLoggedIn) {
+        // create a recipe
+    } else {
+        alert('Please sign in first.');
+    }
   }
+
   findRecipeById = (recipeId) => {
     this.recipeService.findRecipeById(recipeId)
         .then(recipe => {
             this.recipe = recipe;
+            console.log(recipeId);
+            console.log(this.recipe.title);
+            console.log(this.recipe.reviews[0]._id);
+            //console.log(this.recipe.reviews[0].text);
             this.userService.findUserById(recipe.creator)
                 .then(user => this.creator = user);
         });
-    console.log(recipeId);
-    console.log(this.recipe.title);
   }
 }
