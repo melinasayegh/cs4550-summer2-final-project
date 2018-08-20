@@ -34,7 +34,7 @@ export class RecipeCreatorComponent implements OnInit {
     directions;
     prepTime;
     cookTime;
-    numServings ;
+    numServings;
     tags;
     directionsList;
     ingredientsList;

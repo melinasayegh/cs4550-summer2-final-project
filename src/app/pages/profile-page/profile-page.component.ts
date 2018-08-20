@@ -25,12 +25,14 @@ export class ProfilePageComponent implements OnInit {
         }
     }];
 
+    isAdmin: Boolean;
     constructor(private router: Router, private userService: UserServiceClient,
                 private recipeService: RecipeServiceClient) { }
 
     ngOnInit() {
         this.userService.profile().then(user => {
             this.user = user;
+            this.isAdmin = (user.username === 'admin' && user.password === 'admin');
             this.faveRecipes = user.favoriteRecipes;
             this.myRecipes = user.myRecipes;
         });
@@ -39,4 +41,5 @@ export class ProfilePageComponent implements OnInit {
     selectTab = (tab) => {
         this.selectedTab = tab;
     }
+
 }

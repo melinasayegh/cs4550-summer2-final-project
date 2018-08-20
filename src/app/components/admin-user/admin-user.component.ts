@@ -35,7 +35,7 @@ export class AdminUserComponent implements OnInit {
                 this.email = user.email;
             });
     }
-    updateProfile() {
+    updateUser() {
         const newUser = {
             username: this.username,
             password: this.password,
@@ -46,7 +46,7 @@ export class AdminUserComponent implements OnInit {
         this.userService.updateProfile(newUser);
 
     }
-    deleteProfile() {
+    deleteUser() {
         this.userService.deleteProfile()
             .then((response) => this.router.navigate(['login']));
     }

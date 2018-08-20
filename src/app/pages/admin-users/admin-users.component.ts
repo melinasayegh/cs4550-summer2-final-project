@@ -11,10 +11,10 @@ import {RecipeServiceClient} from '../../services/recipe.service.client';
 export class AdminUsersComponent implements OnInit {
 
     allUsers = [];
-    selectedFirstName;
-    selectedLastName;
-    selectedUsername;
-    isValidAdmin;
+    selectedFirstName = '';
+    selectedLastName = '';
+    selectedUsername = '';
+    isValidAdmin = '';
 
     constructor(private recipeService: RecipeServiceClient,
                 private userService: UserServiceClient,

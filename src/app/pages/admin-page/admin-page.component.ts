@@ -12,14 +12,14 @@ export class AdminPageComponent implements OnInit {
 
     allRecipes = [];
     recipeTitle = '';
-    isValidAdmin;
+    isAdmin;
+    username;
+    password;
 
     constructor(private recipeService: RecipeServiceClient,
                 private userService: UserServiceClient,
                 private activatedRoute: ActivatedRoute) {
         this.activatedRoute.params.subscribe(params => this.selectRecipe(params['recipeId']));
-        this.userService.profile()
-            .then(user => this.isValidAdmin = user.isAdmin);
     }
 
 
@@ -30,8 +30,20 @@ export class AdminPageComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.userService.profile()
-            .then(user => this.isValidAdmin = user.isAdmin);
+        this.userService.currentUser()
+            .then(user => {
+                if (user.username !== undefined) {
+
+                    if ((user.username === 'admin') && (user.password === 'admin')) {
+                        this.isAdmin = true;
+                    } else {
+                        this.isAdmin = false;
+                    }
+                } else {
+                    this.isAdmin = false;
+                }
+
+            });
 
         this.recipeService.findAllRecipes()
             .then(recipes => this.allRecipes = recipes);
