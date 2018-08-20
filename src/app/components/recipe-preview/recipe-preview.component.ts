@@ -19,10 +19,11 @@ export class RecipePreviewComponent implements OnInit {
 
     constructor(private recipeService: RecipeServiceClient,
                 private activatedRoute: ActivatedRoute) {
-        //this.activatedRoute.params.subscribe(params => this.loadRecipeData(params['recipeId']));
+        // this.activatedRoute.params.subscribe(params => this.loadRecipeData(params['recipeId']));
     }
 
     ngOnInit() {
+        console.log('in preview recipe' + this.recipeId);
         this.recipeService.findRecipeById(this.recipeId)
             .then(recipe => this.recipe = recipe);
     }
