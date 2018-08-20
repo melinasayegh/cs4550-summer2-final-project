@@ -2,10 +2,14 @@
 ## Welcome to the cs4550-summer2-final-project repository!
 This is the client app for our final project for CS 4550 Web Development - Summer 2
 
-Brenda Lau, Melina Sayegh, and Yoni Smolyar
+Melina Sayegh, Yoni Smolyar, Brenda Lau
+
+CLIENT: https://github.com/melinasayegh/cs4550-summer2-final-project/
+SERVER: https://github.com/melinasayegh/cs4550-summer2-final-project-server/
 
 ***
-Heroku App: https://community-cookings.herokuapp.com/
+CLIENT: Heroku App: https://community-cookings.herokuapp.com/
+SERVER: Heroku App: https://community-cookings-server.herokuapp.com/
 ***
 
 
