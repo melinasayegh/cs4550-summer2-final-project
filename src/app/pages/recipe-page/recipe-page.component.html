@@ -1,15 +1,16 @@
 <div>
   <app-nav-bar></app-nav-bar>
 
-  <span *ngIf="userCreator" class="row float-right">
+  <div class="edit-btns" *ngIf="userCreator">
+    <span class="row">
     <button (click)="deleteRecipe()" class="btn sm-btn btn-dark">
       Delete
     </button>
-    <button (click()="updateRecipe()" class="btn sm-btn btn-light">
+    <button routerLink='/recipe/update/{{recipe._id}}' class="btn sm-btn btn-light">
       Update
     </button>
   </span>
-
+  </div>
   <div class="recipe">
     <div class="recipe-header-row">
       <div class="recipe-title-description">

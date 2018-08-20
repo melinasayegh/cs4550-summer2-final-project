@@ -16,9 +16,10 @@ const appRoutes: Routes = [
     { path: 'profile',          component: ProfilePageComponent },
     { path: 'results/:search',  component: SearchResultsPageComponent },
     { path: 'recipe/:recipeId', component: RecipePageComponent },
-    { path: 'newRecipe', component: CreateRecipePageComponent },
-    { path: 'random', component: RandomRecipeComponent},
-    { path: 'random/:tag', component: RandomRecipeComponent},
+    { path: 'recipe/create/new', component: CreateRecipePageComponent },
+    { path: 'recipe/update/:recipeId', component: CreateRecipePageComponent },
+    { path: 'random',           component: RandomRecipeComponent},
+    { path: 'random/:tag',      component: RandomRecipeComponent},
     { path: '**',               component: HomePageComponent }
 ];
 
