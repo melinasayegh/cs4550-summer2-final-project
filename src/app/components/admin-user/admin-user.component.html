@@ -1,0 +1,72 @@
+<div class="offset-1 col-8">
+  <div class ="form-group row">
+    <label class="control-label col-sm-2" for="userNameFld">
+      Username
+    </label>
+    <div class="col-sm-10">
+      <input [(ngModel)]="username" type="text" class="form-control user-fields disabled"
+             placeholder="" id="userNameFld" disabled/>
+    </div>
+  </div>
+
+  <div class ="form-group row">
+    <label class="control-label col-sm-2" for="passwordFld">
+      Password
+    </label>
+    <div class="col-sm-10">
+      <input [(ngModel)]="password" type="password" class="form-control user-fields" placeholder="" id="passwordFld"/>
+    </div>
+  </div>
+
+  <div class ="form-group row">
+    <label class="control-label col-sm-2" for="firstNameFld">
+      First Name
+    </label>
+    <div class="col-sm-10">
+      <input [(ngModel)]="firstName" type="text" class="form-control user-fields" placeholder="" id="firstNameFld"/>
+    </div>
+  </div>
+
+  <div class ="form-group row">
+    <label class="control-label col-sm-2" for="lastNameFld">
+      Last Name
+    </label>
+    <div class="col-sm-10">
+      <input [(ngModel)]="lastName" type="text" class="form-control user-fields" placeholder="" id="lastNameFld"/>
+    </div>
+  </div>
+
+  <div class ="form-group row">
+    <label class="control-label col-sm-2" for="emailFld">
+      Email
+    </label>
+    <div class="col-sm-10">
+      <input [(ngModel)]="email" type="text" class="form-control user-fields" placeholder="" id="emailFld"/>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div>
+      <button (click)="updateProfile()"
+              class="btn btn-block btn-secondary updateBtn" id="updateBtn">
+        Update
+      </button>
+    </div>
+    <br/>
+    <div>
+      <button (click)="deleteProfile()"
+              class="btn btn-block btn-danger deleteBtn"
+              id="deleteBtn">
+        Delete User
+      </button>
+    </div>
+    <br/>
+    <button class="btn btn-block btn-success float-right">
+      Create New User
+    </button>
+
+  </div>
+
+
+
+</div>

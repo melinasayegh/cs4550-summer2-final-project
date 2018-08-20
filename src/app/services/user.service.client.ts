@@ -66,4 +66,11 @@ export class UserServiceClient {
                     console.log('Error is because there is no current user.');
                 });
     }
+    findAllUsers = () => {
+        return fetch(LOCAL_URL + 'user', {
+            method: 'get',
+            credentials: 'include'
+        }).then(response => response.json());
+    }
+
 }

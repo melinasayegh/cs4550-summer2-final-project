@@ -23,6 +23,9 @@ import { UserServiceClient } from './services/user.service.client';
 import {RecipeServiceClient} from './services/recipe.service.client';
 import { ProfileSettingsComponent } from './components/profile-settings/profile-settings.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { RecipeCreatorComponent } from './components/recipe-creator/recipe-creator.component';
+import { AdminUsersComponent } from './pages/admin-users/admin-users.component';
+import { AdminUserComponent } from './components/admin-user/admin-user.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,10 @@ import { AdminPageComponent } from './pages/admin-page/admin-page.component';
     CreateRecipePageComponent,
     RandomRecipeComponent,
     ProfileSettingsComponent,
-    AdminPageComponent
+    AdminPageComponent,
+    RecipeCreatorComponent,
+    AdminUsersComponent,
+    AdminUserComponent
   ],
   imports: [
     BrowserModule,

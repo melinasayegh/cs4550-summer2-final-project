@@ -1,0 +1,21 @@
+div.create-recipe-form {
+    width: 85%;
+    background-color: white;
+    border: 1px solid #e4e6e8;
+    padding: 50px 0 140px 0;
+    margin: 30px auto;
+}
+
+h1 {
+    margin: auto auto 10px auto;
+}
+
+form {
+    margin: auto;
+    width: 85%;
+}
+
+.create-btn {
+    background-color: #59821e;
+    color: white;
+}

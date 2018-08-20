@@ -1,0 +1,77 @@
+
+<div class="container-fluid">
+  <div class="create-recipe-form">
+    <form>
+      <h1 *ngIf="!isEditing">Create New Recipe</h1>
+      <h1 *ngIf="isEditing">Edit Recipe</h1>
+
+      <div class="form-group">
+        <label for="titleFld">Recipe Title</label>
+        <input class="form-control user-fields" [(ngModel)]="title"
+               name="title" id="titleFld">
+      </div>
+
+      <div class="form-group">
+        <label for="imageFld">Image Link</label>
+        <input class="form-control user-fields" [(ngModel)]="image"
+               name="image" id="imageFld" placeholder="http://cupofsugarpinchofsalt.s3.amazonaws.com/2.jpg"/>
+      </div>
+
+      <div class="form-group">
+        <label for="imageFld">Prep Time</label>
+        <input class="form-control user-fields" [(ngModel)]="prepTime"
+               name="image" id="prepTimeFld" placeholder="Enter as a number."/>
+      </div>
+
+      <div class="form-group">
+        <label for="imageFld">Cook Time</label>
+        <input class="form-control user-fields" [(ngModel)]="cookTime"
+               name="image" id="cookTimeFld" placeholder="Enter as a number."/>
+      </div>
+
+      <div class="form-group">
+        <label for="imageFld"># Servings</label>
+        <input class="form-control user-fields" [(ngModel)]="numServings"
+               name="image" id="numServingsFld" placeholder="Enter as a number."/>
+      </div>
+
+      <div class="form-group">
+        <label for="descriptionFld">Description</label>
+        <textarea [(ngModel)]="description"
+                  class="form-control user-fields" name="description"
+                  id="descriptionFld" rows="4">
+        </textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="ingredientsFld">Ingredients</label>
+        <textarea [(ngModel)]="ingredients"
+                  class="form-control user-fields" name="ingredients"
+                  id="ingredientsFld" rows="8" placeholder="Write each ingredient on its own line.">
+        </textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="directionsFld">Directions</label>
+        <textarea [(ngModel)]="directions"
+                  class="form-control user-fields"  name="directions"
+                  id="directionsFld" rows="8" placeholder="Write each direction on its own line.">
+        </textarea>
+      </div>
+
+      <div class="create-cancel-btns">
+        <span class="float-right">
+          <button routerLink="/home" class="btn cancel-btn btn-dark">Cancel</button>
+          &nbsp;
+            <button (click)="updateRecipe()" class="btn custom-btn btn-light">Update</button>
+            &nbsp;
+          <button (click)="createRecipe()" class="btn custom-btn create-btn">Create</button>
+            &nbsp;
+            <button class="btn btn-danger float-right delBtn">Delete</button>
+
+
+        </span>
+      </div>
+    </form>
+  </div>
+</div>

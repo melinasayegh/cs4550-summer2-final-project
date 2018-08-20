@@ -5,24 +5,24 @@
     <h1>Admin</h1>
     <a href="/admin/recipe">Recipes</a> |
     <a href="/admin/user">Users</a>
-    <h2>Recipes</h2>
+    <h2>Users</h2>
 
   </div>
 
   <div class="row">
-    <div class="col-5">
+      <div class="col-5">
       <ul class="list-group">
-        <li *ngFor="let recipe of allRecipes"
+          <li *ngFor="let user of allUsers"
             class="list-group-item">
-          {{recipe.title}}
+          {{user.firstName}} {{user.lastName}} {{user.username}}
           <br/>
-          <a routerLink="/admin/recipe/{{recipe._id}}"
-             class="btn btn-outline-secondary float-right">Edit Recipe</a>
+          <a routerLink="/admin/user/{{user._id}}"
+             class="btn btn-outline-secondary float-right">Edit User</a>
         </li>
       </ul>
     </div>
     <div class="col-7">
-        <app-recipe-creator *ngIf="recipeTitle !== ''"></app-recipe-creator>
+      <app-admin-user *ngIf="selectedUsername !== ''"></app-admin-user>
     </div>
   </div>
 </div>
