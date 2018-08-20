@@ -7,11 +7,14 @@ import { SearchResultsPageComponent } from './pages/search-results-page/search-r
 import { RecipePageComponent } from './pages/recipe-page/recipe-page.component';
 import { CreateRecipePageComponent } from './pages/create-recipe-page/create-recipe-page.component';
 import {RandomRecipeComponent} from './components/random-recipe/random-recipe.component';
+import {AdminPageComponent} from './pages/admin-page/admin-page.component';
 
 const appRoutes: Routes = [
     { path: '',                 component: HomePageComponent },
     { path: 'home',             component: HomePageComponent },
     { path: 'login',            component: LoginPageComponent },
+    { path: 'admin',            component: AdminPageComponent },
+    { path: 'admin/recipe/:recipeId',            component: AdminPageComponent },
     { path: 'register',         component: RegisterPageComponent },
     { path: 'profile',          component: ProfilePageComponent },
     { path: 'results/:search',  component: SearchResultsPageComponent },
