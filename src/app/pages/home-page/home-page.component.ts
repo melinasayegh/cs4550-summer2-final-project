@@ -18,6 +18,14 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit() {
     this.recipeService.findAllRecipes()
-        .then(recipes => this.recipes = recipes);
+        .then(recipes => {
+          var arr = <any>[];
+
+          for (let i=0; i<3; i++) {
+            arr.push(recipes[i]);
+          }
+
+          this.recipes = arr;
+        });
   }
 }

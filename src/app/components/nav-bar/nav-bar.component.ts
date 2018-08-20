@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
 import {UserServiceClient} from '../../services/user.service.client';
 import {Router} from '@angular/router';
+import {RecipeServiceClient} from "../../services/recipe.service.client";
 
 @Component({
   selector: 'app-nav-bar',
@@ -14,6 +15,7 @@ export class NavBarComponent implements OnInit {
     isAdminUser = false;
     isNavbarOpen = false;
     currentUser = {};
+    searchInput: String;
 
     constructor(private router: Router,
                 private userService: UserServiceClient) { }
@@ -27,9 +29,11 @@ export class NavBarComponent implements OnInit {
             .then(() => this.router.navigate(['login']));
 
     }
-    search() {
-        alert('Clicked Search');
+
+    search(input) {
+        this.router.navigate(['results/' + input]);
     }
+
     ngOnInit() {
         this.userService.currentUser()
             .then((user) =>  {

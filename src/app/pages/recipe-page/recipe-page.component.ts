@@ -17,33 +17,14 @@ export class RecipePageComponent implements OnInit {
     username: String
   };
 
-  recipe = {
-      _id: String,
-      title: String,
-      image: String,
-      creator: String,
-      description: String,
-      ingredients: [String],
-      directions: [String],
-      prepTime: Number,
-      cookTime: Number,
-      createdAt: Date,
-      updatedAt: Date,
-      numServings: Number,
-      tags: [String],
-      reviews: [{
-          _id: String
-      }]
-  };
+  recipe = <any>{};
   directions: [String];
   ingredients: [String];
   comment: String;
 
   constructor(private route: ActivatedRoute,
               private userService: UserServiceClient,
-              private recipeService: RecipeServiceClient) {
-      this.route.params.subscribe(params => this.findRecipeById(params['recipeId']));
-  }
+              private recipeService: RecipeServiceClient) {}
 
   ngOnInit() {
       this.userService.profile()
@@ -51,6 +32,7 @@ export class RecipePageComponent implements OnInit {
               this.userCreator = (this.recipe.creator === loggedInUser._id);
               this.isLoggedIn = true;
           }, () => this.isLoggedIn = false);
+      this.route.params.subscribe(params => this.findRecipeById(params['recipeId']));
   }
 
   fixDate = (date) => {
@@ -73,10 +55,7 @@ export class RecipePageComponent implements OnInit {
     this.recipeService.findRecipeById(recipeId)
         .then(recipe => {
             this.recipe = recipe;
-            console.log(recipeId);
-            console.log(this.recipe.title);
             console.log(this.recipe.reviews[0]._id);
-            //console.log(this.recipe.reviews[0].text);
             this.userService.findUserById(recipe.creator)
                 .then(user => this.creator = user);
         });

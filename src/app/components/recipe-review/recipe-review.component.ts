@@ -10,30 +10,24 @@ import {ReviewServiceClient} from '../../services/review.service.client';
 })
 export class RecipeReviewComponent implements OnInit {
 
-  @Input() currPage: String;
-  @Input() reviewId: String;
+   @Input() reviewId = <any>{};
+   @Input() currPage: String;
 
-  review = {
-      text: String,
-      createdAt: Date,
-      updatedAt: Date,
-      user:  {
-          username: String
-      },
-      recipe: {
-          title: String,
-          image: String
-      }
-  };
+  review = <any>{};
+
   constructor(private reviewService: ReviewServiceClient) { }
 
-    fixDate = (date) => {
+  fixDate = (date) => {
         return new Date(date).toLocaleString();
-    }
+  }
+
   ngOnInit() {
       this.reviewService.findReviewById(this.reviewId)
-          .then(review => this.review = review);
+          .then(review => {
+              this.review = review;
+          });
   }
+
   isNotCurrentPage(pageType) {
       if (pageType !== this.currPage) {
           return true;

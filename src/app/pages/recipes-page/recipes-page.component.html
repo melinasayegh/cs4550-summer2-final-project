@@ -1,15 +1,15 @@
 <div>
   <app-nav-bar></app-nav-bar>
 
-  <div class="search-results">
-    <h3>Search results for: {{recipeTitle}}</h3>
-    <ul class="results-recipes-list" *ngIf="recipes.length>0">
+  <div class="general-recipes">
+    <h3>All Recipes</h3>
+    <ul class="general-recipes-list">
       <li>
         <app-recipe-preview *ngFor="let recipe of recipes"
                             [recipeId]="recipe._id"></app-recipe-preview>
       </li>
     </ul>
-
-    <h6 *ngIf="recipes.length==0">No recipes match this search</h6>
   </div>
+
+  <app-page-footer></app-page-footer>
 </div>

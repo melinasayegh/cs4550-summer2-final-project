@@ -7,26 +7,33 @@ const HEROKU_URL = 'https://community-cookings-server.herokuapp.com/api/';
 export class RecipeServiceClient {
 
     getRandomRecipe = (tag) => {
-        return fetch(LOCAL_URL + 'randomRecipe/' + tag)
+        return fetch(HEROKU_URL + 'randomRecipe/' + tag)
             .then(response => response.json());
     }
 
     findAllRecipes = () => {
-        return fetch(LOCAL_URL + 'recipe', {
+        return fetch(HEROKU_URL + 'recipe', {
             method: 'get',
             credentials: 'include'
         }).then(response => response.json());
     }
 
     findRecipeById = (recipeId) => {
-        return fetch(LOCAL_URL + 'recipe/' + recipeId, {
+        return fetch(HEROKU_URL + 'recipe/' + recipeId, {
+            method: 'get',
+            credentials: 'include'
+        }).then(response => response.json());
+    }
+
+    findRecipesByTitle = (recipeTitle) => {
+        return fetch(HEROKU_URL + 'results/' + recipeTitle, {
             method: 'get',
             credentials: 'include'
         }).then(response => response.json());
     }
 
     createRecipe = (recipe) => {
-        return fetch(LOCAL_URL + 'recipe', {
+        return fetch(HEROKU_URL + 'recipe', {
             method: 'post',
             body: JSON.stringify(recipe),
             credentials: 'include',
@@ -37,7 +44,7 @@ export class RecipeServiceClient {
     }
 
     updateRecipe = (recipeId, recipe) => {
-        return fetch(LOCAL_URL + 'recipe/' + recipeId, {
+        return fetch(HEROKU_URL + 'recipe/' + recipeId, {
             method: 'put',
             body: JSON.stringify(recipe),
             credentials: 'include',
@@ -48,7 +55,7 @@ export class RecipeServiceClient {
     }
 
     deleteRecipe = (recipeId) => {
-        return fetch(LOCAL_URL + 'recipe/' + recipeId, {
+        return fetch(HEROKU_URL + 'recipe/' + recipeId, {
             method: 'delete',
             credentials: 'include',
             headers: {

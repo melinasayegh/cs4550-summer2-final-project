@@ -9,19 +9,20 @@ import { CreateRecipePageComponent } from './pages/create-recipe-page/create-rec
 import {RandomRecipeComponent} from './components/random-recipe/random-recipe.component';
 import {AdminPageComponent} from './pages/admin-page/admin-page.component';
 import {AdminUsersComponent} from './pages/admin-users/admin-users.component';
+import {RecipesPageComponent} from './pages/recipes-page/recipes-page.component';
 
 const appRoutes: Routes = [
     { path: '',                 component: HomePageComponent },
-    { path: 'home',             component: HomePageComponent },
     { path: 'login',            component: LoginPageComponent },
     { path: 'admin',            component: AdminPageComponent },
+    { path: 'recipes',          component: RecipesPageComponent},
     { path: 'admin/user',            component: AdminUsersComponent },
     { path: 'admin/user/:userId',            component: AdminUsersComponent },
     { path: 'admin/recipe',            component: AdminPageComponent },
     { path: 'admin/recipe/:recipeId',            component: AdminPageComponent },
     { path: 'register',         component: RegisterPageComponent },
     { path: 'profile',          component: ProfilePageComponent },
-    { path: 'results/:search',  component: SearchResultsPageComponent },
+    { path: 'results/:recipeTitle',  component: SearchResultsPageComponent },
     { path: 'recipe/:recipeId', component: RecipePageComponent },
     { path: 'recipe/create/new', component: CreateRecipePageComponent },
     { path: 'recipe/update/:recipeId', component: CreateRecipePageComponent },
