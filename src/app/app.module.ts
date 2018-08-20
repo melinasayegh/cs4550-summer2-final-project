@@ -22,6 +22,7 @@ import { RandomRecipeComponent } from './components/random-recipe/random-recipe.
 import { UserServiceClient } from './services/user.service.client';
 import {RecipeServiceClient} from './services/recipe.service.client';
 import { ProfileSettingsComponent } from './components/profile-settings/profile-settings.component';
+import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ProfileSettingsComponent } from './components/profile-settings/profile-
     RecipePageComponent,
     CreateRecipePageComponent,
     RandomRecipeComponent,
-    ProfileSettingsComponent
+    ProfileSettingsComponent,
+    AdminPageComponent
   ],
   imports: [
     BrowserModule,
