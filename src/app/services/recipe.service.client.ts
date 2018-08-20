@@ -36,6 +36,17 @@ export class RecipeServiceClient {
         });
     }
 
+    updateRecipe = (recipeId, recipe) => {
+        return fetch(LOCAL_URL + 'recipe/' + recipeId, {
+            method: 'put',
+            body: JSON.stringify(recipe),
+            credentials: 'include',
+            headers: {
+                'content-type': 'application/json'
+            }
+        });
+    }
+
     deleteRecipe = (recipeId) => {
         return fetch(LOCAL_URL + 'recipe/' + recipeId, {
             method: 'delete',
