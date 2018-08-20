@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RecipeServiceClient } from '../../services/recipe.service.client';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-search-results-page',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchResultsPageComponent implements OnInit {
 
-  constructor() { }
+  recipeTitle: String;
+  recipes = <any>[];
+
+  constructor(private activatedRoute: ActivatedRoute,
+              private recipeService: RecipeServiceClient) { }
 
   ngOnInit() {
+      this.activatedRoute.params.subscribe(params => {
+        this.recipeTitle = params['recipeTitle'];
+
+          this.recipeService.findRecipesByTitle(this.recipeTitle)
+              .then(recipes => this.recipes = recipes);
+      });
   }
 
 }

@@ -12,7 +12,6 @@ import {AdminUsersComponent} from './pages/admin-users/admin-users.component';
 
 const appRoutes: Routes = [
     { path: '',                 component: HomePageComponent },
-    { path: 'home',             component: HomePageComponent },
     { path: 'login',            component: LoginPageComponent },
     { path: 'admin',            component: AdminPageComponent },
     { path: 'admin/user',            component: AdminUsersComponent },
@@ -21,7 +20,7 @@ const appRoutes: Routes = [
     { path: 'admin/recipe/:recipeId',            component: AdminPageComponent },
     { path: 'register',         component: RegisterPageComponent },
     { path: 'profile',          component: ProfilePageComponent },
-    { path: 'results/:search',  component: SearchResultsPageComponent },
+    { path: 'results/:recipeTitle',  component: SearchResultsPageComponent },
     { path: 'recipe/:recipeId', component: RecipePageComponent },
     { path: 'recipe/create/new', component: CreateRecipePageComponent },
     { path: 'recipe/update/:recipeId', component: CreateRecipePageComponent },

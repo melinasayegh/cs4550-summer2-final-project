@@ -25,6 +25,13 @@ export class RecipeServiceClient {
         }).then(response => response.json());
     }
 
+    findRecipesByTitle = (recipeTitle) => {
+        return fetch(LOCAL_URL + 'results/' + recipeTitle, {
+            method: 'get',
+            credentials: 'include'
+        }).then(response => response.json());
+    }
+
     createRecipe = (recipe) => {
         return fetch(LOCAL_URL + 'recipe', {
             method: 'post',

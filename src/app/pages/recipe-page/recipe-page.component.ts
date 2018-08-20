@@ -17,24 +17,7 @@ export class RecipePageComponent implements OnInit {
     username: String
   };
 
-  recipe = {
-      _id: String,
-      title: String,
-      image: String,
-      creator: String,
-      description: String,
-      ingredients: [String],
-      directions: [String],
-      prepTime: Number,
-      cookTime: Number,
-      createdAt: Date,
-      updatedAt: Date,
-      numServings: Number,
-      tags: [String],
-      reviews: [{
-          _id: String
-      }]
-  };
+  recipe = <any>{};
   directions: [String];
   ingredients: [String];
   comment: String;

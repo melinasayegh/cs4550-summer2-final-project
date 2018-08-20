@@ -10,12 +10,7 @@ import {ActivatedRoute} from '@angular/router';
 export class RecipePreviewComponent implements OnInit {
 
     @Input() recipeId = <any>{};
-    recipe = {
-        _id: String,
-        title: String,
-        image: String,
-        tags: [String]
-    };
+    recipe = <any>{};
 
     constructor(private recipeService: RecipeServiceClient,
                 private activatedRoute: ActivatedRoute) {
@@ -23,7 +18,6 @@ export class RecipePreviewComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log('in preview recipe' + this.recipeId);
         this.recipeService.findRecipeById(this.recipeId)
             .then(recipe => this.recipe = recipe);
     }
