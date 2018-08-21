@@ -5,30 +5,43 @@
     This page is reserved for users with Administrator privileges.
   </div>
 
-  <div class="row"
-       *ngIf="isAdmin">
-    <div class="col-sm-5">
+  <div *ngIf="isAdmin">
+    <div>
+      <h1>Admin</h1>
 
+        <ul class="nav nav-tabs row">
+          <li class="nav-item webdev">
+            <a class="nav-link" routerLink="/admin/user">
+              Users
+            </a>
+          </li>
+          <li>
+            <a class="nav-link active" routerLink="/admin/recipe">
+              Recipes
+            </a>
+          </li>
+        </ul>
 
-      <div>
-        <h1>Admin</h1>
-        <a href="/admin/recipe">Recipes</a> |
-        <a href="/admin/user">Users</a>
-        <h2>Recipes</h2>
-      </div>
+        <br/>
 
-
-      <ul class="list-group">
-        <li *ngFor="let recipe of allRecipes"
-            ngClass=""
-            class="list-group-item">
-          {{recipe.title}}
-          <br/>
-          <a routerLink="/admin/recipe/{{recipe._id}}"
-             class="btn btn-outline-secondary float-right">Edit Recipe</a>
-        </li>
-      </ul>
+      <h2>Recipes</h2>
     </div>
+
+
+
+    <div class="row">
+      <div class="col-5">
+        <ul class="list-group">
+          <li *ngFor="let recipe of allRecipes"
+              ngClass=""
+              class="list-group-item">
+            {{recipe.title}}
+            <br/>
+            <a routerLink="/admin/recipe/{{recipe._id}}"
+               class="btn btn-outline-secondary float-right">Edit Recipe</a>
+          </li>
+        </ul>
+      </div>
     <div class="col-7">
       <app-recipe-creator *ngIf="recipeTitle !== ''"></app-recipe-creator>
     </div>

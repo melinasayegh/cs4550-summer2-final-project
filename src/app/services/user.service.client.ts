@@ -72,5 +72,18 @@ export class UserServiceClient {
             credentials: 'include'
         }).then(response => response.json());
     }
+    adminUpdatesUser(userId, user) {
+        return fetch(LOCAL_URL + 'admin/user/update/' + userId, {
+            method: 'put',
+            body: JSON.stringify(user),
+            credentials: 'include',
+        }).then(response => response.json());
+    }
+    adminDeletesUser(userId) {
+        return fetch(LOCAL_URL + 'admin/user/delete/' + userId, {
+            method: 'delete',
+            credentials: 'include',
+        });
+    }
 
 }
