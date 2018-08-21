@@ -14,7 +14,7 @@ export class AdminUsersComponent implements OnInit {
     selectedFirstName = '';
     selectedLastName = '';
     selectedUsername = '';
-    isValidAdmin = '';
+    isValidAdmin = false;
 
     constructor(private recipeService: RecipeServiceClient,
                 private userService: UserServiceClient,
@@ -35,8 +35,20 @@ export class AdminUsersComponent implements OnInit {
 
     ngOnInit() {
 
-        this.userService.profile()
-            .then(user => this.isValidAdmin = user.isAdmin);
+        this.userService.currentUser()
+            .then(user => {
+                if (user.username !== undefined) {
+
+                    if ((user.username === 'admin') && (user.password === 'admin')) {
+                        this.isValidAdmin = true;
+                    } else {
+                        this.isValidAdmin = false;
+                    }
+                } else {
+                    this.isValidAdmin = false;
+                }
+
+            });
 
         this.userService.findAllUsers()
             .then(users => this.allUsers = users);

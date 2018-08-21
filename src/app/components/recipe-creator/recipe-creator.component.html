@@ -67,9 +67,8 @@
             &nbsp;
           <button (click)="createRecipe()" class="btn custom-btn create-btn">Create</button>
             &nbsp;
-            <button class="btn btn-danger float-right delBtn">Delete</button>
-
-
+            <button class="btn btn-danger float-right delBtn"
+                    *ngIf="myUrl[0] == 'admin'">Delete</button>
         </span>
       </div>
     </form>

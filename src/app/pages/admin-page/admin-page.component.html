@@ -1,19 +1,22 @@
 <app-nav-bar></app-nav-bar>
 
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-5">
-      <div class="alert" *ngIf="!isAdmin">
-        This page is reserved for users with Administrator privileges.
-      </div>
+  <div class="alert" *ngIf="!isAdmin">
+    This page is reserved for users with Administrator privileges.
+  </div>
 
-      <div [hidden]="isAdmin !== true">
+  <div class="row"
+       *ngIf="isAdmin">
+    <div class="col-sm-5">
+
+
+      <div>
         <h1>Admin</h1>
         <a href="/admin/recipe">Recipes</a> |
         <a href="/admin/user">Users</a>
         <h2>Recipes</h2>
-
       </div>
+
 
       <ul class="list-group">
         <li *ngFor="let recipe of allRecipes"
