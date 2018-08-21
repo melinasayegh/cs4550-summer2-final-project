@@ -85,5 +85,14 @@ export class UserServiceClient {
             credentials: 'include',
         });
     }
-
+    adminCreatesUser(user) {
+        return fetch(LOCAL_URL + 'admin/user/create', {
+            method: 'post',
+            body: JSON.stringify(user),
+            credentials: 'include',
+            headers: {
+                'content-type': 'application/json'
+            }
+        });
+    }
 }

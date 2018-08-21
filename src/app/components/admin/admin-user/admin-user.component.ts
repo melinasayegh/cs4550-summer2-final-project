@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {UserServiceClient} from '../../services/user.service.client';
+import {UserServiceClient} from '../../../services/user.service.client';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
@@ -65,5 +65,4 @@ export class AdminUserComponent implements OnInit {
                 this.email = user.email;
             });
     }
-
 }
