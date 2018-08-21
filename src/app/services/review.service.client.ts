@@ -6,35 +6,35 @@ const HEROKU_URL = 'https://community-cookings-server.herokuapp.com/api/';
 @Injectable()
 export class ReviewServiceClient {
     findAllReviews = () => {
-        return fetch(HEROKU_URL + 'review', {
+        return fetch(LOCAL_URL + 'review', {
             method: 'get',
             credentials: 'include'
         }).then(response => response.json());
     }
 
     findReviewById = (reviewId) => {
-        return fetch(HEROKU_URL + 'review/' + reviewId, {
+        return fetch(LOCAL_URL + 'review/' + reviewId, {
             method: 'get',
             credentials: 'include'
         }).then(response => response.json());
     }
 
     findReviewsForRecipe = (recipeId) => {
-        return fetch(HEROKU_URL + 'recipe/' + recipeId + '/review', {
+        return fetch(LOCAL_URL + 'recipe/' + recipeId + '/review', {
             method: 'get',
             credentials: 'include'
         }).then(response => response.json());
     }
 
     findReviewsForUser = () => {
-        return fetch(HEROKU_URL + 'review/user', {
+        return fetch(LOCAL_URL + 'review/user', {
             method: 'get',
             credentials: 'include'
         }).then(response => response.json());
     }
 
     createReview = (recipeId, review) => {
-        return fetch(HEROKU_URL + 'recipe/' + recipeId + '/review', {
+        return fetch(LOCAL_URL + 'recipe/' + recipeId + '/review', {
             method: 'post',
             body: JSON.stringify(review),
             credentials: 'include',
@@ -45,7 +45,7 @@ export class ReviewServiceClient {
     }
 
     updateReview = (recipeId, reviewId, review) => {
-        return fetch(HEROKU_URL + 'recipe/' + recipeId + 'recipe/' + reviewId, {
+        return fetch(LOCAL_URL + 'recipe/' + recipeId + 'recipe/' + reviewId, {
             method: 'put',
             body: JSON.stringify(review),
             credentials: 'include',
@@ -56,7 +56,7 @@ export class ReviewServiceClient {
     }
 
     deleteReview = (reviewId) => {
-        return fetch(HEROKU_URL + 'review/' + reviewId, {
+        return fetch(LOCAL_URL + 'review/' + reviewId, {
             method: 'delete',
             credentials: 'include',
             headers: {

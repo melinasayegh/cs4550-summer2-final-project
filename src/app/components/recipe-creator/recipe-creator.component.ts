@@ -10,6 +10,7 @@ import {RecipeServiceClient} from '../../services/recipe.service.client';
 })
 export class RecipeCreatorComponent implements OnInit {
 
+    myUrl;
     isEditing = false;
     recipeId;
     recipe = {
@@ -44,6 +45,7 @@ export class RecipeCreatorComponent implements OnInit {
                 private userService: UserServiceClient,
                 private recipeService: RecipeServiceClient) {
         this.route.params.subscribe(params => this.loadRecipe(params['recipeId']));
+        this.myUrl = this.route.snapshot.url;
     }
 
     loadRecipe = (recipeId) => {
@@ -58,8 +60,8 @@ export class RecipeCreatorComponent implements OnInit {
     }
 
     setFields = () => {
-        let ingredientsString = this.recipe.ingredients.join('\n');
-        let directionsString = this.recipe.directions.join('\n');
+        const ingredientsString = this.recipe.ingredients.join('\n');
+        const directionsString = this.recipe.directions.join('\n');
 
         this.isEditing = true;
         this.title = this.recipe.title;

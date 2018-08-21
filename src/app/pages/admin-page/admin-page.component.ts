@@ -12,7 +12,7 @@ export class AdminPageComponent implements OnInit {
 
     allRecipes = [];
     recipeTitle = '';
-    isAdmin;
+    isAdmin = false;
     username;
     password;
 
