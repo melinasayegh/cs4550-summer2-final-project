@@ -12,7 +12,7 @@ export class AdminPageComponent implements OnInit {
 
     allRecipes = [];
     recipeTitle = '';
-    isAdmin;
+    isAdmin = false;
     username;
     password;
 
@@ -21,14 +21,11 @@ export class AdminPageComponent implements OnInit {
                 private activatedRoute: ActivatedRoute) {
         this.activatedRoute.params.subscribe(params => this.selectRecipe(params['recipeId']));
     }
-
-
     selectRecipe(recipeId) {
         this.recipeService
             .findRecipeById(recipeId)
             .then(recipe => this.recipeTitle = recipe.title);
     }
-
     ngOnInit() {
         this.userService.currentUser()
             .then(user => {

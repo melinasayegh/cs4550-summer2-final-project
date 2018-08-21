@@ -9,6 +9,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class AdminUserComponent implements OnInit {
 
+    userId;
     user = {
         username: String
     };
@@ -22,7 +23,10 @@ export class AdminUserComponent implements OnInit {
     constructor(private router: Router,
                 private route: ActivatedRoute,
                 private userService: UserServiceClient) {
-        this.route.params.subscribe(params => this.getUser(params['userId']));
+        this.route.params.subscribe(params => {
+            this.getUser(params['userId']);
+            this.userId = params['userId'];
+        });
     }
 
     ngOnInit() {
@@ -43,16 +47,11 @@ export class AdminUserComponent implements OnInit {
             lastName: this.lastName,
             email: this.email
         };
-        this.userService.updateProfile(newUser);
-
+        this.userService.adminUpdatesUser(this.userId, newUser);
     }
     deleteUser() {
-        this.userService.deleteProfile()
+        this.userService.adminDeletesUser(this.userId)
             .then((response) => this.router.navigate(['login']));
-    }
-    logout() {
-        this.userService.logout()
-            .then(() => this.router.navigate(['login']));
     }
     getUser(userId) {
         this.userService.findUserById(userId)
