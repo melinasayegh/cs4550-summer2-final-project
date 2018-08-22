@@ -27,7 +27,7 @@
             <div class="input-group">
                 <input class="form-control" type="search" [(ngModel)]="searchInput"
                        placeholder="Search for a recipe..." aria-label="Search"/>
-              <i class="btn btn-light fa fa-search" (click)="search(searchInput)"></i>
+              <i class="btn btn-light fa fa-search" routerLink="/results/{{searchInput}}"></i>
             </div>
           </li>
         </ul>
