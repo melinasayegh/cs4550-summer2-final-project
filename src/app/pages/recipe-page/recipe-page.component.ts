@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {UserServiceClient} from '../../services/user.service.client';
-import {RecipeServiceClient} from '../../services/recipe.service.client';
-import {ActivatedRoute} from '@angular/router';
-import {ReviewServiceClient} from '../../services/review.service.client';
+import { UserServiceClient } from '../../services/user.service.client';
+import { RecipeServiceClient } from '../../services/recipe.service.client';
+import { ActivatedRoute } from '@angular/router';
+import { ReviewServiceClient } from '../../services/review.service.client';
 
 @Component({
     selector: 'app-recipe-page',
@@ -13,59 +13,49 @@ export class RecipePageComponent implements OnInit {
 
     userCreator = false;
     isLoggedIn = false;
+  
+  creator = {
+    username: String
+  };
 
-    creator = {
-        username: String
-    };
+  recipe = <any>{};
+  directions: [String];
+  ingredients: [String];
+  review: String;
 
-    recipe = <any>{};
-    directions: [String];
-    ingredients: [String];
-    comment: String;
-    possibleReview = {
-        text: String,
-        createdAt: Date,
-        updatedAt: Date,
-        user: {},
-    };
+  constructor(private route: ActivatedRoute,
+              private userService: UserServiceClient,
+              private recipeService: RecipeServiceClient,
+              private reviewService: ReviewServiceClient) {}
 
-    constructor(private route: ActivatedRoute,
-                private userService: UserServiceClient,
-                private recipeService: RecipeServiceClient,
-                private reviewService: ReviewServiceClient) {}
+  ngOnInit() {
+      this.userService.profile()
+          .then(loggedInUser => {
+              this.userCreator = (this.recipe.creator === loggedInUser._id);
+              this.isLoggedIn = true;
+          }, () => this.isLoggedIn = false);
+      this.route.params.subscribe(params => this.findRecipeById(params['recipeId']));
+  }
 
-    ngOnInit() {
-        this.userService.profile()
-            .then(loggedInUser => {
-                this.userCreator = (this.recipe.creator === loggedInUser._id);
-                this.isLoggedIn = true;
-            }, () => this.isLoggedIn = false);
-        this.route.params.subscribe(params => this.findRecipeById(params['recipeId']));
-    }
+  fixDate = (date) => {
+      return new Date(date).toLocaleString();
+  }
 
-    fixDate = (date) => {
-        return new Date(date).toLocaleString();
-    }
+  deleteRecipe = () => {
+      this.recipeService.deleteRecipe(this.recipe._id);
+  }
 
-    deleteRecipe = () => {
-        this.recipeService.deleteRecipe(this.recipe._id);
-    }
-
-    submitReview() {
-        if (this.isLoggedIn) {
-            // this.possibleReview.text = this.comment;
-            // this.reviewService.createReview(this.route.params['recipeId'], )
-        } else {
-            alert('Please sign in before leaving a review.');
-        }
-    }
-
-    findRecipeById = (recipeId) => {
-        this.recipeService.findRecipeById(recipeId)
-            .then(recipe => {
-                this.recipe = recipe;
-                this.userService.findUserById(recipe.creator)
-                    .then(user => this.creator = user);
-            });
+  submitReview() {
+    if (this.isLoggedIn) {
+        const newReview = {
+            text: this.review,
+            createdAt: new Date(),
+            updatedAt: new Date(),
+            user: this.recipe.creator._id,
+            recipe: this.recipe._id
+        };
+        this.reviewService.createReview(this.recipe._id, newReview);
+    } else {
+        alert('Please sign in first.');
     }
 }

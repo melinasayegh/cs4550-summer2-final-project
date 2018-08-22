@@ -11,22 +11,28 @@ div.featured-recipes {
     text-align: center;
 }
 
-div.featured-recipes>h3 {
+.my-recipes {
+    display: block;
+    margin-top: -50px;
+    text-align: center;
+}
+
+div.featured-recipes>h3, div.my-recipes>h3 {
     margin: 20px auto;
 }
 
-ul.featured-recipes-list {
+ul.featured-recipes-list, .my-recipes-list {
     width: 90%;
     margin: auto;
     padding-left: 0;
 }
 
-ul.featured-recipes-list>li {
+ul.featured-recipes-list>li, .my-recipes-list>li {
     margin: auto;
     list-style-type: none;
 }
 
-ul.featured-recipes-list>li {
+ul.featured-recipes-list>li, .my-recipes-list>li {
     display: inline-block;
     margin: auto 2.5% 5% 2.5%;
 }
