@@ -10,10 +10,12 @@ div.profile-bio {
     padding: 15px;
     max-height: 85px;
     word-wrap: break-word;
+    margin: 20px auto;
 }
 
 div.profile-bio>h4 {
     margin: 20px auto;
+    display: inline;
 }
 
 ul.profile-tabs-list {
@@ -147,5 +149,16 @@ ul.recipe-review-list>li {
     list-style-type: none;
     padding: 0 0 15px 0;
     width: 90%;
+}
 
+i.fa-check-circle {
+    display: inline;
+    margin: auto 15px auto -15px;
+    font-size: 1.25rem;
+    vertical-align: super;
+    color: #59821e;
+}
+
+i.hide, div.hide, li.hide {
+    display: none;
 }

@@ -171,3 +171,11 @@ div.user>h4, div.recipe-title>h4 {
 div.hide {
     display: none;
 }
+
+h6.recipe-creator-username {
+    color: #59821e;
+}
+
+h6.recipe-creator-username:hover {
+    cursor: pointer;
+}

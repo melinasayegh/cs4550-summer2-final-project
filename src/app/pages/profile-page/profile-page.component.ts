@@ -44,7 +44,6 @@ export class ProfilePageComponent implements OnInit {
             this.profileUser = profileUser;
             this.faveRecipes = profileUser.favoriteRecipes;
             this.myRecipes = profileUser.myRecipes;
-            console.log(this.profileUser);
 
         });
         this.userService.currentUser().then(currUser => {
