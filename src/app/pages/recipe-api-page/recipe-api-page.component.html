@@ -7,14 +7,6 @@
         <h2>{{title}}</h2>
         <h5>Created by: {{sourceName}}</h5>
 
-        <div class="recipe-ratings">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="far fa-star"></i>
-          <i class="far fa-star"></i>
-        </div>
-
         <h4 class="pull-left winePairing">Wine Pairing:</h4>
         <br/>
         <div class="recipe-description">
@@ -27,7 +19,7 @@
           <br/>
           <h5>{{recipe.sourceUrl}}</h5></a>
 
-        <div class="category-tags">
+        <div class="category-tags row">
           <app-category-tag *ngIf="recipe.vegetarian" [category]="'VEGETARIAN'"></app-category-tag>
           <app-category-tag *ngIf="recipe.vegan" [category]="'VEGETARIAN'"></app-category-tag>
           <app-category-tag *ngIf="recipe.dairyFree" [category]="'DAIRY FREE'"></app-category-tag>

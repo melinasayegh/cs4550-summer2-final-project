@@ -8,15 +8,7 @@
     <div class="recipe-description">
       <h5>{{recipe.title}}</h5>
 
-      <div class="recipe-ratings">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="far fa-star"></i>
-        <i class="far fa-star"></i>
-      </div>
-
-      <div class="category-tags">
+      <div class="category-tags row col-10 centered">
         <app-category-tag *ngIf="recipe.vegetarian" [category]="'VEGETARIAN'"></app-category-tag>
         <app-category-tag *ngIf="recipe.vegan" [category]="'VEGETARIAN'"></app-category-tag>
         <app-category-tag *ngIf="recipe.dairyFree" [category]="'DAIRY FREE'"></app-category-tag>
