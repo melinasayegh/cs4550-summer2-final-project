@@ -58,4 +58,15 @@ export class RecipePageComponent implements OnInit {
     } else {
         alert('Please sign in first.');
     }
+    }
+
+    findRecipeById = (recipeId) => {
+        this.recipeService.findRecipeById(recipeId)
+            .then(recipe => {
+                this.recipe = recipe;
+                console.log(this.recipe.reviews[0]._id);
+                this.userService.findUserById(recipe.creator)
+                    .then(user => this.creator = user);
+            });
+    }
 }
