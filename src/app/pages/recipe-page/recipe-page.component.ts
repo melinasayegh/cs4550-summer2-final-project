@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import {UserServiceClient} from '../../services/user.service.client';
-import {RecipeServiceClient} from '../../services/recipe.service.client';
-import {ActivatedRoute} from '@angular/router';
+import { UserServiceClient } from '../../services/user.service.client';
+import { RecipeServiceClient } from '../../services/recipe.service.client';
+import { ActivatedRoute } from '@angular/router';
+import { ReviewServiceClient } from '../../services/review.service.client';
 
 @Component({
-  selector: 'app-recipe-page',
-  templateUrl: './recipe-page.component.html',
-  styleUrls: ['./recipe-page.component.css']
+    selector: 'app-recipe-page',
+    templateUrl: './recipe-page.component.html',
+    styleUrls: ['./recipe-page.component.css']
 })
 export class RecipePageComponent implements OnInit {
 
     userCreator = false;
     isLoggedIn = false;
     currUser = <any>{};
-
   creator = {
     username: String
   };
@@ -23,10 +23,12 @@ export class RecipePageComponent implements OnInit {
   ingredients: [String];
   comment: String;
   isFavorited: boolean;
+  review: String;]
 
   constructor(private route: ActivatedRoute,
               private userService: UserServiceClient,
-              private recipeService: RecipeServiceClient) {}
+              private recipeService: RecipeServiceClient,
+              private reviewService: ReviewServiceClient) {}
 
   ngOnInit() {
       this.userService.currentUser()
@@ -49,11 +51,18 @@ export class RecipePageComponent implements OnInit {
 
   submitReview() {
     if (this.isLoggedIn) {
-        // create a recipe
+        const newReview = {
+            text: this.review,
+            createdAt: new Date(),
+            updatedAt: new Date(),
+            user: this.recipe.creator._id,
+            recipe: this.recipe._id
+        };
+        this.reviewService.createReview(this.recipe._id, newReview);
     } else {
         alert('Please sign in first.');
     }
-  }
+    }
 
   findRecipeById = (recipeId) => {
     this.recipeService.findRecipeById(recipeId)
@@ -112,4 +121,13 @@ export class RecipePageComponent implements OnInit {
           .then(response => this.ngOnInit());
   }
 
+    findRecipeById = (recipeId) => {
+        this.recipeService.findRecipeById(recipeId)
+            .then(recipe => {
+                this.recipe = recipe;
+                console.log(this.recipe.reviews[0]._id);
+                this.userService.findUserById(recipe.creator)
+                    .then(user => this.creator = user);
+            });
+    }
 }

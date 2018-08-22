@@ -27,7 +27,11 @@ import { RecipeCreatorComponent } from './components/recipe-creator/recipe-creat
 import { AdminUsersComponent } from './pages/admin-users/admin-users.component';
 import { AdminUserComponent } from './components/admin/admin-user/admin-user.component';
 import { RecipesPageComponent } from './pages/recipes-page/recipes-page.component';
+import {ReviewServiceClient} from './services/review.service.client';
+import {RecipeApiServiceClient} from './services/recipe-api.service.client';
+import { RecipeApiPreviewComponent } from './components/recipe-api-preview/recipe-api-preview.component';
 import { AdminCreateUserComponent } from './components/admin/admin-create-user/admin-create-user.component';
+import {ReviewServiceClient} from './services/review.service.client';
 
 @NgModule({
   declarations: [
@@ -53,6 +57,7 @@ import { AdminCreateUserComponent } from './components/admin/admin-create-user/a
     AdminUsersComponent,
     AdminUserComponent,
     RecipesPageComponent,
+    RecipeApiPreviewComponent,
     AdminCreateUserComponent
   ],
   imports: [
@@ -62,7 +67,9 @@ import { AdminCreateUserComponent } from './components/admin/admin-create-user/a
   ],
   providers: [
       UserServiceClient,
-      RecipeServiceClient
+      RecipeServiceClient,
+      ReviewServiceClient,
+      RecipeApiServiceClient
   ],
   bootstrap: [AppComponent]
 })

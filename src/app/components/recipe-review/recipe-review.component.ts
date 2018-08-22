@@ -13,7 +13,18 @@ export class RecipeReviewComponent implements OnInit {
    @Input() reviewId = <any>{};
    @Input() currPage: String;
 
-  review = <any>{};
+  review: {
+      text: String,
+      user: {
+          username: String
+      },
+      recipe: {
+          _id: String,
+          title: String,
+          image: String
+      },
+      updatedAt: Date
+  }
 
   constructor(private reviewService: ReviewServiceClient) { }
 
@@ -23,9 +34,7 @@ export class RecipeReviewComponent implements OnInit {
 
   ngOnInit() {
       this.reviewService.findReviewById(this.reviewId)
-          .then(review => {
-              this.review = review;
-          });
+          .then(review => this.review = review);
   }
 
   isNotCurrentPage(pageType) {
