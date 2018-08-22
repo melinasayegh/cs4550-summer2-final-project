@@ -37,6 +37,7 @@ div.recipe-description>h5 {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    font-size: 1.1rem;
 }
 
 div.recipe-description>p {

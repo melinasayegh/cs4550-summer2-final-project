@@ -15,10 +15,7 @@ export class HomePageComponent implements OnInit {
       _id: String
     }
   }];
-  user: {
-      username: String,
-      myRecipes: [{}]
-  }
+  user = <any>{};
   isLoggedIn = false;
 
   constructor(private recipeService: RecipeServiceClient,

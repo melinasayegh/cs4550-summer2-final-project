@@ -18,7 +18,7 @@
             </li>
         </ul>
     </div>
-    <div *ngIf="isLoggedIn" class="my-recipes">
+    <div *ngIf="isLoggedIn && user.isChef" class="my-recipes">
         <h3>My Recipes</h3>
         <ul class="my-recipes-list">
             <li>
