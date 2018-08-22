@@ -10,9 +10,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class AdminUserComponent implements OnInit {
 
     selectedUserId;
-    user = {
-        username: String
-    };
+    user = <any>{};
     username: String;
     password: String;
     firstName: String;
@@ -30,7 +28,7 @@ export class AdminUserComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.userService.profile()
+        this.userService.profile(this.selectedUserId)
             .then(user => {
                 this.username = user.username;
                 this.password = user.password;

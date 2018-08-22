@@ -14,8 +14,11 @@
   <div class="recipe">
     <div class="recipe-header-row">
       <div class="recipe-title-description">
-        <h2>{{recipe.title}}</h2>
-        <h6>Created by: {{recipe.creator.username}}</h6>
+          <div class="recipe-title">
+            <i class="fa-heart" [ngClass]="[isFavorited ? 'fas' : 'far']" (click)="favoriteRecipe()"></i>
+            <h2>{{recipe.title}}</h2>
+          </div>
+        <h6>Created by: {{creator.username}}</h6>
         <h6>Created on {{fixDate(recipe.createdAt)}}</h6>
         <h6>Updated on {{fixDate(recipe.updatedAt)}}</h6>
 

@@ -3,31 +3,47 @@
   <aside class="profile-nav-bar">
 
     <div class="profile-bio">
-        <b>{{user.username}}</b>
-  </div>
+        <h4>{{profileUser.username}}</h4>
+    </div>
 
-      <ul class="profile-tabs-list">
-        <li [ngClass]="{'active': selectedTab == 'Settings'}"
-            (click)="selectTab('Settings')">
-          Settings
-        </li>
-        <li [ngClass]="{'active': selectedTab == 'Friends'}"
-            (click)="selectTab('Friends')">
-          Friends
-        </li>
-        <li [ngClass]="{'active': selectedTab == 'My Recipes'}"
-            (click)="selectTab('My Recipes')">
-          My Recipes
-        </li>
-        <li [ngClass]="{'active': selectedTab == 'Favorites'}"
-            (click)="selectTab('Favorites')">
-          Favorites
-        </li>
-        <li [ngClass]="{'active': selectedTab == 'Reviews'}"
-            (click)="selectTab('Reviews')">
-          Reviews
-        </li>
-      </ul>
+    <button (click)="addFriend(profileUser)"
+            class="btn custom-button add-friend-btn"
+            id="add-friend-btn"
+            type="button"
+            [ngClass]="{'hide' : isOwnProfile || isFriend}">
+      Add Friend
+    </button>
+
+    <button (click)="unfriend(profileUser)"
+            class="btn custom-button unfriend-btn"
+            id="unfriend-btn"
+            type="button"
+            [ngClass]="{'hide' : isOwnProfile || !isFriend}">
+      Unfriend
+    </button>
+
+    <ul class="profile-tabs-list">
+      <li [ngClass]="{'active': selectedTab == 'Friends'}"
+          (click)="selectTab('Friends')">
+        Friends
+      </li>
+      <li [ngClass]="{'active': selectedTab == 'My Recipes'}"
+          (click)="selectTab('My Recipes')">
+        My Recipes
+      </li>
+      <li [ngClass]="{'active': selectedTab == 'Favorites'}"
+          (click)="selectTab('Favorites')">
+        Favorites
+      </li>
+      <li [ngClass]="{'active': selectedTab == 'Reviews'}"
+          (click)="selectTab('Reviews')">
+        Reviews
+      </li>
+      <li [ngClass]="{'active': selectedTab == 'Settings', 'hide' : !isOwnProfile}"
+          (click)="selectTab('Settings')">
+        Settings
+      </li>
+    </ul>
   </aside>
 
   <div class="settings-view" *ngIf="selectedTab === 'Settings'">
@@ -36,18 +52,20 @@
 
   <div class="friends-view" *ngIf="selectedTab === 'Friends'">
     <ul class="friends-list">
-      <li><app-friend-preview></app-friend-preview></li>
-      <li><app-friend-preview></app-friend-preview></li>
-      <li><app-friend-preview></app-friend-preview></li>
+      <li *ngFor="let friend of profileUser.friends">
+        <app-friend-preview [user]="friend"></app-friend-preview>
+      </li>
     </ul>
   </div>
 
   <div class="my-recipes-view" *ngIf="selectedTab === 'My Recipes'">
     <ul class="my-recipes-list">
       <li>
-        <div class="create-recipe" routerLink="/recipe/create/new">
+        <div class="create-recipe" routerLink="/recipe/create/new" [ngClass]="{'hide' : !isOwnProfile}">
+          <div class="create-recipe-content">
             <i class="fa fa-plus"></i>
             <h3>Create a new recipe</h3>
+          </div>
         </div>
       </li>
       <li><app-recipe-preview *ngFor="let recipe of myRecipes" [recipeId]="recipe._id"></app-recipe-preview></li>

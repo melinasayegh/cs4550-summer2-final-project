@@ -50,6 +50,5 @@ export class NavBarComponent implements OnInit {
                     this.isAdminUser = false;
                 }
             });
-        console.log(this.isLoggedIn);
     }
 }

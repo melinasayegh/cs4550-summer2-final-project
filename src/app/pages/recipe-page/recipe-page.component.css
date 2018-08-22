@@ -22,7 +22,11 @@ div.recipe-title-description {
     width: 40%;
 }
 
-h2 {
+div.recipe-title>h2 {
+    display: inline;
+}
+
+div.recipe-title, h2 {
     margin: auto auto 20px auto;
 }
 
@@ -126,4 +130,16 @@ div.recipe-information {
 
 ul {
     margin-bottom: 0;
+}
+
+i.fa-heart {
+    display: inline;
+    margin: auto 25px auto -25px;
+    font-size: 1.25rem;
+    vertical-align: super;
+    color: #59821e;
+}
+
+i.fa-heart:hover {
+    cursor: pointer;
 }
