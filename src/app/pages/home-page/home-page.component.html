@@ -1,15 +1,25 @@
 <div>
     <app-nav-bar></app-nav-bar>
 
-    <!--<div class="home-page-tip">-->
-        <!--<p>Did you know?...</p>-->
-    <!--</div>-->
+    <div class="welcome" *ngIf="isLoggedIn">
+        <h4 class="welcome-text">Welcome back, {{user.username}}!</h4>
+    </div>
 
     <div class="featured-recipes">
         <h3>Featured Recipes</h3>
         <ul class="featured-recipes-list">
             <li>
                 <app-recipe-preview *ngFor="let recipe of recipes"
+                                    [recipeId]="recipe._id"></app-recipe-preview>
+            </li>
+        </ul>
+    </div>
+
+    <div *ngIf="isLoggedIn" class="featured-recipes">
+        <h3>My Recipes</h3>
+        <ul class="featured-recipes-list">
+            <li>
+                <app-recipe-preview *ngFor="let recipe of user.myRecipes"
                                     [recipeId]="recipe._id"></app-recipe-preview>
             </li>
         </ul>
