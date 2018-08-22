@@ -30,3 +30,12 @@ ul.featured-recipes-list>li {
     display: inline-block;
     margin: auto 2.5% 5% 2.5%;
 }
+
+.welcome {
+    margin: 15px;
+    text-align: left;
+}
+
+.welcome-text {
+    color: #59821e;
+}

@@ -31,20 +31,24 @@
 
 
     <div class="row">
-      <div class="col-5">
+      <div class="list-div col-md-5 col-lg-5 col-sm-12 col-xs-12">
         <ul class="list-group">
+          <li class="list-group-item">
+            <a routerLink="/admin/recipe"
+               class="btn btn-outline-success btn-block">Create New Recipe</a>
+          </li>
           <li *ngFor="let recipe of allRecipes"
               ngClass=""
               class="list-group-item">
             {{recipe.title}}
-            <br/>
             <a routerLink="/admin/recipe/{{recipe._id}}"
                class="btn btn-outline-secondary float-right">Edit Recipe</a>
           </li>
         </ul>
       </div>
-    <div class="col-7">
-      <app-recipe-creator *ngIf="recipeTitle !== ''"></app-recipe-creator>
-    </div>
+      <div class="col-md-7 col-lg-7 col-sm-12 col-xs-12">
+        <app-recipe-creator *ngIf="recipeTitle !== ''"></app-recipe-creator>
+        <app-recipe-creator></app-recipe-creator>
+      </div>
   </div>
 </div>

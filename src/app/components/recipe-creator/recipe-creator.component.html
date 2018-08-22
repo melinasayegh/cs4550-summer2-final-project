@@ -4,7 +4,6 @@
     <form>
       <h1 *ngIf="!isEditing">Create New Recipe</h1>
       <h1 *ngIf="isEditing">Edit Recipe</h1>
-
       <div class="form-group">
         <label for="titleFld">Recipe Title</label>
         <input class="form-control user-fields" [(ngModel)]="title"
@@ -61,13 +60,13 @@
 
       <div class="create-cancel-btns">
         <span class="float-right">
-          <button routerLink="/home" class="btn cancel-btn btn-dark">Cancel</button>
+          <button *ngIf="!user.isAdmin" routerLink="/home" class="btn cancel-btn btn-dark">Cancel</button>
           &nbsp;
-            <button (click)="updateRecipe()" class="btn custom-btn btn-light">Update</button>
+            <button (click)="updateRecipe()" class="btn custom-btn btn-secondary">Update</button>
             &nbsp;
-          <button (click)="createRecipe()" class="btn custom-btn create-btn">Create</button>
+          <button *ngIf="!user.isAdmin" (click)="createRecipe()" class="btn custom-btn create-btn">Create</button>
             &nbsp;
-            <button class="btn btn-danger float-right delBtn"
+            <button class="btn btn-danger float-right delBtn" (click)="deleteRecipe()"
                     *ngIf="myUrl[0] == 'admin'">Delete</button>
         </span>
       </div>
