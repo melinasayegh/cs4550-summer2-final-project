@@ -10,7 +10,7 @@
             class="btn custom-button add-friend-btn"
             id="add-friend-btn"
             type="button"
-            [ngClass]="{'hide' : isOwnProfile || isFriend}">
+            [ngClass]="{'hide' : isOwnProfile || isFriend || (currUser === undefined)}">
       Add Friend
     </button>
 

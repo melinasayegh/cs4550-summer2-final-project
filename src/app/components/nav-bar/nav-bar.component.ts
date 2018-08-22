@@ -11,10 +11,10 @@ import {RecipeServiceClient} from "../../services/recipe.service.client";
 })
 export class NavBarComponent implements OnInit {
 
-    isLoggedIn = false;
-    isAdminUser = false;
-    isNavbarOpen = false;
-    currentUser = {};
+    isLoggedIn: boolean;
+    isAdminUser: boolean;
+    isNavbarOpen: boolean;
+    currentUser = <any>{};
     searchInput: String;
 
     constructor(private router: Router,
