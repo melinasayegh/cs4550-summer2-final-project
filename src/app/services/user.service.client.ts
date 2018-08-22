@@ -24,7 +24,7 @@ export class UserServiceClient {
             username: username,
             password: password
         };
-        return fetch(HEROKU_URL + 'login', {
+        return fetch(LOCAL_URL + 'login', {
             method: 'post',
             body: JSON.stringify(user),
             credentials: 'include',
@@ -39,8 +39,8 @@ export class UserServiceClient {
             credentials: 'include'
         });
     }
-    profile() {
-        return fetch(HEROKU_URL + 'profile', {
+    profile(userId) {
+        return fetch(HEROKU_URL + 'profile/' + userId, {
             credentials: 'include',
         }).then(response => response.json());
     }
@@ -53,9 +53,12 @@ export class UserServiceClient {
     updateProfile(newProfile) {
         return fetch(HEROKU_URL + 'user/update', {
             method: 'put',
+            headers: {
+                'content-type': 'application/json'
+            },
             body: JSON.stringify(newProfile),
             credentials: 'include',
-        }).then(response => response.json());
+        });
     }
     currentUser() {
         return fetch(HEROKU_URL + 'currentUser', {
@@ -85,5 +88,14 @@ export class UserServiceClient {
             credentials: 'include',
         });
     }
-
+    adminCreatesUser(user) {
+        return fetch(HEROKU_URL + 'admin/user/create', {
+            method: 'post',
+            body: JSON.stringify(user),
+            credentials: 'include',
+            headers: {
+                'content-type': 'application/json'
+            }
+        });
+    }
 }

@@ -1,15 +1,28 @@
 <div>
     <app-nav-bar></app-nav-bar>
 
-    <!--<div class="home-page-tip">-->
-        <!--<p>Did you know?...</p>-->
-    <!--</div>-->
+    <br/>
+    <div class="alert alert-info .alert-dismissible" *ngIf="isLoggedIn && isAlert" role="alert">
+        <button (click)=removeAlert() type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        Welcome back, {{user.username}}!
+    </div>
 
     <div class="featured-recipes">
         <h3>Featured Recipes</h3>
         <ul class="featured-recipes-list">
             <li>
                 <app-recipe-preview *ngFor="let recipe of recipes"
+                                    [recipeId]="recipe._id"></app-recipe-preview>
+            </li>
+        </ul>
+    </div>
+    <div *ngIf="isLoggedIn" class="my-recipes">
+        <h3>My Recipes</h3>
+        <ul class="my-recipes-list">
+            <li>
+                <app-recipe-preview *ngFor="let recipe of user.myRecipes"
                                     [recipeId]="recipe._id"></app-recipe-preview>
             </li>
         </ul>

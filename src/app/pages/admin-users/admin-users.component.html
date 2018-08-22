@@ -10,14 +10,14 @@
             <h1>Admin</h1>
 
             <ul class="nav nav-tabs row">
-                <li class="nav-item webdev">
-                    <a class="nav-link active" routerLink="/admin/user">
-                        Users
-                    </a>
-                </li>
                 <li>
                     <a class="nav-link" routerLink="/admin/recipe">
                         Recipes
+                    </a>
+                </li>
+                <li class="nav-item webdev">
+                    <a class="nav-link active" routerLink="/admin/user">
+                        Users
                     </a>
                 </li>
             </ul>
@@ -28,10 +28,10 @@
         </div>
 
         <div class="row">
-            <div class="col-5">
+            <div class="list-div col-md-5 col-lg-5 col-sm-12 col-xs-12">
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <a routerLink="/admin/user/new"
+                        <a routerLink="/admin/user"
                            class="btn btn-outline-success btn-block">Create New User</a>
                     </li>
                     <li *ngFor="let user of allUsers"
@@ -47,8 +47,9 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-7">
+            <div class="create-div col-md-7 col-lg-7 col-sm-12 col-xs-12">
                 <app-admin-user *ngIf="selectedUsername !== ''"></app-admin-user>
+                <app-admin-create-user *ngIf="selectedUsername === ''"></app-admin-create-user>
             </div>
         </div>
     </div>

@@ -1,6 +1,5 @@
 .navbar {
     background-color: #ececf6;
-    margin-bottom: 20px;
 }
 
 .nav-link {
@@ -29,3 +28,8 @@ div.input-group> .form-control:not(:last-child), .input-group > .custom-select:n
 div.input-group>i {
     margin: 0 0 0 5px;
 }
+
+div.hide {
+    display: none;
+}
+

@@ -6,26 +6,16 @@ aside.profile-nav-bar {
     text-align: center;
 }
 
-div.profile-img {
-    width: 150px;
-    height: 150px;
-    overflow: hidden;
-    margin: 40px auto 15px auto;
-}
-
-div.profile-img>img {
-    width: 100%;
-    min-height: 100%;
-}
-
 div.profile-bio {
     padding: 15px;
     max-height: 85px;
     word-wrap: break-word;
+    margin: 20px auto;
 }
 
-div.profile-bio>h3 {
-    margin: 0 auto;
+div.profile-bio>h4 {
+    margin: 20px auto;
+    display: inline;
 }
 
 ul.profile-tabs-list {
@@ -35,7 +25,6 @@ ul.profile-tabs-list {
 }
 
 ul.profile-tabs-list>li {
-
     margin: auto;
     background-color: #e0eaf3;
     border-bottom: 1px solid #e6e6e6;
@@ -57,10 +46,6 @@ div.settings-view, div.friends-view, div.my-recipes-view, div.favorites-view, di
     width: 75%;
     float: right;
     margin: 30px auto;
-}
-
-div.hide {
-    display: none;
 }
 
 ul.review-list, ul.favorites-list ul.my-recipes-list, ul.friends-list {
@@ -98,4 +83,82 @@ div.create-recipe {
 
 div.create-recipe>h3 {
     display: block;
+}
+
+.hide, div.create-recipe.hide {
+    display: none;
+}
+
+button.add-friend-btn {
+    background: #b4be60;
+    color: white;
+    width: 50%;
+}
+
+button.unfriend-btn {
+    background: #59821e;
+    color: white;
+    width: 50%;
+}
+
+div.create-recipe-content {
+    margin: 50% 0;
+}
+
+i.fa-user {
+    font-size: 1.5rem;
+}
+
+button.hide {
+    display: none;
+}
+
+div.recipe-review {
+    border: 1px solid #e4e6e8;
+    display: inline-block;
+    margin: auto auto 20px auto;
+    cursor: pointer;
+    background-color: white;
+    width: 100%;
+}
+
+div.recipe-review-content {
+    display: block;
+    padding: 25px;
+    text-align: left;
+}
+
+div.review-heading>h5 {
+    float: right;
+}
+
+div.recipe-title>h4, div.recipe-title>h4 {
+    display: inline-block;
+}
+
+div.hide {
+    display: none;
+}
+
+ul.recipe-review-list {
+    padding-left: 0;
+}
+
+ul.recipe-review-list>li {
+    margin: auto;
+    list-style-type: none;
+    padding: 0 0 15px 0;
+    width: 90%;
+}
+
+i.fa-check-circle {
+    display: inline;
+    margin: auto 15px auto -15px;
+    font-size: 1.25rem;
+    vertical-align: super;
+    color: #59821e;
+}
+
+i.hide, div.hide, li.hide {
+    display: none;
 }

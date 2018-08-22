@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-friend-preview',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./friend-preview.component.css']
 })
 export class FriendPreviewComponent implements OnInit {
+
+  @Input() user = <any>{};
 
   constructor() { }
 

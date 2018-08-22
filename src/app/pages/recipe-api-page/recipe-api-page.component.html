@@ -1,0 +1,65 @@
+<div>
+  <app-nav-bar></app-nav-bar>
+
+  <div class="recipe">
+    <div class="recipe-header-row">
+      <div class="recipe-title-description">
+        <h2>{{title}}</h2>
+        <a href="{{recipe.sourceUrl}}"><h6 class="recipe-more-information">More information at: {{recipe.sourceUrl}}</h6></a>
+        <div class="category-tags">
+          <app-category-tag *ngIf="recipe.vegetarian" [category]="'VEGETARIAN'"></app-category-tag>
+          <app-category-tag *ngIf="recipe.vegan" [category]="'VEGETARIAN'"></app-category-tag>
+          <app-category-tag *ngIf="recipe.dairyFree" [category]="'DAIRY FREE'"></app-category-tag>
+          <app-category-tag *ngIf="recipe.veryHealthy" [category]="'VERY HEALTHY'"></app-category-tag>
+          <app-category-tag *ngIf="recipe.sustainable" [category]="'SUSTAINABLE'"></app-category-tag>
+          <app-category-tag *ngIf="recipe.ketogenic" [category]="'KETOGENIC'"></app-category-tag>
+        </div>
+      </div>
+
+      <div class="recipe-image">
+        <img src="{{recipe.image}}">
+      </div>
+    </div>
+
+    <div class="recipe-ingredients-information-row">
+      <div class="recipe-ingredients">
+        <h2>Ingredients</h2>
+        <ul class="recipe-ingredients-list">
+          <li *ngFor="let ingredient of recipe.extendedIngredients">
+            {{ingredient.originalString}}
+          </li>
+        </ul>
+      </div>
+
+      <div class="recipe-information">
+        <ul class="recipe-information-list">
+          <li>
+            <h6>Prep & Cook Time: {{recipe.readyInMinutes}} Min.</h6>
+          </li>
+          <li>
+            <h6>Number Servings: {{recipe.servings}}</h6>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="recipe-directions-row">
+      <div class="recipe-directions">
+        <h2>Directions</h2>
+        <ol class="recipe-direction-list">
+          <li *ngFor="let direction of directions">
+            {{direction.step}}
+          </li>
+          <h4 *ngIf="directions === undefined">
+            Directions are not available on this external resource. Please visit
+            <a href="{{recipe.sourceUrl}}">
+              {{sourceName}}
+            </a>
+            for detailed directions!
+          </h4>
+        </ol>
+
+      </div>
+    </div>
+  </div>
+</div>

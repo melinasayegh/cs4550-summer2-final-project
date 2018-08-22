@@ -19,7 +19,7 @@ div.recipe-image {
 
 div.recipe-image>img {
     width: 100%;
-    min-height: 100%;
+    min-height: 100%
 }
 
 div.recipe-description {

@@ -1,15 +1,25 @@
 <div>
   <app-nav-bar></app-nav-bar>
+  <div class="container-fluid">
+    <div class="general-recipes">
+      <h3>All Recipes</h3>
+      <ul class="general-recipes-list">
+        <li>
+          <app-recipe-preview *ngFor="let recipe of recipes"
+                              [recipeId]="recipe._id"></app-recipe-preview>
+        </li>
+      </ul>
+    </div>
+    <div class="api-recipes">
+      <h3>CommunityCookings Exclusive Recipes</h3>
+      <ul class="api-recipes-list">
+        <li>
+          <app-recipe-api-preview *ngFor="let apiRecipe of apiRecipes"
+                                  [recipeId]="apiRecipe.id"></app-recipe-api-preview>
+        </li>
+      </ul>
+    </div>
 
-  <div class="general-recipes">
-    <h3>All Recipes</h3>
-    <ul class="general-recipes-list">
-      <li>
-        <app-recipe-preview *ngFor="let recipe of recipes"
-                            [recipeId]="recipe._id"></app-recipe-preview>
-      </li>
-    </ul>
+    <app-page-footer></app-page-footer>
   </div>
-
-  <app-page-footer></app-page-footer>
 </div>

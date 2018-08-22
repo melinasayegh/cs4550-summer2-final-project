@@ -12,7 +12,7 @@ export class RecipeServiceClient {
     }
 
     findAllRecipes = () => {
-        return fetch(HEROKU_URL + 'recipe', {
+        return fetch(HEROKU_URLL + 'recipe', {
             method: 'get',
             credentials: 'include'
         }).then(response => response.json());

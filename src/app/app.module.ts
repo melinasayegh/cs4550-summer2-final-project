@@ -25,8 +25,13 @@ import { ProfileSettingsComponent } from './components/profile-settings/profile-
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { RecipeCreatorComponent } from './components/recipe-creator/recipe-creator.component';
 import { AdminUsersComponent } from './pages/admin-users/admin-users.component';
-import { AdminUserComponent } from './components/admin-user/admin-user.component';
+import { AdminUserComponent } from './components/admin/admin-user/admin-user.component';
 import { RecipesPageComponent } from './pages/recipes-page/recipes-page.component';
+import {ReviewServiceClient} from './services/review.service.client';
+import {RecipeApiServiceClient} from './services/recipe-api.service.client';
+import { RecipeApiPreviewComponent } from './components/recipe-api-preview/recipe-api-preview.component';
+import { AdminCreateUserComponent } from './components/admin/admin-create-user/admin-create-user.component';
+import { RecipeApiPageComponent } from './pages/recipe-api-page/recipe-api-page.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +56,10 @@ import { RecipesPageComponent } from './pages/recipes-page/recipes-page.componen
     RecipeCreatorComponent,
     AdminUsersComponent,
     AdminUserComponent,
-    RecipesPageComponent
+    RecipesPageComponent,
+    RecipeApiPreviewComponent,
+    AdminCreateUserComponent,
+    RecipeApiPageComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +68,9 @@ import { RecipesPageComponent } from './pages/recipes-page/recipes-page.componen
   ],
   providers: [
       UserServiceClient,
-      RecipeServiceClient
+      RecipeServiceClient,
+      ReviewServiceClient,
+      RecipeApiServiceClient
   ],
   bootstrap: [AppComponent]
 })

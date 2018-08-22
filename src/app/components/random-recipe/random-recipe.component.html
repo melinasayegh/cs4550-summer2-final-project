@@ -1,16 +1,28 @@
+<br/>
+<br/>
 <div class="container-fluid">
   <h4>
     Pick a tag or keyword that your random recipe will belong to.
   </h4>
-  <input [(ngModel)]="tag"
+  <input [(ngModel)]="search"
          placeholder="Enter keyword here"
          class="form-control">
   <br/>
-  <button routerLink='/random/{{tag}}'
+  <button (click)="loadRandomRecipe(search)"
           class="btn btn-block btn-success">
     Search
   </button>
+
   <br/>
-  <a [hidden]="randomRecipe === 'undefined'"
-     href="{{sourceUrl}}">{{sourceUrl}}</a>
-</div>
+  <div class="search-results">
+    <h3>Searching for: {{search}}</h3>
+    <ul class="results-recipes-list"
+        *ngIf="searchResults.length>0">
+      <li>
+        <app-recipe-preview *ngFor="let recipe of recipeResults"
+                            [recipeId]="recipe.id"></app-recipe-preview>
+      </li>
+    </ul>
+
+    <h6 *ngIf="recipeResults.length==0">No recipes match this search</h6>
+  </div></div>

@@ -27,7 +27,7 @@
             <div class="input-group">
                 <input class="form-control" type="search" [(ngModel)]="searchInput"
                        placeholder="Search for a recipe..." aria-label="Search"/>
-              <i class="btn btn-light fa fa-search" (click)="search(searchInput)"></i>
+              <i class="btn btn-light fa fa-search" routerLink="/results/{{searchInput}}"></i>
             </div>
           </li>
         </ul>
@@ -36,7 +36,7 @@
       <div class="collapse navbar-collapse justify-content-end" *ngIf="isLoggedIn">
         <ul class="nav navbar-nav navbar-right">
           <li class="nav-item">
-            <a class="nav-link" routerLink="/profile">Profile</a>
+            <a class="nav-link" routerLink="/profile/{{currentUser._id}}">Profile</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" (click)="logout()">Log Out</a>

@@ -11,10 +11,10 @@ import {RecipeServiceClient} from "../../services/recipe.service.client";
 })
 export class NavBarComponent implements OnInit {
 
-    isLoggedIn = false;
-    isAdminUser = false;
-    isNavbarOpen = false;
-    currentUser = {};
+    isLoggedIn: boolean;
+    isAdminUser: boolean;
+    isNavbarOpen: boolean;
+    currentUser = <any>{};
     searchInput: String;
 
     constructor(private router: Router,
@@ -28,10 +28,6 @@ export class NavBarComponent implements OnInit {
         this.userService.logout()
             .then(() => this.router.navigate(['login']));
 
-    }
-
-    search(input) {
-        this.router.navigate(['results/' + input]);
     }
 
     ngOnInit() {
@@ -50,6 +46,5 @@ export class NavBarComponent implements OnInit {
                     this.isAdminUser = false;
                 }
             });
-        console.log(this.isLoggedIn);
     }
 }
