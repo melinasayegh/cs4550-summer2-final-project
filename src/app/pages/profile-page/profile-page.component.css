@@ -10,10 +10,12 @@ div.profile-bio {
     padding: 15px;
     max-height: 85px;
     word-wrap: break-word;
+    margin: 20px auto;
 }
 
 div.profile-bio>h4 {
     margin: 20px auto;
+    display: inline;
 }
 
 ul.profile-tabs-list {
@@ -108,5 +110,55 @@ i.fa-user {
 }
 
 button.hide {
+    display: none;
+}
+
+div.recipe-review {
+    border: 1px solid #e4e6e8;
+    display: inline-block;
+    margin: auto auto 20px auto;
+    cursor: pointer;
+    background-color: white;
+    width: 100%;
+}
+
+div.recipe-review-content {
+    display: block;
+    padding: 25px;
+    text-align: left;
+}
+
+div.review-heading>h5 {
+    float: right;
+}
+
+div.recipe-title>h4, div.recipe-title>h4 {
+    display: inline-block;
+}
+
+div.hide {
+    display: none;
+}
+
+ul.recipe-review-list {
+    padding-left: 0;
+}
+
+ul.recipe-review-list>li {
+    margin: auto;
+    list-style-type: none;
+    padding: 0 0 15px 0;
+    width: 90%;
+}
+
+i.fa-check-circle {
+    display: inline;
+    margin: auto 15px auto -15px;
+    font-size: 1.25rem;
+    vertical-align: super;
+    color: #59821e;
+}
+
+i.hide, div.hide, li.hide {
     display: none;
 }

@@ -44,6 +44,7 @@ export class ProfilePageComponent implements OnInit {
             this.profileUser = profileUser;
             this.faveRecipes = profileUser.favoriteRecipes;
             this.myRecipes = profileUser.myRecipes;
+
         });
         this.userService.currentUser().then(currUser => {
             this.currUser = currUser;
@@ -72,10 +73,11 @@ export class ProfilePageComponent implements OnInit {
         }
     }
 
-    addFriend(user) {
-        const updatedFriends = this.currUser.friends.push(user._id);
+    addFriend(newFriend) {
+        const updatedCurrUserFriends = this.currUser.friends.push(newFriend._id)
+        const updatedNewFriendFriends = newFriend.friends.push(this.currUser._id);
 
-        const updatedUser = {
+        const updatedCurrUser = {
             username: this.currUser.username,
             password: this.currUser.password,
             firstName: this.currUser.firstName,
@@ -87,14 +89,29 @@ export class ProfilePageComponent implements OnInit {
             reviews: this.currUser.reviews,
             friends: this.currUser.friends
         };
-        this.userService.updateProfile(updatedUser)
+
+        const updatedNewFriend = {
+            username: newFriend.username,
+            password: newFriend.password,
+            firstName: newFriend.firstName,
+            lastName: newFriend.lastName,
+            email: newFriend.email,
+            isAdmin: newFriend.isAdmin,
+            myRecipes: newFriend.myRecipes,
+            favoriteRecipes: newFriend.favoriteRecipes,
+            reviews: newFriend.reviews,
+            friends: newFriend.friends
+        };
+
+        this.userService.updateProfile(updatedCurrUser)
             .then(response => {
-                    this.ngOnInit();
-            });
+                return this.userService.updateProfile(updatedNewFriend);
+            })
+            .then(response => this.ngOnInit());
     }
 
-    unfriend(user) {
-        const updatedUser = {
+    unfriend(exfriend) {
+        const updatedCurrUser = {
             username: this.currUser.username,
             password: this.currUser.password,
             firstName: this.currUser.firstName,
@@ -105,13 +122,33 @@ export class ProfilePageComponent implements OnInit {
             favoriteRecipes: this.currUser.favoriteRecipes,
             reviews: this.currUser.reviews,
             friends: this.currUser.friends.filter(u => {
-                return u._id !== user._id;
+                return u._id !== exfriend._id;
             })
-    };
-        this.userService.updateProfile(updatedUser)
-            .then(response => {
-                    this.ngOnInit();
-            });
+        };
 
+        const updatedExFriend = {
+            username: exfriend.username,
+            password: exfriend.password,
+            firstName: exfriend.firstName,
+            lastName: exfriend.lastName,
+            email: exfriend.email,
+            isAdmin: exfriend.isAdmin,
+            myRecipes: exfriend.myRecipes,
+            favoriteRecipes: exfriend.favoriteRecipes,
+            reviews: exfriend.reviews,
+            friends: exfriend.friends.filter(u => {
+                return u._id !== this.currUser._id;
+            })
+        };
+        this.userService.updateProfile(updatedCurrUser)
+            .then(response => {
+                return this.userService.updateProfile(updatedExFriend);
+            })
+            .then(response => this.ngOnInit());
+
+    }
+
+    fixDate = (date) => {
+        return new Date(date).toLocaleString();
     }
 }

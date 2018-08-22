@@ -11,6 +11,11 @@ div.recipe-preview-content {
     display: block;
 }
 
+div.recipe-image {
+    height: 250px;
+    width: 250px;
+    overflow: hidden;
+}
 
 div.recipe-image>img {
     width: 100%;

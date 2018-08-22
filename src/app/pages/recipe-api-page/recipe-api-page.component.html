@@ -5,21 +5,8 @@
     <div class="recipe-header-row">
       <div class="recipe-title-description">
         <h2>{{title}}</h2>
-        <h5>Created by: {{sourceName}}</h5>
-
-        <h4 class="pull-left winePairing">Wine Pairing:</h4>
-        <br/>
-        <div class="recipe-description">
-          {{winePairing}}
-          <h6 *ngIf="winePairing === ''">
-            There are no wines paired with this dish! Maybe mix in a water.
-          </h6>
-        </div>
-        <a href="{{recipe.sourceUrl}}">
-          <br/>
-          <h5>{{recipe.sourceUrl}}</h5></a>
-
-        <div class="category-tags row">
+        <a href="{{recipe.sourceUrl}}"><h6 class="recipe-more-information">More information at: {{recipe.sourceUrl}}</h6></a>
+        <div class="category-tags">
           <app-category-tag *ngIf="recipe.vegetarian" [category]="'VEGETARIAN'"></app-category-tag>
           <app-category-tag *ngIf="recipe.vegan" [category]="'VEGETARIAN'"></app-category-tag>
           <app-category-tag *ngIf="recipe.dairyFree" [category]="'DAIRY FREE'"></app-category-tag>
@@ -37,9 +24,8 @@
     <div class="recipe-ingredients-information-row">
       <div class="recipe-ingredients">
         <h2>Ingredients</h2>
-        <ul class="recipe-ingredients-list"
-            *ngFor="let ingredient of recipe.extendedIngredients">
-          <li>
+        <ul class="recipe-ingredients-list">
+          <li *ngFor="let ingredient of recipe.extendedIngredients">
             {{ingredient.originalString}}
           </li>
         </ul>
@@ -73,27 +59,6 @@
           </h4>
         </ol>
 
-      </div>
-    </div>
-
-    <div class="recipe-reviews-row">
-      <div class="recipe-reviews">
-        <h2>Reviews</h2>
-
-        <div class="recipe-review-input">
-          <textarea rows="8" class="form-control" [(ngModel)]="comment"></textarea>
-          <div class="submit-btn">
-            <p>Submit</p>
-          </div>
-        </div>
-
-        <ul class="recipe-review-list">
-
-          <li *ngFor="let review of recipe.reviews">
-            <p>{{review._id}}</p>
-            <app-recipe-review [reviewId]="review._id" [currPage]="'recipe'"></app-recipe-review>
-          </li>
-        </ul>
       </div>
     </div>
   </div>
