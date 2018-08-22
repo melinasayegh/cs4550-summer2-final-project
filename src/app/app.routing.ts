@@ -27,7 +27,6 @@ const appRoutes: Routes = [
     { path: 'recipe/create/new', component: CreateRecipePageComponent },
     { path: 'recipe/update/:recipeId', component: CreateRecipePageComponent },
     { path: 'random',           component: RandomRecipeComponent},
-    { path: 'random/:tag',      component: RandomRecipeComponent},
     { path: '**',               component: HomePageComponent }
 ];
 

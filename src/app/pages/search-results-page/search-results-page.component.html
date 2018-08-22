@@ -1,15 +1,14 @@
-<div>
-  <app-nav-bar></app-nav-bar>
+<app-nav-bar></app-nav-bar>
 
-  <div class="search-results">
-    <h3>Search results for: {{recipeTitle}}</h3>
-    <ul class="results-recipes-list" *ngIf="recipes.length>0">
-      <li>
-        <app-recipe-preview *ngFor="let recipe of recipes"
-                            [recipeId]="recipe._id"></app-recipe-preview>
-      </li>
-    </ul>
+<div class="search-results">
+  <h2>Searching for: {{search}}</h2>
+  <ul class="results-recipes-list"
+      *ngIf="searchResults.length>0">
+    <li>
+      <app-recipe-api-preview *ngFor="let recipe of recipeResults"
+                              [recipeId]="recipe.id"></app-recipe-api-preview>
+    </li>
+  </ul>
 
-    <h6 *ngIf="recipes.length==0">No recipes match this search</h6>
-  </div>
+  <h6 *ngIf="recipeResults.length==0">No recipes match this search</h6>
 </div>
