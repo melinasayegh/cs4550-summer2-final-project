@@ -27,7 +27,7 @@ export class RecipePageComponent implements OnInit {
               private recipeService: RecipeServiceClient) {}
 
   ngOnInit() {
-      this.userService.profile()
+      this.userService.currentUser()
           .then(loggedInUser => {
               this.userCreator = (this.recipe.creator === loggedInUser._id);
               this.isLoggedIn = true;

@@ -11,18 +11,11 @@ div.friend-preview-content {
     display: block;
 }
 
-div.friend-image {
-    height: 50px;
-    width: 50px;
+div.friend-preview-content>i {
     overflow: hidden;
     display: inline-block;
     vertical-align: middle;
     margin: 15px;
-}
-
-div.friend-image>img {
-    width: 100%;
-    min-height: 100%;
 }
 
 div.friend-name {

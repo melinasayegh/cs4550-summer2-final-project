@@ -39,8 +39,8 @@ export class UserServiceClient {
             credentials: 'include'
         });
     }
-    profile() {
-        return fetch(LOCAL_URL + 'profile', {
+    profile(userId) {
+        return fetch(LOCAL_URL + 'profile/' + userId, {
             credentials: 'include',
         }).then(response => response.json());
     }

@@ -6,26 +6,14 @@ aside.profile-nav-bar {
     text-align: center;
 }
 
-div.profile-img {
-    width: 150px;
-    height: 150px;
-    overflow: hidden;
-    margin: 40px auto 15px auto;
-}
-
-div.profile-img>img {
-    width: 100%;
-    min-height: 100%;
-}
-
 div.profile-bio {
     padding: 15px;
     max-height: 85px;
     word-wrap: break-word;
 }
 
-div.profile-bio>h3 {
-    margin: 0 auto;
+div.profile-bio>h4 {
+    margin: 20px auto;
 }
 
 ul.profile-tabs-list {
@@ -35,7 +23,6 @@ ul.profile-tabs-list {
 }
 
 ul.profile-tabs-list>li {
-
     margin: auto;
     background-color: #e0eaf3;
     border-bottom: 1px solid #e6e6e6;
@@ -57,10 +44,6 @@ div.settings-view, div.friends-view, div.my-recipes-view, div.favorites-view, di
     width: 75%;
     float: right;
     margin: 30px auto;
-}
-
-div.hide {
-    display: none;
 }
 
 ul.review-list, ul.favorites-list ul.my-recipes-list, ul.friends-list {
@@ -98,4 +81,24 @@ div.create-recipe {
 
 div.create-recipe>h3 {
     display: block;
+}
+
+.hide, div.create-recipe.hide {
+    display: none;
+}
+
+button.add-friend-btn {
+    background: #b4be60;
+    color: white;
+    width: 50%;
+}
+
+button.unfriend-btn {
+    background: #59821e;
+    color: white;
+    width: 50%;
+}
+
+div.create-recipe-content {
+    margin: 50% 0;
 }
