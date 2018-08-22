@@ -106,3 +106,7 @@ div.create-recipe-content {
 i.fa-user {
     font-size: 1.5rem;
 }
+
+button.hide {
+    display: none;
+}

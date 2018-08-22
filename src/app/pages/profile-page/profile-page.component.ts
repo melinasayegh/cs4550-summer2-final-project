@@ -24,7 +24,7 @@ export class ProfilePageComponent implements OnInit {
     }];
     currProfileId = <any>{};
     isOwnProfile: boolean;
-    currUser = <any>{};
+    currUser = undefined;
     isFriend: boolean;
 
     constructor(private router: Router,
@@ -47,8 +47,7 @@ export class ProfilePageComponent implements OnInit {
         });
         this.userService.currentUser().then(currUser => {
             this.currUser = currUser;
-
-            if (currUser.username !== undefined) {
+            if (currUser !== undefined) {
                 if (this.currProfileId === currUser._id) {
                     this.isOwnProfile = true;
                 } else {

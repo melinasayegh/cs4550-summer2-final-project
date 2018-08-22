@@ -1,4 +1,10 @@
 div.general-recipes {
+     display: block;
+     margin: 30px auto;
+     text-align: center;
+ }
+
+div.api-recipes {
     display: block;
     margin: 30px auto;
     text-align: center;
@@ -19,7 +25,23 @@ ul.general-recipes-list>li {
     list-style-type: none;
 }
 
+ul.api-recipes-list>li {
+    margin: auto;
+    list-style-type: none;
+}
+
 ul.general-recipes-list>li {
     display: inline-block;
     margin: auto 2.5% 5% 2.5%;
+}
+
+ul.api-recipes-list>li {
+    display: inline-block;
+    margin: auto 2.5% 5% 2.5%;
+}
+
+
+app-recipe-api-preview {
+    width: 10%;
+    height: 40%;
 }
