@@ -53,9 +53,12 @@ export class UserServiceClient {
     updateProfile(newProfile) {
         return fetch(LOCAL_URL + 'user/update', {
             method: 'put',
+            headers: {
+                'content-type': 'application/json'
+            },
             body: JSON.stringify(newProfile),
             credentials: 'include',
-        }).then(response => response.json());
+        });
     }
     currentUser() {
         return fetch(LOCAL_URL + 'currentUser', {

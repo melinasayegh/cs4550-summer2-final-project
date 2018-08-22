@@ -75,7 +75,7 @@ export class ProfilePageComponent implements OnInit {
 
     addFriend(user) {
         const updatedUser = {
-            username: this.currUser.user,
+            username: this.currUser.username,
             password: this.currUser.password,
             firstName: this.currUser.firstName,
             lastName: this.currUser.lastName,
@@ -86,13 +86,15 @@ export class ProfilePageComponent implements OnInit {
             reviews: this.currUser.reviews,
             friends: this.currUser.friends.push(user._id)
         };
-        console.log(updatedUser);
-        this.userService.updateProfile(updatedUser);
+        this.userService.updateProfile(updatedUser)
+            .then(response => {
+                    this.ngOnInit();
+            });
     }
 
     unfriend(user) {
         const updatedUser = {
-            username: this.currUser.user,
+            username: this.currUser.username,
             password: this.currUser.password,
             firstName: this.currUser.firstName,
             lastName: this.currUser.lastName,
@@ -105,6 +107,10 @@ export class ProfilePageComponent implements OnInit {
                 return u._id !== user._id;
             })
     };
-        this.userService.updateProfile(updatedUser);
+        this.userService.updateProfile(updatedUser)
+            .then(response => {
+                    this.ngOnInit();
+            });
+
     }
 }
