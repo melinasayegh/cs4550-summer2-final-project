@@ -74,6 +74,8 @@ export class ProfilePageComponent implements OnInit {
     }
 
     addFriend(user) {
+        const updatedFriends = this.currUser.friends.push(user._id);
+
         const updatedUser = {
             username: this.currUser.username,
             password: this.currUser.password,
@@ -84,7 +86,7 @@ export class ProfilePageComponent implements OnInit {
             myRecipes: this.currUser.myRecipes,
             favoriteRecipes: this.currUser.favoriteRecipes,
             reviews: this.currUser.reviews,
-            friends: this.currUser.friends.push(user._id)
+            friends: this.currUser.friends
         };
         this.userService.updateProfile(updatedUser)
             .then(response => {

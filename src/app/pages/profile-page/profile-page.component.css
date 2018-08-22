@@ -102,3 +102,7 @@ button.unfriend-btn {
 div.create-recipe-content {
     margin: 50% 0;
 }
+
+i.fa-user {
+    font-size: 1.5rem;
+}
