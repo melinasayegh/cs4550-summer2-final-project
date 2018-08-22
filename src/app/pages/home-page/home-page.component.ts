@@ -8,6 +8,8 @@ import {UserServiceClient} from '../../services/user.service.client';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
+
+    isAlert = true;
   recipes: [{
     recipe: {
       _id: String
@@ -22,6 +24,9 @@ export class HomePageComponent implements OnInit {
   constructor(private recipeService: RecipeServiceClient,
               private userService: UserServiceClient) {}
 
+  removeAlert = () => {
+      this.isAlert = false;
+  }
   ngOnInit() {
     this.recipeService.findAllRecipes()
         .then(recipes => {

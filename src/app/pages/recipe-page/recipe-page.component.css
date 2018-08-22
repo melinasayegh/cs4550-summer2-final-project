@@ -4,7 +4,7 @@ div.recipe {
     border: 1px solid #e4e6e8;
 }
 
-div.recipe-header-row, div.recipe-ingredients-information-row, div.recipe-directions-row {
+div.recipe-header-row, div.recipe-ingredients-information-row, div.recipe-directions-row, div.review-item {
     margin: auto;
     width: 95%;
     padding: 40px 0;
