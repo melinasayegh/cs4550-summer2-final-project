@@ -28,7 +28,7 @@
         </div>
 
         <div class="recipe-description">
-          "{{recipe.description}}"
+          {{recipe.description}}
         </div>
 
         <div class="category-tags">
@@ -83,7 +83,7 @@
         <h2>Reviews</h2>
 
         <div class="recipe-review-input">
-          <textarea rows="8"></textarea>
+          <textarea rows="8" class="form-control" [(ngModel)]="comment"></textarea>
           <div class="submit-btn">
             <p (click)="submitReview()">Submit</p>
           </div>
