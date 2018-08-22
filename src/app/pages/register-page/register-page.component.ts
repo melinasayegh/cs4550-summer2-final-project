@@ -54,6 +54,12 @@ export class RegisterPageComponent implements OnInit {
                 firstName: this.firstName,
                 lastName: this.lastName,
                 email: this.email,
+                myRecipes: [],
+                favoriteRecipes: [],
+                reviews: [],
+                friends: [],
+                isAdmin: false,
+                isChef: false
             };
             this.userService.register(newUser)
                 .then((response) => {

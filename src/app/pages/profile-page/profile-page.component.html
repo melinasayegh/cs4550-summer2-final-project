@@ -63,7 +63,7 @@
     <ul class="my-recipes-list">
       <li>
         <div class="create-recipe" routerLink="/recipe/create/new"
-             [ngClass]="{'hide' : !isOwnProfile && !(profileUser.isChef)}">
+             [ngClass]="{'hide' : !isOwnProfile && !(profileUser.isChef) || (currUser === undefined)}">
           <div class="create-recipe-content">
             <i class="fa fa-plus"></i>
             <h3>Create a new recipe</h3>
