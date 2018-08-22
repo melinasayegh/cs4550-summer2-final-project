@@ -31,6 +31,7 @@ import {ReviewServiceClient} from './services/review.service.client';
 import {RecipeApiServiceClient} from './services/recipe-api.service.client';
 import { RecipeApiPreviewComponent } from './components/recipe-api-preview/recipe-api-preview.component';
 import { AdminCreateUserComponent } from './components/admin/admin-create-user/admin-create-user.component';
+import { RecipeApiPageComponent } from './pages/recipe-api-page/recipe-api-page.component';
 import {ReviewServiceClient} from './services/review.service.client';
 
 @NgModule({
@@ -58,7 +59,8 @@ import {ReviewServiceClient} from './services/review.service.client';
     AdminUserComponent,
     RecipesPageComponent,
     RecipeApiPreviewComponent,
-    AdminCreateUserComponent
+    AdminCreateUserComponent,
+    RecipeApiPageComponent
   ],
   imports: [
     BrowserModule,

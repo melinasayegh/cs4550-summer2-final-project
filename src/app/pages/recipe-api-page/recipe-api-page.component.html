@@ -1,0 +1,104 @@
+<div>
+  <app-nav-bar></app-nav-bar>
+
+  <div class="recipe">
+    <div class="recipe-header-row">
+      <div class="recipe-title-description">
+        <h2>{{title}}</h2>
+        <h5>Created by: {{sourceName}}</h5>
+
+        <div class="recipe-ratings">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star"></i>
+        </div>
+
+        <h4 class="pull-left winePairing">Wine Pairing:</h4>
+        <br/>
+        <div class="recipe-description">
+          {{winePairing}}
+          <h6 *ngIf="winePairing === ''">
+            There are no wines paired with this dish! Maybe mix in a water.
+          </h6>
+        </div>
+        <a href="{{recipe.sourceUrl}}">
+          <br/>
+          <h5>{{recipe.sourceUrl}}</h5></a>
+
+        <div class="category-tags">
+          <app-category-tag *ngFor="let tag of recipe.tags" [category]="tag"></app-category-tag>
+        </div>
+      </div>
+
+      <div class="recipe-image">
+        <img src="{{recipe.image}}">
+      </div>
+    </div>
+
+    <div class="recipe-ingredients-information-row">
+      <div class="recipe-ingredients">
+        <h2>Ingredients</h2>
+        <ul class="recipe-ingredients-list"
+            *ngFor="let ingredient of recipe.extendedIngredients">
+          <li>
+            {{ingredient.originalString}}
+          </li>
+        </ul>
+      </div>
+
+      <div class="recipe-information">
+        <ul class="recipe-information-list">
+          <li>
+            <h6>Prep & Cook Time: {{recipe.readyInMinutes}} Min.</h6>
+          </li>
+          <li>
+            <h6>Number Servings: {{recipe.servings}}</h6>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="recipe-directions-row">
+      <div class="recipe-directions">
+        <h2>Directions</h2>
+        <ol class="recipe-direction-list">
+          <li *ngFor="let direction of directions">
+            {{direction.step}}
+          </li>
+          <h4 *ngIf="directions === undefined">
+            Directions are not available on this external resource. Please visit
+            <a href="{{recipe.sourceUrl}}">
+              {{sourceName}}
+            </a>
+            for detailed directions!
+          </h4>
+        </ol>
+
+      </div>
+    </div>
+
+    <div class="recipe-reviews-row">
+      <div class="recipe-reviews">
+        <h2>Reviews</h2>
+
+        <div class="recipe-review-input">
+          <textarea rows="8" class="form-control" [(ngModel)]="comment"></textarea>
+          <div class="submit-btn">
+            <p>Submit</p>
+          </div>
+        </div>
+
+        <ul class="recipe-review-list">
+
+          <li *ngFor="let review of recipe.reviews">
+            <p>{{review._id}}</p>
+            <app-recipe-review [reviewId]="review._id" [currPage]="'recipe'"></app-recipe-review>
+            <!--<app-recipe-review [reviewId]="'5b7a282bfb6fc066d4287dec'" [currPage]="'recipe'"></app-recipe-review>-->
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

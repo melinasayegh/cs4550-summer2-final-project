@@ -1,4 +1,4 @@
-<div class="recipe-preview" routerLink="/recipe/{{recipe.id}}">
+<div class="recipe-preview" routerLink="/recipe/external/{{recipe.id}}">
 
   <div class="recipe-preview-content">
     <div class="recipe-image">
@@ -17,7 +17,12 @@
       </div>
 
       <div class="category-tags">
-        <app-category-tag *ngFor="let tag of recipe.tags" [category]="tag"></app-category-tag>
+        <app-category-tag *ngIf="recipe.vegetarian" [category]="'VEGETARIAN'"></app-category-tag>
+        <app-category-tag *ngIf="recipe.vegan" [category]="'VEGETARIAN'">VEGAN</app-category-tag>
+        <app-category-tag *ngIf="recipe.dairyFree" [category]="'DAIRY FREE'"></app-category-tag>
+        <app-category-tag *ngIf="recipe.veryHealthy" [category]="'VEGETARIAN'">VERY HEALTHY</app-category-tag>
+        <app-category-tag *ngIf="recipe.sustainable" [category]="'VEGETARIAN'">SUSTAINABLE</app-category-tag>
+        <app-category-tag *ngIf="recipe.ketogenic" [category]="'VEGETARIAN'">KETOGENIC</app-category-tag>
       </div>
     </div>
   </div>
