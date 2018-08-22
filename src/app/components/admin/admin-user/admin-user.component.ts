@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {UserServiceClient} from '../../services/user.service.client';
+import {UserServiceClient} from '../../../services/user.service.client';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class AdminUserComponent implements OnInit {
 
-    userId;
+    selectedUserId;
     user = {
         username: String
     };
@@ -25,7 +25,7 @@ export class AdminUserComponent implements OnInit {
                 private userService: UserServiceClient) {
         this.route.params.subscribe(params => {
             this.getUser(params['userId']);
-            this.userId = params['userId'];
+            this.selectedUserId = params['userId'];
         });
     }
 
@@ -47,11 +47,12 @@ export class AdminUserComponent implements OnInit {
             lastName: this.lastName,
             email: this.email
         };
-        this.userService.adminUpdatesUser(this.userId, newUser);
+        this.userService.adminUpdatesUser(this.selectedUserId, newUser)
+            .then((response) => this.router.navigate(['admin/user']));
     }
     deleteUser() {
-        this.userService.adminDeletesUser(this.userId)
-            .then((response) => this.router.navigate(['login']));
+        this.userService.adminDeletesUser(this.selectedUserId)
+            .then((response) => this.router.navigate(['admin/user']));
     }
     getUser(userId) {
         this.userService.findUserById(userId)
@@ -64,5 +65,4 @@ export class AdminUserComponent implements OnInit {
                 this.email = user.email;
             });
     }
-
 }

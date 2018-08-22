@@ -9,4 +9,10 @@
 
 .container-fluid {
     margin: 15px;
+    padding-right: 30px;
+}
+
+.list-div {
+    padding-bottom: 20px;
+    padding-right: 20px;
 }
