@@ -39,9 +39,8 @@
     <div class="recipe-ingredients-information-row">
         <div class="recipe-ingredients">
             <h2>Ingredients</h2>
-            <ul class="recipe-ingredients-list"
-                *ngFor="let ingredient of recipe.ingredients">
-                <li>
+            <ul class="recipe-ingredients-list">
+                <li *ngFor="let ingredient of recipe.ingredients">
                     {{ingredient}}
                 </li>
             </ul>

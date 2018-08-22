@@ -11,18 +11,16 @@ div.recipe-header-row, div.recipe-ingredients-information-row, div.recipe-direct
     border-bottom: 2px solid #ecede9;
 }
 
-div.recipe-reviews-row {
-    width: 95%;
-    padding-bottom: 20px;
-    margin: 30px auto 0 auto;
-}
-
 div.recipe-title-description {
     display: inline-block;
     width: 40%;
 }
 
-h2 {
+div.recipe-title>h2 {
+    display: inline;
+}
+
+div.recipe-title, h2 {
     margin: auto auto 20px auto;
 }
 
@@ -49,7 +47,7 @@ div.recipe-image>img {
     max-width: 100%;
 }
 
-div.recipe-directions, div.recipe-reviews {
+div.recipe-directions {
     margin: auto;
     width: 80%;
 }
@@ -59,14 +57,12 @@ div.recipe {
     text-align: center;
 }
 
-ul.recipe-ingredients-list, ol.recipe-direction-list, ul.recipe-review-list,
-ul.recipe-information-list {
+ul.recipe-ingredients-list, ol.recipe-direction-list, ul.recipe-information-list {
     padding-left: 0;
     width: 100%;
 }
 
-ul.recipe-ingredients-list>li, ul.recipe-review-list>li, ul.recipe-review-list>li,
-ul.recipe-information-list>li {
+ul.recipe-ingredients-list>li, ul.recipe-information-list>li {
     margin: auto;
     list-style-type: none;
     padding: 0 0 15px 0;
@@ -79,36 +75,8 @@ ol.recipe-direction-list>li {
 }
 
 div.recipe-ingredients>h2, ul.recipe-ingredients-list>li, div.recipe-directions>h2,
-ol.recipe-direction-list>li, div.recipe-reviews>h2, ul.recipe-review-list>li,
-ul.recipe-information-list>li {
+ol.recipe-direction-list>li, ul.recipe-information-list>li {
     text-align: left;
-}
-
-div.submit-btn {
-    float: right;
-    cursor: pointer;
-    text-align: center;
-    margin: 20px auto;
-    background-color: #59821e;
-    color: white;
-    padding: 10px 20px;
-}
-
-div.submit-btn>p {
-    margin-bottom: 0;
-}
-
-div.recipe-review-input {
-    margin: auto auto 40px auto;
-    padding-bottom: 75px;
-}
-
-div.recipe-review-input>textarea {
-    width: 100%;
-}
-
-.edit-btns {
-    margin-left: 50px;
 }
 
 div.recipe-ingredients  {
@@ -128,6 +96,6 @@ ul {
     margin-bottom: 0;
 }
 
-.winePairing {
-    margin-left: 70px;
+h6.recipe-more-information {
+    color:  #59821e;
 }
