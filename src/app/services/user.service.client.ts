@@ -24,7 +24,7 @@ export class UserServiceClient {
             username: username,
             password: password
         };
-        return fetch(LOCAL_URL + 'login', {
+        return fetch(HEROKU_URL + 'login', {
             method: 'post',
             body: JSON.stringify(user),
             credentials: 'include',
