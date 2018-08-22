@@ -28,7 +28,7 @@
         </div>
 
         <div class="row">
-            <div class="col-5">
+            <div class="list-div col-md-5 col-lg-5 col-sm-12 col-xs-12">
                 <ul class="list-group">
                     <li class="list-group-item">
                         <a routerLink="/admin/user"
@@ -47,7 +47,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-7">
+            <div class="create-div col-md-7 col-lg-7 col-sm-12 col-xs-12">
                 <app-admin-user *ngIf="selectedUsername !== ''"></app-admin-user>
                 <app-admin-create-user *ngIf="selectedUsername === ''"></app-admin-create-user>
             </div>

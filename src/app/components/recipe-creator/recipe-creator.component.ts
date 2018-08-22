@@ -26,7 +26,8 @@ export class RecipeCreatorComponent implements OnInit {
     };
 
     user = {
-        _id: String
+        _id: String,
+        isAdmin: Boolean
     };
     title;
     image;
@@ -91,7 +92,14 @@ export class RecipeCreatorComponent implements OnInit {
             numServings: Number(this.numServings),
             tags: ['NONE'],
         };
-        this.recipeService.updateRecipe(this.recipeId, recipe);
+        this.recipeService.updateRecipe(this.recipeId, recipe)
+            .then(() => {
+                if (this.user.isAdmin) {
+                    this.router.navigate(['admin/recipe']);
+                } else {
+                    this.router.navigate(['profile']);
+                }
+            });
     }
 
     createRecipe = () => {
@@ -112,7 +120,25 @@ export class RecipeCreatorComponent implements OnInit {
             numServings: Number(this.numServings),
             tags: ['NONE'],
         };
-        this.recipeService.createRecipe(recipe);
+        this.recipeService.createRecipe(recipe)
+            .then(() => {
+                if (this.user.isAdmin) {
+                    this.router.navigate(['admin/recipe']);
+                } else {
+                    this.router.navigate(['profile']);
+                }
+            });
+    }
+
+    deleteRecipe = () => {
+        this.recipeService.deleteRecipe(this.recipeId)
+            .then(() => {
+                if (this.user.isAdmin) {
+                    this.router.navigate(['admin/recipe']);
+                } else {
+                    this.router.navigate(['profile']);
+                }
+        });
     }
 
     ngOnInit() {
