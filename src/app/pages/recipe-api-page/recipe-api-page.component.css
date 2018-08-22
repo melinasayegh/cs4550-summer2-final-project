@@ -4,7 +4,7 @@ div.recipe {
     border: 1px solid #e4e6e8;
 }
 
-div.recipe-header-row, div.recipe-ingredients-information-row, div.recipe-directions-row, div.review-item {
+div.recipe-header-row, div.recipe-ingredients-information-row, div.recipe-directions-row {
     margin: auto;
     width: 95%;
     padding: 40px 0;
@@ -22,11 +22,7 @@ div.recipe-title-description {
     width: 40%;
 }
 
-div.recipe-title>h2 {
-    display: inline;
-}
-
-div.recipe-title, h2 {
+h2 {
     margin: auto auto 20px auto;
 }
 
@@ -132,14 +128,6 @@ ul {
     margin-bottom: 0;
 }
 
-i.fa-heart {
-    display: inline;
-    margin: auto 25px auto -25px;
-    font-size: 1.25rem;
-    vertical-align: super;
-    color: #59821e;
-}
-
-i.fa-heart:hover {
-    cursor: pointer;
+.winePairing {
+    margin-left: 70px;
 }

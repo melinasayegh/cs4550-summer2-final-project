@@ -5,8 +5,7 @@
   <ul class="results-recipes-list"
       *ngIf="searchResults.length>0">
     <li>
-      <app-recipe-api-preview *ngFor="let recipe of recipeResults"
-                              [recipeId]="recipe.id"></app-recipe-api-preview>
+      <app-recipe-api-preview *ngFor="let recipe of recipeResults" [recipeId]="recipe.id"></app-recipe-api-preview>
     </li>
   </ul>
 

@@ -30,10 +30,6 @@ export class NavBarComponent implements OnInit {
 
     }
 
-    search(input) {
-        this.router.navigate(['results/' + input]);
-    }
-
     ngOnInit() {
         this.userService.currentUser()
             .then((user) =>  {

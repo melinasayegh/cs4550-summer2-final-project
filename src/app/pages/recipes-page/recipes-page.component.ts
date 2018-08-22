@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RecipeServiceClient} from '../../services/recipe.service.client';
+import {RecipeApiServiceClient} from '../../services/recipe-api.service.client';
 
 @Component({
   selector: 'app-recipes-page',
@@ -9,14 +10,24 @@ import {RecipeServiceClient} from '../../services/recipe.service.client';
 export class RecipesPageComponent implements OnInit {
     recipes: [{
         recipe: {
-            _id: String
+            _id: String;
         }
     }];
 
-  constructor(private recipeService: RecipeServiceClient) { }
+    apiRecipes: [{
+        apiRecipe: {
+            id: String;
+        }
+    }];
+
+  constructor(private recipeService: RecipeServiceClient,
+              private recipeApiService: RecipeApiServiceClient) { }
 
   ngOnInit() {
       this.recipeService.findAllRecipes()
           .then(recipes => this.recipes = recipes);
+
+      this.recipeApiService.findRandomRecipes()
+          .then(recipes => this.apiRecipes = recipes.recipes);
   }
 }

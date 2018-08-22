@@ -18,7 +18,7 @@
             <i class="fa-heart" [ngClass]="[isFavorited ? 'fas' : 'far']" (click)="favoriteRecipe()"></i>
             <h2>{{recipe.title}}</h2>
           </div>
-        <h6>Created by: {{creator.username}}</h6>
+        <h6>Created by: {{recipe.creator.username}}</h6>
         <h6>Created on {{fixDate(recipe.createdAt)}}</h6>
         <h6>Updated on {{fixDate(recipe.updatedAt)}}</h6>
 
@@ -77,36 +77,29 @@
       <div class="recipe-reviews">
         <h2>Reviews</h2>
 
-        <div class="recipe-review-input">
+        <div class="recipe-review-input review-item">
           <textarea class="form-control user-fields" [(ngModel)]="review" rows="8"></textarea>
           <div class="submit-btn">
             <p (click)="submitReview()">Submit</p>
           </div>
         </div>
 
-        <ul class="recipe-review-list">
-
-            <li>
-                <div class="recipe-review" routerLink="/recipe/{{recipe._id}}">
+        <ul class="recipe-review-list review-item">
+            <li *ngFor="let review of recipe.reviews">
+            <div class="recipe-review" routerLink="/recipe/{{recipe._id}}">
                     <div class="recipe-review-content">
                         <div class="review-heading">
                             <div class="user-ratings">
                                 <div class="user">
-                                    <h4>{{recipe.reviews[0].user.username}}</h4>
-                                    <p>heres a review</p>
+                                    <h5>user: {{review.user.username}}</h5>
+                                    <p>{{fixDate(review.updatedAt)}}</p>
                                 </div>
-                            <h5>{{fixDate(recipe.reviews[0].updatedAt)}}</h5>
+                                <h4>{{review.text}}</h4>
+                            </div>
                         </div>
-                        <p>{{recipe.reviews[0].text}}</p>
                     </div>
                 </div>
-                </div>
             </li>
-
-          <li *ngFor="let review of recipe.reviews">
-              <p>{{review._id}}</p>
-              <app-recipe-review [reviewId]="review._id" [currPage]="'recipe'"></app-recipe-review>
-          </li>
         </ul>
       </div>
     </div>

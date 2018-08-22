@@ -1,8 +1,12 @@
 <div>
     <app-nav-bar></app-nav-bar>
 
-    <div class="welcome" *ngIf="isLoggedIn">
-        <h4 class="welcome-text">Welcome back, {{user.username}}!</h4>
+    <br/>
+    <div class="alert alert-info .alert-dismissible" *ngIf="isLoggedIn && isAlert" role="alert">
+        <button (click)=removeAlert() type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        Welcome back, {{user.username}}!
     </div>
 
     <div class="featured-recipes">

@@ -38,11 +38,7 @@ ul.featured-recipes-list>li, .my-recipes-list>li {
     margin: auto 2.5% 5% 2.5%;
 }
 
-.welcome {
-    margin: 15px;
-    text-align: left;
-}
-
-.welcome-text {
-    color: #59821e;
+.alert-info {
+    margin-left: 20px;
+    margin-right: 20px;
 }

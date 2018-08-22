@@ -23,7 +23,7 @@ export class RecipePageComponent implements OnInit {
   ingredients: [String];
   comment: String;
   isFavorited: boolean;
-  review = <any>{};
+  review: String;
 
   constructor(private route: ActivatedRoute,
               private userService: UserServiceClient,
@@ -64,18 +64,8 @@ export class RecipePageComponent implements OnInit {
         alert('Please sign in first.');
     }
     }
-
-  findRecipeById = (recipeId) => {
-    this.recipeService.findRecipeById(recipeId)
-        .then(recipe => {
-            this.recipe = recipe;
-            this.userService.findUserById(recipe.creator)
-                .then(user => this.creator = user);
-        });
-  }
-
   checkFavoriteStatus() {
-    for (var i = 0; i < this.currUser.favoriteRecipes.length; i++) {
+    for (let i = 0; i < this.currUser.favoriteRecipes.length; i++) {
         if (this.currUser.favoriteRecipes[i]._id === this.recipe._id) {
             this.isFavorited = true;
             break;
