@@ -2,7 +2,9 @@
 
   <div class="recipe-preview-content">
     <div class="recipe-image">
-      <img src={{recipe.image}}>
+      <img *ngIf="recipe.image !== ''" src={{recipe.image}}>
+      <img *ngIf="recipe.image === ''"
+           src="http://4.bp.blogspot.com/-1PPIpuTPnPY/UCudijf1DPI/AAAAAAAABgY/Ohzq0co9uyk/s1600/generic.jpg">
     </div>
 
     <div class="recipe-description">
