@@ -7,14 +7,6 @@
 
     <div class="recipe-description">
       <h5>{{recipe.title}}</h5>
-
-      <div class="recipe-ratings">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="far fa-star"></i>
-        <i class="far fa-star"></i>
-      </div>
       
       <div class="category-tags">
         <app-category-tag *ngFor="let tag of recipe.tags" [category]="tag"></app-category-tag>

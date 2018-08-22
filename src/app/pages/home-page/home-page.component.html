@@ -14,10 +14,9 @@
             </li>
         </ul>
     </div>
-
-    <div *ngIf="isLoggedIn" class="featured-recipes">
+    <div *ngIf="isLoggedIn" class="my-recipes">
         <h3>My Recipes</h3>
-        <ul class="featured-recipes-list">
+        <ul class="my-recipes-list">
             <li>
                 <app-recipe-preview *ngFor="let recipe of user.myRecipes"
                                     [recipeId]="recipe._id"></app-recipe-preview>

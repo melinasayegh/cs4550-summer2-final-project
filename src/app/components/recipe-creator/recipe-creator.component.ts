@@ -142,6 +142,6 @@ export class RecipeCreatorComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.userService.profile().then(user => this.user = user);
+        this.userService.currentUser().then(user => this.user = user);
     }
 }

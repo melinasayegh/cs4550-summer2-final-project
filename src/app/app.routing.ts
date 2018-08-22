@@ -22,7 +22,7 @@ const appRoutes: Routes = [
     { path: 'admin/recipe',            component: AdminPageComponent },
     { path: 'admin/recipe/:recipeId',            component: AdminPageComponent },
     { path: 'register',         component: RegisterPageComponent },
-    { path: 'profile',          component: ProfilePageComponent },
+    { path: 'profile/:userId',          component: ProfilePageComponent },
     { path: 'results/:recipeTitle',  component: SearchResultsPageComponent },
     { path: 'recipe/:recipeId', component: RecipePageComponent },
     { path: 'recipe/external/:recipeId', component: RecipeApiPageComponent },

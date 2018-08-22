@@ -21,7 +21,7 @@ export class ProfileSettingsComponent implements OnInit {
     constructor(private router: Router, private userService: UserServiceClient) { }
 
     ngOnInit() {
-        this.userService.profile()
+        this.userService.currentUser()
             .then(user => {
                 this.username = user.username;
                 this.password = user.password;

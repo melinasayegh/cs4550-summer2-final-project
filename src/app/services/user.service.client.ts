@@ -39,8 +39,8 @@ export class UserServiceClient {
             credentials: 'include'
         });
     }
-    profile() {
-        return fetch(LOCAL_URL + 'profile', {
+    profile(userId) {
+        return fetch(LOCAL_URL + 'profile/' + userId, {
             credentials: 'include',
         }).then(response => response.json());
     }
@@ -53,9 +53,12 @@ export class UserServiceClient {
     updateProfile(newProfile) {
         return fetch(LOCAL_URL + 'user/update', {
             method: 'put',
+            headers: {
+                'content-type': 'application/json'
+            },
             body: JSON.stringify(newProfile),
             credentials: 'include',
-        }).then(response => response.json());
+        });
     }
     currentUser() {
         return fetch(LOCAL_URL + 'currentUser', {
