@@ -28,7 +28,12 @@
           <h5>{{recipe.sourceUrl}}</h5></a>
 
         <div class="category-tags">
-          <app-category-tag *ngFor="let tag of recipe.tags" [category]="tag"></app-category-tag>
+          <app-category-tag *ngIf="recipe.vegetarian" [category]="'VEGETARIAN'"></app-category-tag>
+          <app-category-tag *ngIf="recipe.vegan" [category]="'VEGETARIAN'"></app-category-tag>
+          <app-category-tag *ngIf="recipe.dairyFree" [category]="'DAIRY FREE'"></app-category-tag>
+          <app-category-tag *ngIf="recipe.veryHealthy" [category]="'VERY HEALTHY'"></app-category-tag>
+          <app-category-tag *ngIf="recipe.sustainable" [category]="'SUSTAINABLE'"></app-category-tag>
+          <app-category-tag *ngIf="recipe.ketogenic" [category]="'KETOGENIC'"></app-category-tag>
         </div>
       </div>
 
@@ -95,7 +100,6 @@
           <li *ngFor="let review of recipe.reviews">
             <p>{{review._id}}</p>
             <app-recipe-review [reviewId]="review._id" [currPage]="'recipe'"></app-recipe-review>
-            <!--<app-recipe-review [reviewId]="'5b7a282bfb6fc066d4287dec'" [currPage]="'recipe'"></app-recipe-review>-->
           </li>
         </ul>
       </div>
