@@ -5,15 +5,15 @@ import { ActivatedRoute } from '@angular/router';
 import { ReviewServiceClient } from '../../services/review.service.client';
 
 @Component({
-  selector: 'app-recipe-page',
-  templateUrl: './recipe-page.component.html',
-  styleUrls: ['./recipe-page.component.css']
+    selector: 'app-recipe-page',
+    templateUrl: './recipe-page.component.html',
+    styleUrls: ['./recipe-page.component.css']
 })
 export class RecipePageComponent implements OnInit {
 
     userCreator = false;
     isLoggedIn = false;
-
+  
   creator = {
     username: String
   };
@@ -58,15 +58,4 @@ export class RecipePageComponent implements OnInit {
     } else {
         alert('Please sign in first.');
     }
-  }
-
-  findRecipeById = (recipeId) => {
-    this.recipeService.findRecipeById(recipeId)
-        .then(recipe => {
-            this.recipe = recipe;
-            console.log(this.recipe.reviews[0]._id);
-            this.userService.findUserById(recipe.creator)
-                .then(user => this.creator = user);
-        });
-  }
 }
