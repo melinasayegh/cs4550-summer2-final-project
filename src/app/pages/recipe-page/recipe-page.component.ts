@@ -13,7 +13,7 @@ export class RecipePageComponent implements OnInit {
 
     userCreator = false;
     isLoggedIn = false;
-    currUser = undefined;
+    currUser = <any>{};
   creator = {
     username: String
   };
@@ -37,9 +37,15 @@ export class RecipePageComponent implements OnInit {
               this.userCreator = (this.recipe.creator === loggedInUser._id);
               this.isLoggedIn = true;
               this.checkFavoriteStatus();
-          }, () => this.isLoggedIn = false);
+          }, () => {
+              this.currUser = undefined;
+              this.isLoggedIn = false;
+          });
 
-      this.route.params.subscribe(params => this.findRecipeById(params['recipeId']));
+      this.route.params.subscribe(params =>
+          this.recipeService.findRecipeById(params['recipeId'])
+              .then(recipe => this.recipe = recipe));
+      this.review = '';
   }
 
   fixDate = (date) => {
@@ -51,19 +57,21 @@ export class RecipePageComponent implements OnInit {
   }
 
   submitReview() {
-    if (this.isLoggedIn) {
+      if (this.isLoggedIn) {
         const newReview = {
             text: this.review,
             createdAt: new Date(),
             updatedAt: new Date(),
-            user: this.recipe.creator._id,
+            user: this.currUser._id,
             recipe: this.recipe._id
         };
-        this.reviewService.createReview(this.recipe._id, newReview);
+        this.reviewService.createReview(this.recipe._id, newReview)
+            .then(response => this.ngOnInit());
     } else {
         alert('Please sign in first.');
     }
-    }
+   }
+
   checkFavoriteStatus() {
     for (let i = 0; i < this.currUser.favoriteRecipes.length; i++) {
         if (this.currUser.favoriteRecipes[i]._id === this.recipe._id) {
@@ -77,7 +85,7 @@ export class RecipePageComponent implements OnInit {
 
   favoriteRecipe() {
       if (this.currUser === undefined) {
-          alert('Please log in in order to favorite recipes');
+          alert('Please sign in first.');
       } else {
           let updatedUser;
           if (this.isFavorited) {

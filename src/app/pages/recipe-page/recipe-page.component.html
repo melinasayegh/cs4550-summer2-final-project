@@ -85,13 +85,13 @@
         </div>
 
         <ul class="recipe-review-list review-item">
-            <li *ngFor="let review of recipe.reviews">
-            <div class="recipe-review" routerLink="/recipe/{{recipe._id}}">
+            <li *ngFor="let review of recipe.reviews" class="review-list-item" routerLink="/profile/{{review.user._id}}">
+            <div class="recipe-review">
                     <div class="recipe-review-content">
                         <div class="review-heading">
                             <div class="user-ratings">
                                 <div class="user">
-                                    <h5>user: {{review.user.username}}</h5>
+                                    <h5>{{review.user.username}}</h5>
                                     <p>{{fixDate(review.updatedAt)}}</p>
                                 </div>
                                 <h4>{{review.text}}</h4>

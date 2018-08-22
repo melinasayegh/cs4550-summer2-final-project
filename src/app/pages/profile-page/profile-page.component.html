@@ -79,10 +79,22 @@
   </div>
 
   <div class="reviews-view" *ngIf="selectedTab === 'Reviews'">
-    <ul class="review-list">
-      <li><app-recipe-review [currPage]="'profile'"></app-recipe-review></li>
-      <li><app-recipe-review [currPage]="'profile'"></app-recipe-review></li>
-      <li><app-recipe-review [currPage]="'profile'"></app-recipe-review></li>
+    <ul class="recipe-review-list review-item">
+      <li *ngFor="let review of profileUser.reviews" class="review-list-item" routerLink="/recipe/{{review.recipe._id}}">
+        <div class="recipe-review">
+          <div class="recipe-review-content">
+            <div class="review-heading">
+              <div class="user-ratings">
+                <div class="recipe-title">
+                  <h5>{{review.recipe.title}}</h5>
+                  <p>{{fixDate(review.updatedAt)}}</p>
+                </div>
+                <h4>{{review.text}}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
     </ul>
   </div>
 </div>

@@ -44,6 +44,8 @@ export class ProfilePageComponent implements OnInit {
             this.profileUser = profileUser;
             this.faveRecipes = profileUser.favoriteRecipes;
             this.myRecipes = profileUser.myRecipes;
+            console.log(this.profileUser);
+
         });
         this.userService.currentUser().then(currUser => {
             this.currUser = currUser;
@@ -113,5 +115,9 @@ export class ProfilePageComponent implements OnInit {
                     this.ngOnInit();
             });
 
+    }
+
+    fixDate = (date) => {
+        return new Date(date).toLocaleString();
     }
 }

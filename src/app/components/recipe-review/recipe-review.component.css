@@ -17,15 +17,7 @@ div.review-heading>h5 {
     float: right;
 }
 
-div.user-ratings {
-    display: inline-block;
-}
-
-div.recipe-ratings {
-    color: #59821e;
-}
-
-div.user-image, div.recipe-image {
+div.user-image {
     height: 25px;
     width: 25px;
     overflow: hidden;
@@ -34,12 +26,8 @@ div.user-image, div.recipe-image {
     margin: 10px;
 }
 
-div.user-image>img, div.recipe-image>img {
-    width: 100%;
-    min-height: 100%;
-}
 
-div.user-image, div.user>h4, div.recipe-image, div.recipe-title>h4 {
+div.user>h4, div.recipe-image, div.recipe-title>h4 {
     display: inline-block;
 }
 
